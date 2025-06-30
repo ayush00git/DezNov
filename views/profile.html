@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buttons</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 5rem;
+    background-color: #0D0E12;
+}
+
+.btn-pro{
+    display: flex;
+    align-items: center;
+    height: 57px;
+    width: 225px;
+    border-radius: 34.5px;
+    border: 2px solid #6E3D85;
+    background-color: #281730;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    padding-left: 12px;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-pro i{
+    display: flex;
+    margin: 0 15px;
+    color: #C08E00;
+}
+
+.btn-pro.active,
+.btn-pro:hover{
+    background-color: #C08E00;
+    width: 240px;
+    color: black;
+    border-color: #FFBC00;
+    box-shadow: 5px 5px 8px rgba(255, 188, 0, 0.25);
+}
+
+.btn-pro.active i,
+.btn-pro:hover i{
+    color: #000;
+}
+
+
+</style>
+</head>
+<body>
+    <button class="btn-pro"><i class="fa-solid fa-user"></i>Profile</button>
+</body>
+<script>
+        const btnpro = document.querySelector('.btn-pro');
+        btnpro.addEventListener('click', function() {
+            btnpro.classList.add('active');
+        });
+</script>
+</html>
