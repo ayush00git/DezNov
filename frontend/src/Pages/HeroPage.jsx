@@ -1,13 +1,9 @@
-import Auth from "../components/Auth"
-import Screen from "../components/Screen"
+import Screen from "../components/Pages/Screen"
 
 function HeroPage() {
     return(
         <>
-            
-               
-                <Screen />
-           
+            <Screen />  
         </>
     )
 }
