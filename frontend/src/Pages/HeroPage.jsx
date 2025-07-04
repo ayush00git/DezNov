@@ -5,7 +5,7 @@ function HeroPage() {
     return(
         <>
             
-                <Auth />   
+               
                 <Screen />
            
         </>
