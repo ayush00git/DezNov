@@ -2,19 +2,19 @@ import TextPressure from "../Elements/TextPressure";
 import TrueFocus from "../Elements/TrueFocus";
 import SpotlightCard from "../Elements/SpotlightCard";
 import AuthFooter from "../Elements/AuthFooter";
-import Navbar from "../Elements/Navbar";
+import AuthNavbar from "../Elements/AuthNavbar";
 
 function Intro() {
   return (
     <>
-      <Navbar />
+      <AuthNavbar />
       <div className="min-h-screen px-4">
         {/* DezNov with text-pressure */}
-        <div className="relative h-60 sm:h-[700px] mb-8 sm:mb-24">
+        <div className="relative h-60 sm:h-[700px] mb-8 sm:mb-2 select-none cursor-crosshair">
           <TextPressure
             text="DEZNOV"
             flex={false}
-            alpha={true}
+            alpha={false}
             stroke={false}
             width={true}
             weight={true}

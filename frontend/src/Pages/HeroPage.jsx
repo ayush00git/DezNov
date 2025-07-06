@@ -5,7 +5,9 @@ function HeroPage() {
     return(
         <>
             <Screen />
-            <Intro />
+            <div>
+                <Intro />
+            </div>
         </>
     )
 }
