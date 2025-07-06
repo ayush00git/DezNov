@@ -1,34 +1,65 @@
 import React from "react";
+import { Instagram, Linkedin, Github } from "lucide-react";
 
-function AuthFooter() {
+export default function Footer() {
   return (
-    <footer className="w-full bg-[#0D0E12] py-8 flex flex-col items-center gap-4 border-t border-[#222]">
-      <div className="flex items-center gap-2 text-white text-lg font-semibold">
-        <span>DezNov</span>
-        <span className="text-gray-400 font-normal">– created by Ayush Kumar</span>
+    <footer className="bg-gray-900 text-white border-t border-gray-800 mt-32">
+      <div className="container mx-auto px-4 py-8">
+        <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          {/* Brand and Developer Info */}
+          <div className="text-center md:text-left">
+            <h3 className="text-2xl font-bold text-white mb-2">DezNov</h3>
+            <p className="text-gray-400 text-sm">
+              Developed by{" "}
+              <span className="text-white font-medium">Ayush Kumar</span>
+            </p>
+          </div>
+
+          {/* Join Community Button and Social Media Icons */}
+          <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
+            {/* Join Community Button */}
+            <button className="relative px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 group cursor-pointer">
+              <span className="relative z-10">Join the Community</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
+            </button>
+
+            {/* Social Media Icons */}
+            <div className="flex space-x-6">
+              <a
+                href="https://www.instagram.com/ayyush_z/"
+                target="_blank"
+                className="text-gray-400 hover:text-pink-500 transition-colors duration-300 transform hover:scale-110"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-6 h-6" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/ayush-kumar-368446246/?originalSubdomain=in"
+                target="_blank"
+                className="text-gray-400 hover:text-blue-500 transition-colors duration-300 transform hover:scale-110"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-6 h-6" />
+              </a>
+              <a
+                href="https://github.com/ayush00git"
+                target="_blank"
+                className="text-gray-400 hover:text-white transition-colors duration-300 transform hover:scale-110"
+                aria-label="GitHub"
+              >
+                <Github className="w-6 h-6" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="mt-8 pt-4 border-t border-gray-800">
+          <p className="text-center text-gray-500 text-sm">
+            © {new Date().getFullYear()} DezNov. All rights reserved.
+          </p>
+        </div>
       </div>
-      <div className="flex gap-6 mt-2">
-        <a href="https://www.linkedin.com/in/ayushkumar" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <svg className="w-7 h-7 text-white hover:text-blue-400 transition" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm15.5 10.28h-3v-4.5c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.39v4.58h-3v-9h2.88v1.23h.04c.4-.75 1.38-1.54 2.85-1.54 3.05 0 3.61 2.01 3.61 4.62v4.69z"/>
-          </svg>
-        </a>
-        <a href="https://github.com/ayushkumar" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-          <svg className="w-7 h-7 text-white hover:text-gray-400 transition" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.27 3.4.97.11-.75.41-1.27.74-1.56-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 2.92-.39c.99.01 1.99.13 2.92.39 2.22-1.49 3.2-1.18 3.2-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.41-5.27 5.7.42.36.79 1.09.79 2.2 0 1.59-.01 2.87-.01 3.26 0 .31.21.68.8.56C20.71 21.39 24 17.08 24 12c0-6.27-5.23-11.5-12-11.5z"/>
-          </svg>
-        </a>
-        <a href="https://instagram.com/ayushkumar" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <svg className="w-7 h-7 text-white hover:text-pink-400 transition" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.056 1.97.24 2.43.41.59.22 1.01.48 1.45.92.44.44.7.86.92 1.45.17.46.354 1.26.41 2.43.058 1.266.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.056 1.17-.24 1.97-.41 2.43-.22.59-.48 1.01-.92 1.45-.44.44-.86.7-1.45.92-.46.17-1.26.354-2.43.41-1.266.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.056-1.97-.24-2.43-.41-.59-.22-1.01-.48-1.45-.92-.44-.44-.7-.86-.92-1.45-.17-.46-.354-1.26-.41-2.43C2.212 15.634 2.2 15.25 2.2 12s.012-3.584.07-4.85c.056-1.17.24-1.97.41-2.43.22-.59.48-1.01.92-1.45.44-.44.86-.7 1.45-.92.46-.17 1.26-.354 2.43-.41C8.416 2.212 8.8 2.2 12 2.2zm0-2.2C8.736 0 8.332.012 7.052.07 5.77.128 4.87.312 4.13.54c-.77.24-1.42.56-2.07 1.21-.65.65-.97 1.3-1.21 2.07-.23.74-.41 1.64-.47 2.92C.012 8.332 0 8.736 0 12c0 3.264.012 3.668.07 4.948.058 1.282.242 2.182.47 2.922.24.77.56 1.42 1.21 2.07.65.65 1.3.97 2.07 1.21.74.23 1.64.41 2.92.47C8.332 23.988 8.736 24 12 24s3.668-.012 4.948-.07c1.282-.058 2.182-.242 2.922-.47.77-.24 1.42-.56 2.07-1.21.65-.65.97-1.3 1.21-2.07.23-.74.41-1.64.47-2.92.058-1.28.07-1.684.07-4.948s-.012-3.668-.07-4.948c-.058-1.282-.242-2.182-.47-2.922-.24-.77-.56-1.42-1.21-2.07-.65-.65-1.3-.97-2.07-1.21-.74-.23-1.64-.41-2.92-.47C15.668.012 15.264 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm7.844-10.406a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/>
-          </svg>
-        </a>
-      </div>
-      <button className="mt-4 px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full font-semibold shadow-lg hover:scale-105 transition">
-        Join the Community
-      </button>
     </footer>
   );
 }
-
-export default AuthFooter;
