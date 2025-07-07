@@ -1,7 +1,6 @@
 import LogIn from "./LogIn";
 import Signup from "./Signup";
 import React, { useReducer, useEffect, useState } from "react";
-import ReactDOM from 'react-dom'
 
 function AuthIcons({ className = "" }) {
   // Reducers for each button
@@ -49,7 +48,7 @@ function AuthIcons({ className = "" }) {
 
   return (
     <>
-    {showSignup && ReactDOM.createPortal(
+    {showSignup && (
         <div
           className="fixed inset-0 z-50 flex justify-center items-center bg-black/40 backdrop-blur-sm"
           onClick={() => setShowSignup(false)}
@@ -60,7 +59,7 @@ function AuthIcons({ className = "" }) {
         </div>
       )}
 
-      {showLogIn && ReactDOM.createPortal (
+      {showLogIn && (
         <div
           className="fixed inset-0 z-50 flex justify-center items-center bg-black/40 backdrop-blur-sm"
           onClick={() => setShowLogIn(false)}
