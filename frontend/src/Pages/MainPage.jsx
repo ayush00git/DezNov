@@ -1,9 +1,9 @@
+import Signup from "../components/Elements/Signup"
+
 function MainPage() {
     return(
         <>
-        <div className="min-h-screen bg-white">
-
-        </div>
+        
         {/* <NavBar /> */}
         {/* <Gallery />  */}
         {/* <Footer />  */}

@@ -32,14 +32,14 @@ function Intro() {
             feedback.
           </p>
           <p className="text-2xl/[1.5] tracking-widest w-full max-w-[750px]">
-            DezNov is more than just a gallery — it's a focused space for UI/UX
-            designers and digital artists to showcase their work and grow
-            through authentic feedback. Whether you’re sharing polished shots or
+            Whether you’re sharing polished shots or
             early concepts, DezNov helps you stay inspired through a curated
             feed of high-quality designs. Real-time comments, organized
             collections, and simple, OAuth-powered signups make it easy to join,
-            connect, and build your creative presence. Designed for creators who
-            value quality over clout.
+            connect, and build your creative presence. 
+          </p>
+          <p className="text-2xl/[1.5] tracking-widest w-full max-w-[750px]">
+           - Designed for creators who value quality over clout.
           </p>
         </div>
       </div>

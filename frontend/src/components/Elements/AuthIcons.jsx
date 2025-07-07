@@ -1,4 +1,7 @@
-import React, { useReducer } from "react";
+import LogIn from "./LogIn";
+import Signup from "./Signup";
+import React, { useReducer, useEffect, useState } from "react";
+import ReactDOM from 'react-dom'
 
 function AuthIcons({ className = "" }) {
   // Reducers for each button
@@ -23,7 +26,50 @@ function AuthIcons({ className = "" }) {
     property1: "default",
   });
 
+  const [showSignup, setShowSignup] = useState(false);
+  const [showLogIn, setShowLogIn] = useState(false);
+
+  useEffect(() => {
+    if (!showSignup) return;
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") setShowSignup(false);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [showSignup]);
+
+  useEffect(() => {
+    if (!showLogIn) return;
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") setShowLogIn(false);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [showLogIn]);
+
   return (
+    <>
+    {showSignup && ReactDOM.createPortal(
+        <div
+          className="fixed inset-0 z-50 flex justify-center items-center bg-black/40 backdrop-blur-sm"
+          onClick={() => setShowSignup(false)}
+        >
+          <div className="relative" onClick={(e) => e.stopPropagation()}>
+            <Signup onClose={() => setShowSignup(false)} />
+          </div>
+        </div>
+      )}
+
+      {showLogIn && ReactDOM.createPortal (
+        <div
+          className="fixed inset-0 z-50 flex justify-center items-center bg-black/40 backdrop-blur-sm"
+          onClick={() => setShowLogIn(false)}
+        >
+          <div className="relative" onClick={(e) => e.stopPropagation()}>
+            <LogIn onClose={() => setShowLogIn(false)} />
+          </div>
+        </div>
+      )}
     <div className={`flex flex-wrap text-white w-fit gap-5 ${className}`}>
       {/* Login Button */}
       <div
@@ -35,6 +81,7 @@ function AuthIcons({ className = "" }) {
         }`}
         onMouseLeave={() => loginDispatch("mouse_leave")}
         onMouseEnter={() => loginDispatch("mouse_enter")}
+        onClick={() => setShowLogIn(true)}
       >
         <svg
           className="w-[22px] h-[22px]"
@@ -63,6 +110,7 @@ function AuthIcons({ className = "" }) {
         }`}
         onMouseLeave={() => signupDispatch("mouse_leave")}
         onMouseEnter={() => signupDispatch("mouse_enter")}
+        onClick={() => setShowSignup(true)}
       >
         <svg
           className="w-[18px] h-[18px]"
@@ -105,6 +153,7 @@ function AuthIcons({ className = "" }) {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
