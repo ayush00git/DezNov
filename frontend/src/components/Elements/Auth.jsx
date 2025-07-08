@@ -1,4 +1,5 @@
 import React, { useReducer, useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import Signup from "./Signup";
 import LogIn from "./LogIn";
 
@@ -27,6 +28,7 @@ function Auth({ className = "" }) {
 
   const [showSignup, setShowSignup] = useState(false);
   const [showLogIn, setShowLogIn] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!showSignup) return;
@@ -138,6 +140,7 @@ function Auth({ className = "" }) {
           }`}
           onMouseLeave={() => exploreDispatch("mouse_leave")}
           onMouseEnter={() => exploreDispatch("mouse_enter")}
+          onClick={() => navigate('/explore')}
         >
           <svg
             className="w-5 h-5 sm:w-[22px] sm:h-[22px]"

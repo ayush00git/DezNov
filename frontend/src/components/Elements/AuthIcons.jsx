@@ -1,6 +1,7 @@
 import LogIn from "./LogIn";
 import Signup from "./Signup";
 import React, { useReducer, useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 function AuthIcons({ className = "" }) {
   // Reducers for each button
@@ -27,6 +28,7 @@ function AuthIcons({ className = "" }) {
 
   const [showSignup, setShowSignup] = useState(false);
   const [showLogIn, setShowLogIn] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!showSignup) return;
@@ -138,6 +140,7 @@ function AuthIcons({ className = "" }) {
         }`}
         onMouseLeave={() => exploreDispatch("mouse_leave")}
         onMouseEnter={() => exploreDispatch("mouse_enter")}
+        onClick={() => navigate('/explore')}
       >
         <svg
           className="w-[22px] h-[22px]"
