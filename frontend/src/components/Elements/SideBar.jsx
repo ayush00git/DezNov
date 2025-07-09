@@ -1,11 +1,11 @@
 function SideBar() {
   return (
     <>
-      <div className="bg-[#0D0E12] max-w-16 min-h-4/5 border-r-2 border-gray-400 flex flex-col pl-4 gap-32">
+      <div className="bg-[#0D0E12] max-w-16 min-h-4/5 border-r border-gray-400 flex flex-col items-center gap-32 pt-8 sticky top-16">
         <div className="text-3xl font-bold text-white">DZ</div>
         {/* Mid-Icons */}
         <div className="flex flex-col gap-12">
-          <div>
+          <div className="cursor-pointer" title="saved">
             <svg
               width="18"
               height="23"
@@ -19,7 +19,7 @@ function SideBar() {
               />
             </svg>
           </div>
-          <div>
+          <div className="cursor-pointer" title="post">
             <svg
               width="22"
               height="23"
@@ -35,7 +35,7 @@ function SideBar() {
               />
             </svg>
           </div>
-          <div>
+          <div className="cursor-pointer" title="messages">
             <svg
               width="22"
               height="23"
@@ -57,7 +57,7 @@ function SideBar() {
               />
             </svg>
           </div>
-          <div>
+          <div className="cursor-pointer" title="updates">
             <svg
               width="23"
               height="28"
@@ -72,7 +72,8 @@ function SideBar() {
             </svg>
           </div>
         </div>
-        <div>
+        {/* logout icon */}
+        <div className="mt-42">
           <svg
             width="44"
             height="45"

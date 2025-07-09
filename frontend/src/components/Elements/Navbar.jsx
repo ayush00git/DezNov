@@ -1,8 +1,12 @@
+import React, { useState } from "react";
+
 function NavBar() {
+  const [search, setSearch] = useState("");
+
   return (
     <>
-      <nav className="relative bg-[rgba(13,14,18,0.1)] min-h-16 h-auto text-white flex items-center justify-center">
-        <div className="border-2 rounded-full bg-white text-gray-500 flex items-center max-w-2xl min-h-10 px-6 gap-8 pr-16 absolute lg:left-64">
+      <nav className="relative bg-[rgba(13,14,18,0.1)] min-h-16 h-auto text-white flex items-center justify-center border-b border-gray-400">
+        <div className="border-2 rounded-full bg-white text-gray-500 flex items-center max-w-2xl min-h-10 px-4 gap-4 lg:pr-12 absolute lg:left-64">
           <svg
             width="18"
             height="19"
@@ -15,9 +19,15 @@ function NavBar() {
               fill="black"
             />
           </svg>
-          Search for designs...
+          <input
+            type="text"
+            className="bg-transparent outline-none w-full text-gray-700"
+            placeholder="Search for designs..."
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+          />
         </div>
-        <div className="absolute right-8">
+        <div className="absolute right-4 cursor-pointer" title="profile">
           <svg
             width="36"
             height="36"
@@ -26,8 +36,8 @@ function NavBar() {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M18 1.97772e-10C20.3638 -1.10801e-05 22.7044 0.465563 24.8883 1.37014C27.0721 2.27472 29.0564 3.60058 30.7279 5.27204C32.3994 6.94349 33.7252 8.92779 34.6298 11.1117C35.5344 13.2955 36 15.6362 36 18C36 27.9411 27.9411 36 18 36C8.0589 36 0 27.9411 0 18C0 8.0589 8.0589 1.97772e-10 18 1.97772e-10ZM19.8 19.8H16.2C11.7437 19.8 7.91791 22.4989 6.26779 26.3516C8.87869 30.0127 13.1605 32.4 18 32.4C22.8394 32.4 27.1212 30.0127 29.7322 26.3513C28.0821 22.4989 24.2563 19.8 19.8 19.8ZM18 5.4C15.0176 5.4 12.6 7.81768 12.6 10.8C12.6 13.7823 15.0176 16.2 18 16.2C20.9823 16.2 23.4 13.7823 23.4 10.8C23.4 7.81768 20.9824 5.4 18 5.4Z"
               fill="white"
             />
