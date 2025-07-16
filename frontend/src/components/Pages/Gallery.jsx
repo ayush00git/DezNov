@@ -1,5 +1,25 @@
 import Masonry from "../Elements/Masonry";
-import items from "../gallery/items.json"
+const items = [
+// import items from "../gallery/items.json"
+  {
+    "id": 1,
+    "img": "https://picsum.photos/id/143/200/300",
+    "url": "",
+    "height": 300
+  },
+  {
+    "id": 2,
+    "img": "https://picsum.photos/id/129/200/300",
+    "url": "",
+    "height": 200
+  },
+  {
+    "id": 3,
+    "img": "https://picsum.photos/id/164/200/300",
+    "url": "",
+    "height": 500
+  }
+];
 
 function Gallery() {
   return (

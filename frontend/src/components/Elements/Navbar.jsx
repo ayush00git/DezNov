@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom'
 
 function NavBar() {
   const [search, setSearch] = useState("");
-
+  const navigate = useNavigate()
   return (
     <>
       <nav className="relative bg-[rgba(13,14,18,0.1)] min-h-16 h-auto text-white flex items-center justify-center border-b border-gray-400">
+        {/* Search bar */}
         <div className="border-2 rounded-full bg-white text-gray-500 flex items-center max-w-2xl min-h-10 px-4 gap-4 lg:pr-12 absolute lg:left-64">
           <svg
             width="18"
@@ -27,7 +29,9 @@ function NavBar() {
             onChange={e => setSearch(e.target.value)}
           />
         </div>
-        <div className="absolute right-4 cursor-pointer" title="profile">
+        {/* profile */}
+        <div className="absolute right-4 cursor-pointer" title="profile"
+        onClick={() => navigate('/profile')}>
           <svg
             width="36"
             height="36"
@@ -43,6 +47,7 @@ function NavBar() {
             />
           </svg>
         </div>
+
       </nav>
     </>
   );

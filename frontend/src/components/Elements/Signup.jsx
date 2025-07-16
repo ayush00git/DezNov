@@ -1,6 +1,6 @@
 function Signup({ onClose }) {
   return (
-    <div className="flex relative flex-col items-center text-white bg-gradient-to-br from-[#192552] via-[#334796] to-[#374C9F] rounded-xl w-full max-w-xs sm:max-w-md px-7 py-6 gap-4">
+    <div className="flex relative flex-col items-center text-white bg-gradient-to-br from-[#192552] via-[#334796] to-[#374C9F] rounded-xl w-full max-w-xs sm:max-w-md px-7 py-6 gap-4 pb-8">
       <div className="absolute right-4 top-4 cursor-pointer" onClick={onClose}>
         <svg
           width="22"

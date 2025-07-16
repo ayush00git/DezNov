@@ -1,8 +1,14 @@
+import { useNavigate } from 'react-router-dom'
+
 function SideBar() {
+
+    const navigate = useNavigate();
+
   return (
     <>
       <div className="bg-[#0D0E12] max-w-16 min-h-4/5 border-r border-gray-400 flex flex-col items-center gap-32 pt-8 sticky top-16">
-        <div className="text-3xl font-bold text-white">DZ</div>
+        <div className="text-3xl font-bold text-white cursor-pointer" title="DezNov-Home"
+        onClick={() => navigate('/explore')}>DZ</div>
         {/* Mid-Icons */}
         <div className="flex flex-col gap-12">
           <div className="cursor-pointer" title="saved">
