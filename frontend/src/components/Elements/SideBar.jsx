@@ -6,11 +6,10 @@ function SideBar() {
 
   return (
     <>
-      <div className="bg-[#0D0E12] max-w-16 min-h-4/5 border-r border-gray-400 flex flex-col items-center gap-32 pt-8 sticky top-16">
-        <div className="text-3xl font-bold text-white cursor-pointer" title="DezNov-Home"
-        onClick={() => navigate('/explore')}>DZ</div>
+      <div className="bg-[#0D0E12] max-w-16 min-h-4/5 border-r border-gray-700 flex flex-col items-center gap-32 pt-8 sticky top-16">
+        
         {/* Mid-Icons */}
-        <div className="flex flex-col gap-12">
+        <div className="flex flex-col gap-12 mt-35">
           <div className="cursor-pointer" title="saved">
             <svg
               width="18"
@@ -81,8 +80,8 @@ function SideBar() {
         {/* logout icon */}
         <div className="mt-42">
           <svg
-            width="44"
-            height="45"
+            width="34"
+            height="35"
             viewBox="0 0 44 45"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

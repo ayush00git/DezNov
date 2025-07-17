@@ -6,9 +6,11 @@ function NavBar() {
   const navigate = useNavigate()
   return (
     <>
-      <nav className="relative bg-[rgba(13,14,18,0.1)] min-h-16 h-auto text-white flex items-center justify-center border-b border-gray-400">
+      <nav className="relative bg-[rgba(13,14,18,0.1)] min-h-16 h-auto text-white flex items-center justify-center border-b-1 border-gray-700 backdrop-blur-md">
+        <div className="absolute top-4 left-4 text-3xl font-bold text-white cursor-pointer" title="DezNov-Home"
+          onClick={() => navigate('/explore')}>DZ</div>
         {/* Search bar */}
-        <div className="border-2 rounded-full bg-white text-gray-500 flex items-center max-w-2xl min-h-10 px-4 gap-4 lg:pr-12 absolute lg:left-64">
+        <div className="border-2 rounded-full bg-white text-gray-500 flex items-center max-w-2xl min-h-10 px-4 gap-4 absolute lg:w-200">
           <svg
             width="18"
             height="19"
@@ -24,7 +26,7 @@ function NavBar() {
           <input
             type="text"
             className="bg-transparent outline-none w-full text-gray-700"
-            placeholder="Search for designs..."
+            placeholder="Search for projects or users...."
             value={search}
             onChange={e => setSearch(e.target.value)}
           />

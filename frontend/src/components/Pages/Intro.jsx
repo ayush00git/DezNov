@@ -19,6 +19,7 @@ function Intro() {
         </div>
       </div>
     </nav>
+    {/* Paragraphs */}
       <div className="min-h-screen px-4">
         {/* DezNov with text-pressure */}
         <div className="relative h-60 sm:h-[700px] mb-8 sm:mb-2 select-none cursor-crosshair">
@@ -38,23 +39,20 @@ function Intro() {
         {/* Para */}
         <div className="text-white text-left flex justify-center flex-col items-center gap-16 mb-24">
           <p className="text-2xl/[1.5] tracking-widest w-full max-w-[750px]">
-            DezNov is an exclusive space for UI/UX designers and digital artists
-            to share stunning work, get inspired, and connect through creative
-            feedback.
+            DezNov is a chill space where designers and developers — from beginners to pros — can share what they’re working on. 
+            Whether it’s a clean UI, a design concept, or a coding project you’re proud of, this is the place to put it out there.
           </p>
           <p className="text-2xl/[1.5] tracking-widest w-full max-w-[750px]">
-            Whether you’re sharing polished shots or
-            early concepts, DezNov helps you stay inspired through a curated
-            feed of high-quality designs. Real-time comments, organized
-            collections, and simple, OAuth-powered signups make it easy to join,
-            connect, and build your creative presence. 
+            Add captions, share your thought process, and get real feedback from other creators. You can comment on work, save 
+            stuff you love, and even follow people who inspire you. No pressure, no noise — just a creative feed 
+            full of cool projects and ideas.
           </p>
           <p className="text-2xl/[1.5] tracking-widest w-full max-w-[750px]">
-           - Designed for creators who value quality over clout.
+           - One place for your ideas, in progress or polished
           </p>
         </div>
       </div>
-
+    {/* Features */}
       <div className="relative min-h-screen flex items-center justify-center text-white px-4">
         {/* <h1 className="absolute top-0 text-7xl font-bold text-center text-white">
           Features
@@ -68,9 +66,8 @@ function Intro() {
               Upload Your Work
             </h1>
             <p className="text-xl/[1.5] tracking-wider text-center w-full max-w-[300px] mx-auto">
-              Easily share your UI/UX designs and digital artwork with a smooth
-              upload flow powered by Cloudinary, ensuring fast and optimized
-              image delivery right from the start.
+              Effortlessly share everything you create — from coding projects and web apps to UI designs and digital art. With a fast, optimized 
+              upload flow powered by Cloudinary, your work looks sharp and loads quick, every time
             </p>
           </SpotlightCard>
           <SpotlightCard
@@ -81,9 +78,8 @@ function Intro() {
               Seamless Profile Setup
             </h1>
             <p className="text-xl/[1.5] tracking-wider text-center w-full max-w-[300px] mx-auto">
-              Sign in with ease using OAuth, including GitHub authentication,
-              giving each user a unique space to showcase their uploads and
-              connect with others in the community.{" "}
+              Sign up easily using your NITH college email to unlock your personal space on DezNov. 
+              Every profile lets you showcase your uploads and connect with other creators within the campus community{" "}
             </p>
           </SpotlightCard>
           <SpotlightCard
@@ -96,7 +92,7 @@ function Intro() {
             <p className="text-xl/[1.5] tracking-wider text-center w-full max-w-[300px] mx-auto">
               Users can explore a dynamic, ever-growing feed of creative work,
               served through a robust backend built with MongoDB and Express,
-              delivering fresh content on every visit.{" "}
+              delivering fresh content on every visit{" "}
             </p>
           </SpotlightCard>
           <SpotlightCard
@@ -109,7 +105,7 @@ function Intro() {
             <p className="text-xl/[1.5] tracking-wider text-center w-full max-w-[300px] mx-auto">
               Engagement feels instant with real-time comments and likes,
               powered by Socket.io and synced with your MongoDB database to keep
-              the conversation flowing.{" "}
+              the conversation flowing{" "}
             </p>
           </SpotlightCard>
           <SpotlightCard
@@ -120,9 +116,9 @@ function Intro() {
               Save Your Favorites
             </h1>
             <p className="text-xl/[1.5] tracking-wider text-center w-full max-w-[300px] mx-auto">
-              Designs can be saved and organized into personal collections — all
-              managed securely in your MongoDB database, so users can access
-              their favorites anytime.{" "}
+              Found something that clicks? Save it. Whether it’s a slick UI, a cool side project, 
+              or a piece of art — drop it into your personal collection and come back to it anytime
+              {" "}
             </p>
           </SpotlightCard>
         </div>

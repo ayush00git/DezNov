@@ -24,7 +24,7 @@ const items = [
 function Gallery() {
   return (
     <>
-      <Masonry
+      {/* <Masonry
         items={items}
         ease="power3.out"
         duration={0.6}
@@ -34,7 +34,7 @@ function Gallery() {
         hoverScale={0.95}
         blurToFocus={true}
         colorShiftOnHover={false}
-      />
+      />     */}
     </>
   );
 }

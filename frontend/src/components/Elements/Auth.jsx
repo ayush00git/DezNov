@@ -1,7 +1,5 @@
 import React, { useReducer, useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
-import Signup from "./Signup";
-import LogIn from "./LogIn";
 
 function Auth({ className = "" }) {
   // Reducers for each button
@@ -26,52 +24,10 @@ function Auth({ className = "" }) {
     property1: "default",
   });
 
-  const [showSignup, setShowSignup] = useState(false);
-  const [showLogIn, setShowLogIn] = useState(false);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    if (!showSignup) return;
-    const handleKeyDown = (e) => {
-      if (e.key === "Escape") setShowSignup(false);
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [showSignup]);
-
-  useEffect(() => {
-    if (!showLogIn) return;
-    const handleKeyDown = (e) => {
-      if (e.key === "Escape") setShowLogIn(false);
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [showLogIn]);
 
   return (
     <>
-      {showSignup && (
-        <div
-          className="fixed inset-0 z-50 flex justify-center items-center bg-black/40 backdrop-blur-sm"
-          onClick={() => setShowSignup(false)}
-        >
-          <div className="relative" onClick={(e) => e.stopPropagation()}>
-            <Signup onClose={() => setShowSignup(false)} />
-          </div>
-        </div>
-      )}
-
-      {showLogIn && (
-        <div
-          className="fixed inset-0 z-50 flex justify-center items-center bg-black/40 backdrop-blur-sm"
-          onClick={() => setShowLogIn(false)}
-        >
-          <div className="relative" onClick={(e) => e.stopPropagation()}>
-            <LogIn onClose={() => setShowLogIn(false)} />
-          </div>
-        </div>
-      )}
-
       <div
         className={`flex flex-wrap border-2 border-[#849ADE] text-white sm:w-full lg:w-fit py-3 sm:py-4 px-3 sm:px-6 rounded-full gap-3 justify-center items-center sm:gap-5 bg-[rgba(49,61,94,0.9)] ${className}`}
       >
@@ -84,7 +40,7 @@ function Auth({ className = "" }) {
           }`}
           onMouseLeave={() => loginDispatch("mouse_leave")}
           onMouseEnter={() => loginDispatch("mouse_enter")}
-          onClick={() => setShowLogIn(true)}
+          onClick={() => navigate('/login')}
         >
           <svg
             className="w-5 h-5 sm:w-[22px] sm:h-[22px]"
@@ -112,7 +68,7 @@ function Auth({ className = "" }) {
           }`}
           onMouseLeave={() => signupDispatch("mouse_leave")}
           onMouseEnter={() => signupDispatch("mouse_enter")}
-          onClick={() => setShowSignup(true)}
+          onClick={() => navigate('/signup')}          
         >
           <svg
             className="w-4 h-4 sm:w-[18px] sm:h-[18px]"
