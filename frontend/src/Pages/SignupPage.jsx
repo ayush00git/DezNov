@@ -78,11 +78,32 @@ export default function SignupPage() {
     if (!validateForm()) return;
 
     setIsLoading(true);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    setIsLoading(false);
-    
-    alert('Account created successfully!');
+    try {
+      const response = await fetch('http://localhost:8000/api/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          username: formData.username,
+          fullName: formData.fullName,
+          email: formData.email,
+          password: formData.password,
+        }),
+      });
+      const data = await response.json();
+      setIsLoading(false);
+      if (response.ok) {
+        alert('Account created successfully!');
+        // Optionally redirect to login or home
+        // navigate('/login');
+      } else {
+        alert(data.error || 'Signup failed');
+      }
+    } catch (err) {
+      setIsLoading(false);
+      alert('Network error, please try again later.');
+    }
   };
 
   const handleForgotPassword = () => {
