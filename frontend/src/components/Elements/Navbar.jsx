@@ -1,39 +1,53 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 
 function NavBar() {
   const [search, setSearch] = useState("");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  
   return (
     <>
       <nav className="relative bg-[rgba(13,14,18,0.1)] min-h-16 h-auto text-white flex items-center justify-center border-b-1 border-gray-700 backdrop-blur-md">
-        <div className="absolute top-4 left-4 text-3xl font-bold text-white cursor-pointer" title="DezNov-Home"
-          onClick={() => navigate('/explore')}>DZ</div>
+        {/* Logo */}
+        <div
+          className="absolute top-4 left-4 text-3xl font-bold text-white cursor-pointer"
+          title="DezNov-Home"
+          onClick={() => navigate("/explore")}
+        >
+          DZ
+        </div>
+
         {/* Search bar */}
-        <div className="border-2 rounded-full bg-white text-gray-500 flex items-center max-w-2xl min-h-10 px-4 gap-4 absolute lg:w-200">
+        <div className="rounded-full border-2 border-transparent bg-[#9fd3cb] flex items-center flex-row-reverse max-w-2xl min-h-10 px-0.5 gap-4 absolute lg:w-[750px] md:w-[450px] sm:w-[300px] w-[250px] text-gray-900 transition-all duration-300 ease-in-out focus-within:border-[#59c9b8] focus-within:bg-[#0D0E11] focus-within:text-white hover:bg-[#0D0E11] hover:border-[#59c9b8] hover:text-white hover:shadow-lg focus-within:shadow-lg">
           <svg
-            width="18"
-            height="19"
-            viewBox="0 0 18 19"
+            width="35"
+            height="34"
+            viewBox="0 0 37 35"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            className="cursor-pointer transition-transform duration-200 ease-in-out hover:scale-105"
           >
+            <rect width="35" height="34" rx="17" fill="#2A9F8D" className="transition-colors duration-300 ease-in-out" />
             <path
-              d="M6.5 13.7125C4.68333 13.7125 3.146 13.0832 1.888 11.8245C0.63 10.5658 0.000667196 9.02849 5.29101e-07 7.21249C-0.000666138 5.39649 0.628667 3.85916 1.888 2.60049C3.14733 1.34183 4.68467 0.712494 6.5 0.712494C8.31533 0.712494 9.853 1.34183 11.113 2.60049C12.373 3.85916 13.002 5.39649 13 7.21249C13 7.94583 12.8833 8.63749 12.65 9.28749C12.4167 9.93749 12.1 10.5125 11.7 11.0125L17.3 16.6125C17.4833 16.7958 17.575 17.0292 17.575 17.3125C17.575 17.5958 17.4833 17.8292 17.3 18.0125C17.1167 18.1958 16.8833 18.2875 16.6 18.2875C16.3167 18.2875 16.0833 18.1958 15.9 18.0125L10.3 12.4125C9.8 12.8125 9.225 13.1292 8.575 13.3625C7.925 13.5958 7.23333 13.7125 6.5 13.7125ZM6.5 11.7125C7.75 11.7125 8.81267 11.2752 9.688 10.4005C10.5633 9.52583 11.0007 8.46316 11 7.21249C10.9993 5.96183 10.562 4.89949 9.688 4.02549C8.814 3.15149 7.75133 2.71383 6.5 2.71249C5.24867 2.71116 4.18633 3.14883 3.313 4.02549C2.43967 4.90216 2.002 5.96449 2 7.21249C1.998 8.46049 2.43567 9.52316 3.313 10.4005C4.19033 11.2778 5.25267 11.7152 6.5 11.7125Z"
-              fill="black"
+              d="M15.825 21.65C13.9175 21.65 12.3033 20.9892 10.9824 19.6676C9.6615 18.346 9.0007 16.7318 9 14.825C8.9993 12.9182 9.6601 11.304 10.9824 9.9824C12.3047 8.6608 13.9189 8 15.825 8C17.7311 8 19.3457 8.6608 20.6687 9.9824C21.9917 11.304 22.6521 12.9182 22.65 14.825C22.65 15.595 22.5275 16.3212 22.2825 17.0037C22.0375 17.6862 21.705 18.29 21.285 18.815L27.165 24.695C27.3575 24.8875 27.4537 25.1325 27.4537 25.43C27.4537 25.7275 27.3575 25.9725 27.165 26.165C26.9725 26.3575 26.7275 26.4537 26.43 26.4537C26.1325 26.4537 25.8875 26.3575 25.695 26.165L19.815 20.285C19.29 20.705 18.6863 21.0375 18.0038 21.2825C17.3213 21.5275 16.595 21.65 15.825 21.65ZM15.825 19.55C17.1375 19.55 18.2533 19.0908 19.1724 18.1724C20.0915 17.254 20.5507 16.1382 20.55 14.825C20.5493 13.5118 20.0901 12.3964 19.1724 11.4787C18.2547 10.561 17.1389 10.1014 15.825 10.1C14.5111 10.0986 13.3957 10.5582 12.4787 11.4787C11.5617 12.3992 11.1021 13.5146 11.1 14.825C11.0979 16.1354 11.5575 17.2512 12.4787 18.1724C13.3999 19.0936 14.5153 19.5528 15.825 19.55Z"
+              fill="white"
             />
           </svg>
           <input
             type="text"
-            className="bg-transparent outline-none w-full text-gray-700"
-            placeholder="Search for projects or users...."
+            className="bg-transparent outline-none w-full placeholder:text-gray-700 focus:placeholder:text-gray-400 transition-all duration-300 ease-in-out pl-4"
+            placeholder="Search for projects or users..."
             value={search}
-            onChange={e => setSearch(e.target.value)}
+            onChange={(e) => setSearch(e.target.value)}
           />
         </div>
+
         {/* profile */}
-        <div className="absolute right-4 cursor-pointer" title="profile"
-        onClick={() => navigate('/profile')}>
+        <div
+          className="absolute right-4 cursor-pointer transition-transform duration-200 ease-in-out hover:scale-110"
+          title="profile"
+          onClick={() => navigate("/profile")}
+        >
           <svg
             width="36"
             height="36"
@@ -49,9 +63,9 @@ function NavBar() {
             />
           </svg>
         </div>
-
       </nav>
     </>
   );
 }
+
 export default NavBar;
