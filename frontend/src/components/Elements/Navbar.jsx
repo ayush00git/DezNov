@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Search, Bell, MessageCircle, User, Menu, X } from 'lucide-react';
+import Categories from './Categories';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
