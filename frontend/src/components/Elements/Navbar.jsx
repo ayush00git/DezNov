@@ -27,32 +27,32 @@ const Navbar = () => {
             <div className="hidden md:flex flex-1 max-w-lg mx-8">
               <div className="relative w-full">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Search className="h-5 w-5 text-gray-400" />
+                  <Search className="h-5 w-5 text-gray-400 z-10" />
                 </div>
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="block w-full pl-10 pr-3 py-2 border border-gray-200/50 rounded-full 
-                           bg-white/50 backdrop-blur-sm placeholder-gray-400 text-gray-900 
-                           focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
-                           hover:bg-white/70 transition-all duration-200"
-                  placeholder="Search..."
+                           bg-[#0D0E11] backdrop-blur-sm placeholder-gray-400 text-white 
+                           focus:outline-none focus:ring-2 focus:ring-[#2A9F8D] focus:border-transparent
+                           hover:bg-[#0D0E11] transition-all duration-200"
+                  placeholder="Search for projects or designs..."
                 />
               </div>
             </div>
 
             {/* Desktop Icons - Right */}
             <div className="hidden md:flex items-center space-x-4">
-              <button className="p-2 text-gray-600 hover:text-blue-600 hover:bg-white/50 rounded-full transition-all duration-200 relative">
+              <button className="p-2 text-gray-600 hover:text-[#ff6b6bb5] rounded-full transition-all duration-200 relative cursor-pointer">
                 <Bell className="h-6 w-6" />
                 <span className="absolute top-1 right-1 h-2 w-2 bg-red-500 rounded-full"></span>
               </button>
-              <button className="p-2 text-gray-600 hover:text-blue-600 hover:bg-white/50 rounded-full transition-all duration-200 relative">
+              <button className="p-2 text-gray-600 hover:text-[#2A9F8D]   rounded-full transition-all duration-200 relative cursor-pointer">
                 <MessageCircle className="h-6 w-6" />
                 <span className="absolute top-1 right-1 h-2 w-2 bg-green-500 rounded-full"></span>
               </button>
-              <button className="p-2 text-gray-600 hover:text-blue-600 hover:bg-white/50 rounded-full transition-all duration-200">
+              <button className="p-2 text-gray-600 hover:text-[#1E90FF]   rounded-full transition-all duration-200 cursor-pointer">
                 <User className="h-6 w-6" />
               </button>
             </div>
@@ -72,17 +72,17 @@ const Navbar = () => {
           <div className="md:hidden pb-4">
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <Search className="h-5 w-5 text-gray-400" />
+                <Search className="h-5 w-5 text-gray-400 z-10" />
               </div>
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="block w-full pl-10 pr-3 py-2 border border-gray-200/50 rounded-full 
-                         bg-white/50 backdrop-blur-sm placeholder-gray-400 text-gray-900 
-                         focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent
-                         hover:bg-white/70 transition-all duration-200"
-                placeholder="Search..."
+                           bg-[#0D0E11] backdrop-blur-sm placeholder-gray-400 text-white 
+                           focus:outline-none focus:ring-2 focus:ring-[#2A9F8D] focus:border-transparent
+                           hover:bg-[#0D0E11] transition-all duration-200"
+                placeholder="Search for projects or designs..."
               />
             </div>
           </div>
