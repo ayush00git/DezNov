@@ -10,15 +10,15 @@ function NavBar() {
       <nav className="relative bg-[rgba(13,14,18,0.1)] min-h-16 h-auto text-white flex items-center justify-center border-b-1 border-gray-700 backdrop-blur-md">
         {/* Logo */}
         <div
-          className="absolute top-4 left-4 text-3xl font-bold text-white cursor-pointer"
+          className="absolute top-4 left-4 font-bold text-white cursor-pointer lg:text-3xl"
           title="DezNov-Home"
           onClick={() => navigate("/explore")}
         >
-          DZ
+          DezNov
         </div>
 
         {/* Search bar */}
-        <div className="rounded-full border-2 border-transparent bg-[#9fd3cb] flex items-center flex-row-reverse max-w-2xl min-h-10 px-0.5 gap-4 absolute lg:w-[750px] md:w-[450px] sm:w-[300px] w-[250px] text-gray-900 transition-all duration-300 ease-in-out focus-within:border-[#59c9b8] focus-within:bg-[#0D0E11] focus-within:text-white hover:bg-[#0D0E11] hover:border-[#59c9b8] hover:text-white hover:shadow-lg focus-within:shadow-lg">
+        <div className="rounded-full border-2 border-transparent bg-[#b7e2dc] flex items-center flex-row-reverse max-w-2xl min-h-10 px-0.5 gap-4 absolute lg:w-[750px] md:w-[450px] sm:w-[300px] w-[250px] text-gray-900 transition-all duration-300 ease-in-out focus-within:border-[#59c9b8] focus-within:bg-[#0D0E11] focus-within:text-white hover:bg-[#0D0E11] hover:border-[#59c9b8] hover:text-white hover:shadow-lg focus-within:shadow-lg">
           <svg
             width="35"
             height="34"
@@ -35,7 +35,7 @@ function NavBar() {
           </svg>
           <input
             type="text"
-            className="bg-transparent outline-none w-full placeholder:text-gray-700 focus:placeholder:text-gray-400 transition-all duration-300 ease-in-out pl-4"
+            className="bg-transparent outline-none w-full placeholder:text-gray-700 focus:placeholder:text-gray-400 transition-all duration-300 ease-in-out pl-3"
             placeholder="Search for projects or users..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
