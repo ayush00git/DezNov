@@ -1,7 +1,5 @@
 import Categories from "../components/Elements/Categories"
 import NavBar from "../components/Elements/Navbar"
-import SideBar from "../components/Elements/SideBar"
-import Gallery from "../components/Pages/Gallery"
 
 function MainPage() {
     return(
@@ -15,7 +13,6 @@ function MainPage() {
             </div>
             {/* issue */}
             <div className="min-h-screen flex flex-wrap">
-                
             </div>
             
             

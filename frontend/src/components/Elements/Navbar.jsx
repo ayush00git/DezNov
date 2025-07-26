@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Search, Bell, MessageCircle, User, Menu, X } from 'lucide-react';
 import Categories from './Categories';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,6 +10,7 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  const navigate = useNavigate();
 
   return (
     <>
@@ -19,7 +21,8 @@ const Navbar = () => {
             
             {/* Company Name - Left */}
             <div className="flex-shrink-0">
-              <h1 className="text-2xl font-bold text-white cursor-pointer">
+              <h1 className="text-2xl font-bold text-white cursor-pointer"
+              onClick={() => navigate('/')}>
                 DezNov
               </h1>
             </div>
