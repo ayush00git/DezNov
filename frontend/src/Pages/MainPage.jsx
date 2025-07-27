@@ -3,6 +3,7 @@ import Categories from "../components/Elements/Categories"
 import NavBar from "../components/Elements/Navbar"
 import ProjectCard from "../components/Elements/ProjectCard"
 import data from "../components/Elements/Data.json"
+import UploadButton from "../components/Elements/UploadButton"
 
 function MainPage() {
     const [selectedCategory, setSelectedCategory] = useState("All")
@@ -25,6 +26,7 @@ function MainPage() {
                 {filteredData.map(item => (
                     <ProjectCard key={item.id} data={item} />
                 ))}
+                <UploadButton />
             </div>
             
             
