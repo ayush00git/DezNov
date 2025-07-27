@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Mail, Phone, Globe, Github, Linkedin, Calendar, Award, Briefcase, GraduationCap, Star } from 'lucide-react';
+import { MapPin, Mail, Phone, Globe, Github, Linkedin, Pencil, Calendar, Award, Briefcase, GraduationCap, Star } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Elements/Navbar';
 
@@ -28,9 +28,18 @@ export default function ModernProfilePage() {
 
             {/* Profile Info */}
             <div className="flex-1 text-center lg:text-left">
-              <h1 className="text-5xl lg:text-6xl font-bold mb-4 text-white bg-clip-text text-transparent">
-                Alex Johnson
-              </h1>
+              <div className="flex items-center justify-center lg:justify-start mt-4">
+                <h1 className="text-5xl lg:text-6xl font-bold mb-4 text-white bg-clip-text">
+                  Alex Johnson
+                </h1>
+                <button
+                  className="ml-4 flex items-center px-4 py-2 bg-[#2A9F8D] text-md text-white font-medium rounded-lg shadow-md hover:bg-[#23876F] transition-all duration-300 cursor-pointer"
+                >
+                  <Pencil className="w-4 h-4 mr-1" />
+                  Edit Profile
+                </button>
+              </div>
+              
               <p className="text-xl text-gray-300 mb-6">Senior Full Stack Developer & UI/UX Designer</p>
               <p className="text-gray-400 text-lg mb-8 max-w-2xl">
                 Passionate about creating beautiful, functional digital experiences that solve real-world problems. 
@@ -127,6 +136,7 @@ export default function ModernProfilePage() {
 
         
       </div>
+
     </div>
   );
 }
