@@ -56,7 +56,8 @@ const Navbar = () => {
                 <MessageCircle className="h-6 w-6" />
                 <span className="absolute top-1 right-1 h-2 w-2 bg-green-500 rounded-full"></span>
               </button>
-              <button className="p-2 text-gray-600 hover:text-[#1E90FF]   rounded-full transition-all duration-200 cursor-pointer">
+              <button className="p-2 text-gray-600 hover:text-[#1E90FF]   rounded-full transition-all duration-200 cursor-pointer"
+              onClick={() => navigate('/profile')}>
                 <User className="h-6 w-6" />
               </button>
             </div>
