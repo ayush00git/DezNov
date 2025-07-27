@@ -37,18 +37,12 @@ export default function ModernProfilePage() {
               
               {/* Contact Info */}
               <div className="flex flex-col sm:flex-row gap-6 text-gray-300">
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-5 h-5" />
-                  <span>San Francisco, CA</span>
-                </div>
+                
                 <div className="flex items-center gap-2">
                   <Mail className="w-5 h-5" />
                   <span>alex@example.com</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Phone className="w-5 h-5" />
-                  <span>+1 (555) 123-4567</span>
-                </div>
+                
               </div>
             </div>
           </div>
