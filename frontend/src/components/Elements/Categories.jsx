@@ -1,11 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-const Categories = () => {
+const Categories = ({ setSelectedCategory }) => {
   const [activeTab, setActiveTab] = useState(0);
   const [indicatorStyle, setIndicatorStyle] = useState({});
   const tabRefs = useRef([]);
 
   const tabs = [
+    "All",
     "UI/UX Design",
     "Blockchain & Web3",
     "Web Dev",
@@ -38,8 +39,9 @@ const Categories = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, [activeTab]);
 
-  const handleTabClick = (index) => {
+  const handleTabClick = (index, category) => {
     setActiveTab(index);
+    setSelectedCategory(category);
   };
 
   return (
@@ -58,7 +60,7 @@ const Categories = () => {
             <button
               key={index}
               ref={(el) => (tabRefs.current[index] = el)}
-              onClick={() => handleTabClick(index)}
+              onClick={() => handleTabClick(index, tab)}
               className={`
                 relative z-10 px-2 py-3 text-xs font-medium rounded-full cursor-pointer transition-all duration-300 ease-out
                 flex-1 text-center min-w-0
