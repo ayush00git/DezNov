@@ -33,7 +33,7 @@ export default function ModernProfilePage() {
                   Alex Johnson
                 </h1>
                 <button
-                  className="ml-4 flex items-center px-4 py-2 bg-[#2A9F8D] text-md text-white font-medium rounded-lg shadow-md hover:bg-[#23876F] transition-all duration-300 cursor-pointer"
+                  className="ml-4 flex items-center px-4 py-2 bg-[#2A9F8D] text-sm text-nowrap text-white font-medium rounded-lg shadow-md hover:bg-[#23876F] transition-all duration-300 cursor-pointer"
                 >
                   <Pencil className="w-4 h-4 mr-1" />
                   Edit Profile
