@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Search, Bell, MessageCircle, User, Menu, X } from 'lucide-react';
 import Categories from './Categories';
 import { useNavigate } from 'react-router-dom';
@@ -6,11 +6,42 @@ import { useNavigate } from 'react-router-dom';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
+  const notificationRef = useRef(null);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-  const navigate = useNavigate();
+
+  const toggleNotifications = () => {
+    setIsNotificationsOpen(!isNotificationsOpen);
+  };
+
+  // Handle Escape key press and click outside
+  useEffect(() => {
+    const handleEscapeKey = (event) => {
+      if (event.key === 'Escape' && isNotificationsOpen) {
+        setIsNotificationsOpen(false);
+      }
+    };
+
+    const handleClickOutside = (event) => {
+      if (notificationRef.current && !notificationRef.current.contains(event.target)) {
+        setIsNotificationsOpen(false);
+      }
+    };
+
+    if (isNotificationsOpen) {
+      document.addEventListener('keydown', handleEscapeKey);
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscapeKey);
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isNotificationsOpen]);
 
   return (
     <>
@@ -48,16 +79,54 @@ const Navbar = () => {
 
             {/* Desktop Icons - Right */}
             <div className="hidden md:flex items-center space-x-4">
-              <button className="p-2 text-gray-600 hover:text-[#ff6b6bb5] rounded-full transition-all duration-200 relative cursor-pointer">
-                <Bell className="h-6 w-6" />
-                <span className="absolute top-1 right-1 h-2 w-2 bg-red-500 rounded-full"></span>
-              </button>
-              <button className="p-2 text-gray-600 hover:text-[#2A9F8D]   rounded-full transition-all duration-200 relative cursor-pointer"
+              <div className="relative" ref={notificationRef}>
+                <button
+                  className="p-2 text-gray-600 hover:text-[#ff6b6bb5] rounded-full transition-all duration-200 relative cursor-pointer"
+                  onClick={toggleNotifications}
+                >
+                  <Bell className="h-6 w-6" />
+                  <span className="absolute top-1 right-1 h-2 w-2 bg-red-500 rounded-full"></span>
+                </button>
+
+                {/* Notifications Modal */}
+                {isNotificationsOpen && (
+                  <div className="absolute top-12 right-0 bg-[#0D0E11] border border-[#1A1D23] text-white rounded-xl shadow-lg w-80 z-50 overflow-hidden">
+                    <div className="p-4 border-b border-[#1A1D23] font-bold text-[#2A9F8D]">
+                      Notifications
+                    </div>
+                    <ul className="divide-y divide-[#1A1D23] max-h-64 overflow-y-scroll" style={{scrollbarWidth: 'none', msOverflowStyle: 'none'}}>
+                      <style jsx>{`
+                        ul::-webkit-scrollbar {
+                          display: none;
+                        }
+                      `}</style>
+                      <li className="p-4 hover:bg-[#1A1D23] transition-colors cursor-pointer">
+                        <div className="text-sm text-white">New feature added to the platform!</div>
+                        <div className="text-xs text-gray-400 mt-1">2 minutes ago</div>
+                      </li>
+                      <li className="p-4 hover:bg-[#1A1D23] transition-colors cursor-pointer">
+                        <div className="text-sm text-white">Your profile has been updated successfully.</div>
+                        <div className="text-xs text-gray-400 mt-1">1 hour ago</div>
+                      </li>
+                      <li className="p-4 hover:bg-[#1A1D23] transition-colors cursor-pointer">
+                        <div className="text-sm text-white">System maintenance scheduled for tomorrow.</div>
+                        <div className="text-xs text-gray-400 mt-1">3 hours ago</div>
+                      </li>
+                      <li className="p-4 hover:bg-[#1A1D23] transition-colors cursor-pointer">
+                        <div className="text-sm text-white">New message from Emma Davis</div>
+                        <div className="text-xs text-gray-400 mt-1">1 day ago</div>
+                      </li>
+                    </ul>
+                  </div>
+                )}
+              </div>
+              
+              <button className="p-2 text-gray-600 hover:text-[#2A9F8D] rounded-full transition-all duration-200 relative cursor-pointer"
               onClick={() => navigate('/chats')}>
                 <MessageCircle className="h-6 w-6" />
                 <span className="absolute top-1 right-1 h-2 w-2 bg-green-500 rounded-full"></span>
               </button>
-              <button className="p-2 text-gray-600 hover:text-[#1E90FF]   rounded-full transition-all duration-200 cursor-pointer"
+              <button className="p-2 text-gray-600 hover:text-[#1E90FF] rounded-full transition-all duration-200 cursor-pointer"
               onClick={() => navigate('/profile')}>
                 <User className="h-6 w-6" />
               </button>
@@ -97,7 +166,10 @@ const Navbar = () => {
           {isMenuOpen && (
             <div className="md:hidden pb-4">
               <div className="flex justify-center space-x-6">
-                <button className="flex flex-col items-center p-3 text-gray-600 hover:text-blue-600 hover:bg-white/50 rounded-lg transition-all duration-200 relative">
+                <button 
+                  className="flex flex-col items-center p-3 text-gray-600 hover:text-blue-600 hover:bg-white/50 rounded-lg transition-all duration-200 relative"
+                  onClick={toggleNotifications}
+                >
                   <Bell className="h-6 w-6 mb-1" />
                   <span className="text-xs">Updates</span>
                   <span className="absolute top-2 right-2 h-2 w-2 bg-red-500 rounded-full"></span>
@@ -116,9 +188,37 @@ const Navbar = () => {
               </div>
             </div>
           )}
+
+          {/* Mobile Notifications Modal */}
+          {isNotificationsOpen && (
+            <div className="md:hidden absolute top-16 left-4 right-4 bg-[#0D0E11] border border-[#1A1D23] text-white rounded-xl shadow-lg z-50 overflow-hidden">
+              <div className="p-4 border-b border-[#1A1D23] font-bold text-[#2A9F8D]">
+                Notifications
+              </div>
+              <ul className="divide-y divide-[#1A1D23] max-h-64 overflow-y-scroll" style={{scrollbarWidth: 'none', msOverflowStyle: 'none'}}>
+                <style jsx>{`
+                  ul::-webkit-scrollbar {
+                    display: none;
+                  }
+                `}</style>
+                <li className="p-4 hover:bg-[#1A1D23] transition-colors cursor-pointer">
+                  <div className="text-sm text-white">New feature added to the platform!</div>
+                  <div className="text-xs text-gray-400 mt-1">2 minutes ago</div>
+                </li>
+                <li className="p-4 hover:bg-[#1A1D23] transition-colors cursor-pointer">
+                  <div className="text-sm text-white">Your profile has been updated successfully.</div>
+                  <div className="text-xs text-gray-400 mt-1">1 hour ago</div>
+                </li>
+                <li className="p-4 hover:bg-[#1A1D23] transition-colors cursor-pointer">
+                  <div className="text-sm text-white">System maintenance scheduled for tomorrow.</div>
+                  <div className="text-xs text-gray-400 mt-1">3 hours ago</div>
+                </li>
+              </ul>
+            </div>
+          )}
         </div>
       </nav>
-      </>
+    </>
   );
 };
 
