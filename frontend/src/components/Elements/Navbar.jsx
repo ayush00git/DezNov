@@ -45,6 +45,16 @@ const Navbar = () => {
 
   return (
     <>
+      <style jsx global>{`
+        .notification-scroll {
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+        }
+        .notification-scroll::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
+      
       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0D0E11] backdrop-blur-md border-b border-white/20 shadow-sm">
         <div className="max-w-9xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -69,7 +79,7 @@ const Navbar = () => {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="block w-full pl-10 pr-3 py-2 border border-gray-200/50 rounded-full 
-                           bg-[#0D0E11] backdrop-blur-sm placeholder-gray-400 text-white 
+                            bg-[#1A1D23] backdrop-blur-sm placeholder-gray-400 text-white 
                            focus:outline-none focus:ring-2 focus:ring-[#2A9F8D] focus:border-transparent
                            hover:bg-[#0D0E11] transition-all duration-200"
                   placeholder="Search for projects or designs..."
@@ -88,18 +98,13 @@ const Navbar = () => {
                   <span className="absolute top-1 right-1 h-2 w-2 bg-red-500 rounded-full"></span>
                 </button>
 
-                {/* Notifications Modal */}
+                {/* Desktop Notifications Modal */}
                 {isNotificationsOpen && (
-                  <div className="absolute top-12 right-0 bg-[#0D0E11] border border-[#1A1D23] text-white rounded-xl shadow-lg w-80 z-50 overflow-hidden">
+                  <div className="absolute top-12 right-0 bg-[#0D0E11] border-2 border-gray-200/50 text-white rounded-xl shadow-lg w-100 z-50 overflow-hidden">
                     <div className="p-4 border-b border-[#1A1D23] font-bold text-[#2A9F8D]">
                       Notifications
                     </div>
-                    <ul className="divide-y divide-[#1A1D23] max-h-64 overflow-y-scroll" style={{scrollbarWidth: 'none', msOverflowStyle: 'none'}}>
-                      <style jsx>{`
-                        ul::-webkit-scrollbar {
-                          display: none;
-                        }
-                      `}</style>
+                    <ul className="divide-y divide-[#1A1D23] max-h-64 overflow-y-auto notification-scroll">
                       <li className="p-4 hover:bg-[#1A1D23] transition-colors cursor-pointer">
                         <div className="text-sm text-white">New feature added to the platform!</div>
                         <div className="text-xs text-gray-400 mt-1">2 minutes ago</div>
@@ -115,6 +120,14 @@ const Navbar = () => {
                       <li className="p-4 hover:bg-[#1A1D23] transition-colors cursor-pointer">
                         <div className="text-sm text-white">New message from Emma Davis</div>
                         <div className="text-xs text-gray-400 mt-1">1 day ago</div>
+                      </li>
+                      <li className="p-4 hover:bg-[#1A1D23] transition-colors cursor-pointer">
+                        <div className="text-sm text-white">Welcome to the platform!</div>
+                        <div className="text-xs text-gray-400 mt-1">2 days ago</div>
+                      </li>
+                      <li className="p-4 hover:bg-[#1A1D23] transition-colors cursor-pointer">
+                        <div className="text-sm text-white">Your subscription has been renewed</div>
+                        <div className="text-xs text-gray-400 mt-1">3 days ago</div>
                       </li>
                     </ul>
                   </div>
@@ -191,29 +204,46 @@ const Navbar = () => {
 
           {/* Mobile Notifications Modal */}
           {isNotificationsOpen && (
-            <div className="md:hidden absolute top-16 left-4 right-4 bg-[#0D0E11] border border-[#1A1D23] text-white rounded-xl shadow-lg z-50 overflow-hidden">
+            <div className="md:hidden absolute top-16 left-4 right-4 bg-[#0D0E11] border border-[#1A1D23] text-white rounded-xl shadow-lg z-50 overflow-hidden max-h-80">
               <div className="p-4 border-b border-[#1A1D23] font-bold text-[#2A9F8D]">
                 Notifications
               </div>
-              <ul className="divide-y divide-[#1A1D23] max-h-64 overflow-y-scroll" style={{scrollbarWidth: 'none', msOverflowStyle: 'none'}}>
-                <style jsx>{`
-                  ul::-webkit-scrollbar {
-                    display: none;
-                  }
-                `}</style>
-                <li className="p-4 hover:bg-[#1A1D23] transition-colors cursor-pointer">
-                  <div className="text-sm text-white">New feature added to the platform!</div>
-                  <div className="text-xs text-gray-400 mt-1">2 minutes ago</div>
-                </li>
-                <li className="p-4 hover:bg-[#1A1D23] transition-colors cursor-pointer">
-                  <div className="text-sm text-white">Your profile has been updated successfully.</div>
-                  <div className="text-xs text-gray-400 mt-1">1 hour ago</div>
-                </li>
-                <li className="p-4 hover:bg-[#1A1D23] transition-colors cursor-pointer">
-                  <div className="text-sm text-white">System maintenance scheduled for tomorrow.</div>
-                  <div className="text-xs text-gray-400 mt-1">3 hours ago</div>
-                </li>
-              </ul>
+              <div className="overflow-y-auto notification-scroll" style={{ maxHeight: '256px' }}>
+                <ul className="divide-y divide-[#1A1D23]">
+                  <li className="p-4 hover:bg-[#1A1D23] transition-colors cursor-pointer">
+                    <div className="text-sm text-white">New feature added to the platform!</div>
+                    <div className="text-xs text-gray-400 mt-1">2 minutes ago</div>
+                  </li>
+                  <li className="p-4 hover:bg-[#1A1D23] transition-colors cursor-pointer">
+                    <div className="text-sm text-white">Your profile has been updated successfully.</div>
+                    <div className="text-xs text-gray-400 mt-1">1 hour ago</div>
+                  </li>
+                  <li className="p-4 hover:bg-[#1A1D23] transition-colors cursor-pointer">
+                    <div className="text-sm text-white">System maintenance scheduled for tomorrow.</div>
+                    <div className="text-xs text-gray-400 mt-1">3 hours ago</div>
+                  </li>
+                  <li className="p-4 hover:bg-[#1A1D23] transition-colors cursor-pointer">
+                    <div className="text-sm text-white">New message from Emma Davis</div>
+                    <div className="text-xs text-gray-400 mt-1">1 day ago</div>
+                  </li>
+                  <li className="p-4 hover:bg-[#1A1D23] transition-colors cursor-pointer">
+                    <div className="text-sm text-white">Welcome to the platform!</div>
+                    <div className="text-xs text-gray-400 mt-1">2 days ago</div>
+                  </li>
+                  <li className="p-4 hover:bg-[#1A1D23] transition-colors cursor-pointer">
+                    <div className="text-sm text-white">Your subscription has been renewed</div>
+                    <div className="text-xs text-gray-400 mt-1">3 days ago</div>
+                  </li>
+                  <li className="p-4 hover:bg-[#1A1D23] transition-colors cursor-pointer">
+                    <div className="text-sm text-white">Server maintenance completed</div>
+                    <div className="text-xs text-gray-400 mt-1">4 days ago</div>
+                  </li>
+                  <li className="p-4 hover:bg-[#1A1D23] transition-colors cursor-pointer">
+                    <div className="text-sm text-white">Password changed successfully</div>
+                    <div className="text-xs text-gray-400 mt-1">5 days ago</div>
+                  </li>
+                </ul>
+              </div>
             </div>
           )}
         </div>

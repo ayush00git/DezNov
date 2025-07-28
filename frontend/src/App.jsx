@@ -4,7 +4,8 @@ import ProfilePage from './Pages/ProfilePage'
 import { Routes, Route } from 'react-router-dom'
 import SignupPage from './Pages/SignupPage'
 import LoginPage from './Pages/LoginPage'
-import Chats from './Pages/Chats'
+import ChatsPage from './Pages/ChatsPage'
+
 function App() {
   return(
     <Routes>
@@ -13,7 +14,7 @@ function App() {
       <Route path="/profile" element={<ProfilePage />} />
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/login" element={<LoginPage />} />
-      <Route path="/chats" element={<Chats />} />
+      <Route path="/chats" element={<ChatsPage />} />
     </Routes>
   )
 }

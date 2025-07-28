@@ -47,7 +47,7 @@ const Categories = ({ setSelectedCategory }) => {
   return (
     <div className="w-full p-4">
       {/* Tab Navigation Container - Full Width */}
-      <div className="relative rounded-full p-1 shadow-2xl border border-gray-200/50 w-full backdrop-blur-[4px]">
+      <div className="relative rounded-full p-1 shadow-2xl border border-gray-200/50 w-full backdrop-blur-[15px]">
         {/* Animated Background Indicator */}
         <div
           className="absolute top-1 bottom-1 bg-white rounded-full transition-all duration-300 ease-out shadow-lg"
