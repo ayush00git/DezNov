@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { Send, Search, Phone, Heart, Smile, ArrowLeft } from 'lucide-react';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const ChatInterface = () => {
   const [selectedChat, setSelectedChat] = useState(null);
   const [message, setMessage] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   const [showChatList, setShowChatList] = useState(true);
-
+  const navigate = useNavigate();
   // Mock chat data
   const chats = [
-    
     {
       id: 2,
       name: 'Mike Chen',
@@ -122,7 +122,8 @@ const ChatInterface = () => {
         {/* Header */}
         <div className="p-4 border-b border-[#1A1D23]">
           <div className="flex items-center justify-between mb-4">
-            <h1 className="text-xl font-semibold text-white">Messages</h1>
+            <h1 className="text-xl font-semibold text-white cursor-pointer"
+            onClick={() => navigate('/explore')}>DezNov</h1>
           </div>
           
           {/* Search */}
@@ -154,7 +155,6 @@ const ChatInterface = () => {
                   alt={chat.name}
                   className="w-12 h-12 rounded-full object-cover"
                 />
-                
               </div>
               
               <div className="ml-3 flex-1 min-w-0">
@@ -176,19 +176,24 @@ const ChatInterface = () => {
       </div>
 
       {/* Right Side - Chat Area */}
-      <div className="flex-1 flex flex-col">
+      <div className={`flex-1 flex flex-col ${!showChatList ? 'block' : 'hidden md:flex'}`}>
         {selectedChat ? (
           <>
             {/* Chat Header */}
             <div className="p-4 border-b border-[#1A1D23] flex items-center justify-between bg-[#0D0E11]">
               <div className="flex items-center">
+                <button
+                  onClick={handleBackToChats}
+                  className="md:hidden mr-3 p-2 hover:bg-[#1A1D23] rounded-full transition-colors"
+                >
+                  <ArrowLeft className="w-5 h-5 text-white" />
+                </button>
                 <div className="relative">
                   <img
                     src={selectedChat.avatar}
                     alt={selectedChat.name}
                     className="w-10 h-10 rounded-full object-cover"
                   />
-                 
                 </div>
                 <div className="ml-3">
                   <h2 className="font-semibold text-white">{selectedChat.name}</h2>
@@ -253,7 +258,7 @@ const ChatInterface = () => {
             </div>
           </>
         ) : (
-          // No chat selected state
+          // No chat selected state - only shows on desktop
           <div className="flex-1 flex items-center justify-center bg-[#0D0E11]">
             <div className="text-center">
               <div className="w-24 h-24 bg-[#1A1D23] rounded-full flex items-center justify-center mx-auto mb-4">

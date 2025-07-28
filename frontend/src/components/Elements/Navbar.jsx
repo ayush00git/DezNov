@@ -102,7 +102,8 @@ const Navbar = () => {
                   <span className="text-xs">Updates</span>
                   <span className="absolute top-2 right-2 h-2 w-2 bg-red-500 rounded-full"></span>
                 </button>
-                <button className="flex flex-col items-center p-3 text-gray-600 hover:text-blue-600 hover:bg-white/50 rounded-lg transition-all duration-200 relative">
+                <button className="flex flex-col items-center p-3 text-gray-600 hover:text-blue-600 hover:bg-white/50 rounded-lg transition-all duration-200 relative"
+                onClick={() => navigate('/chats')}>
                   <MessageCircle className="h-6 w-6 mb-1" />
                   <span className="text-xs">Messages</span>
                   <span className="absolute top-2 right-2 h-2 w-2 bg-green-500 rounded-full"></span>
