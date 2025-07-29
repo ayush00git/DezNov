@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom'
 import SignupPage from './Pages/SignupPage'
 import LoginPage from './Pages/LoginPage'
 import ChatsPage from './Pages/ChatsPage'
+import UploadPage from './Pages/UploadPage'
 
 function App() {
   return(
@@ -15,6 +16,7 @@ function App() {
       <Route path="/signup" element={<SignupPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/chats" element={<ChatsPage />} />
+      <Route path="/upload" element={<UploadPage />} />
     </Routes>
   )
 }
