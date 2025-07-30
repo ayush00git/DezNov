@@ -6,6 +6,7 @@ import SignupPage from './Pages/SignupPage'
 import LoginPage from './Pages/LoginPage'
 import ChatsPage from './Pages/ChatsPage'
 import UploadPage from './Pages/UploadPage'
+import ProjectDetailPage from './Pages/ProjectViewerPage'
 
 function App() {
   return(
@@ -17,6 +18,7 @@ function App() {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/chats" element={<ChatsPage />} />
       <Route path="/upload" element={<UploadPage />} />
+      <Route path="/project/id" element={<ProjectDetailPage />} />
     </Routes>
   )
 }
