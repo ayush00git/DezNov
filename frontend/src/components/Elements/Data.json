@@ -4,699 +4,1099 @@
         "title": "Typography Basics",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop",
-        "likes": 423
+        "likes": 423,
+        "user": {
+            "name": "Sarah Chen",
+            "avatar": "https://images.unsplash.com/photo-1494790108755-2616b612b977?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 2,
         "title": "Ethereum Smart Contracts",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1559028006-448665bd7c7f?w=400&h=300&fit=crop",
-        "likes": 318
+        "likes": 318,
+        "user": {
+            "name": "Michael Rodriguez",
+            "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 3,
         "title": "Full-Stack Projects",
         "category": "Blockchain & Web3",
         "image": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=300&fit=crop",
-        "likes": 335
+        "likes": 335,
+        "user": {
+            "name": "Alex Thompson",
+            "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 4,
         "title": "Logo Design Techniques",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=400&h=300&fit=crop",
-        "likes": 455
+        "likes": 455,
+        "user": {
+            "name": "Emma Johnson",
+            "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 5,
         "title": "Generative AI Models",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop",
-        "likes": 297
+        "likes": 297,
+        "user": {
+            "name": "David Kim",
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 6,
         "title": "Full-Stack Projects",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=400&h=300&fit=crop",
-        "likes": 69
+        "likes": 69,
+        "user": {
+            "name": "Jessica Williams",
+            "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 7,
         "title": "Typography Basics",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop",
-        "likes": 435
+        "likes": 435,
+        "user": {
+            "name": "Ryan Patel",
+            "avatar": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 8,
         "title": "Typography Basics",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=400&h=300&fit=crop",
-        "likes": 370
+        "likes": 370,
+        "user": {
+            "name": "Lisa Zhang",
+            "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 9,
         "title": "Typography Basics",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=300&fit=crop",
-        "likes": 128
+        "likes": 128,
+        "user": {
+            "name": "James Wilson",
+            "avatar": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 10,
         "title": "Full-Stack Projects",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=400&h=300&fit=crop",
-        "likes": 57
+        "likes": 57,
+        "user": {
+            "name": "Sofia Martinez",
+            "avatar": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 11,
         "title": "Decentralized Identity",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=400&h=300&fit=crop",
-        "likes": 104
+        "likes": 104,
+        "user": {
+            "name": "Marcus Brown",
+            "avatar": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 12,
         "title": "Generative AI Models",
         "category": "Blockchain & Web3",
         "image": "https://images.unsplash.com/photo-1644088379091-d574269d422f?w=400&h=300&fit=crop",
-        "likes": 62
+        "likes": 62,
+        "user": {
+            "name": "Nina Kowalski",
+            "avatar": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 13,
         "title": "UX Case Studies",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1609921212029-bb5a28e60960?w=400&h=300&fit=crop",
-        "likes": 127
+        "likes": 127,
+        "user": {
+            "name": "Tyler Davis",
+            "avatar": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 14,
         "title": "Responsive Web Layouts",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1545235617-9465d2a55698?w=400&h=300&fit=crop",
-        "likes": 457
+        "likes": 457,
+        "user": {
+            "name": "Rachel Green",
+            "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 15,
         "title": "Responsive Web Layouts",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&h=300&fit=crop",
-        "likes": 76
+        "likes": 76,
+        "user": {
+            "name": "Kevin Lee",
+            "avatar": "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 16,
         "title": "UX Case Studies",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
-        "likes": 30
+        "likes": 30,
+        "user": {
+            "name": "Amanda Clark",
+            "avatar": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 17,
         "title": "Typography Basics",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=400&h=300&fit=crop",
-        "likes": 240
+        "likes": 240,
+        "user": {
+            "name": "Carlos Mendez",
+            "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 18,
         "title": "Ethereum Smart Contracts",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?w=400&h=300&fit=crop",
-        "likes": 445
+        "likes": 445,
+        "user": {
+            "name": "Priya Singh",
+            "avatar": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 19,
         "title": "UX Case Studies",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=400&h=300&fit=crop",
-        "likes": 214
+        "likes": 214,
+        "user": {
+            "name": "Jordan Taylor",
+            "avatar": "https://images.unsplash.com/photo-1494790108755-2616b612b977?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 20,
         "title": "Logo Design Techniques",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=400&h=300&fit=crop",
-        "likes": 220
+        "likes": 220,
+        "user": {
+            "name": "Natalie Cooper",
+            "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 21,
         "title": "Logo Design Techniques",
         "category": "Blockchain & Web3",
         "image": "https://images.unsplash.com/photo-1622630998477-20aa696ecb05?w=400&h=300&fit=crop",
-        "likes": 453
+        "likes": 453,
+        "user": {
+            "name": "Benjamin Miller",
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 22,
         "title": "Modern UI Trends",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
-        "likes": 140
+        "likes": 140,
+        "user": {
+            "name": "Olivia Anderson",
+            "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 23,
         "title": "Decentralized Identity",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=300&fit=crop",
-        "likes": 387
+        "likes": 387,
+        "user": {
+            "name": "Samuel Jackson",
+            "avatar": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 24,
         "title": "Generative AI Models",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=400&h=300&fit=crop",
-        "likes": 380
+        "likes": 380,
+        "user": {
+            "name": "Grace Liu",
+            "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 25,
         "title": "Decentralized Identity",
         "category": "Blockchain & Web3",
         "image": "https://images.unsplash.com/photo-1639322537228-f710d846310a?w=400&h=300&fit=crop",
-        "likes": 399
+        "likes": 399,
+        "user": {
+            "name": "Ethan Parker",
+            "avatar": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 26,
         "title": "Decentralized Identity",
         "category": "Blockchain & Web3",
         "image": "https://images.unsplash.com/photo-1644088379091-d574269d422f?w=400&h=300&fit=crop",
-        "likes": 157
+        "likes": 157,
+        "user": {
+            "name": "Maya Sharma",
+            "avatar": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 27,
         "title": "Responsive Web Layouts",
         "category": "Blockchain & Web3",
         "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
-        "likes": 500
+        "likes": 500,
+        "user": {
+            "name": "Luke Thompson",
+            "avatar": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 28,
         "title": "UX Case Studies",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
-        "likes": 407
+        "likes": 407,
+        "user": {
+            "name": "Isabella Rodriguez",
+            "avatar": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 29,
         "title": "Modern UI Trends",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop",
-        "likes": 134
+        "likes": 134,
+        "user": {
+            "name": "Noah Williams",
+            "avatar": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 30,
         "title": "Full-Stack Projects",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1558655146-364adaf25c26?w=400&h=300&fit=crop",
-        "likes": 113
+        "likes": 113,
+        "user": {
+            "name": "Zoe Chen",
+            "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 31,
         "title": "Typography Basics",
         "category": "Blockchain & Web3",
         "image": "https://images.unsplash.com/photo-1622630998477-20aa696ecb05?w=400&h=300&fit=crop",
-        "likes": 291
+        "likes": 291,
+        "user": {
+            "name": "Adam Davis",
+            "avatar": "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 32,
         "title": "Ethereum Smart Contracts",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop",
-        "likes": 417
+        "likes": 417,
+        "user": {
+            "name": "Lily Wang",
+            "avatar": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 33,
         "title": "Modern UI Trends",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1516110833967-0b5716ca75d5?w=400&h=300&fit=crop",
-        "likes": 120
+        "likes": 120,
+        "user": {
+            "name": "Daniel Garcia",
+            "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 34,
         "title": "Decentralized Identity",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1587560699334-cc4ff634909a?w=400&h=300&fit=crop",
-        "likes": 119
+        "likes": 119,
+        "user": {
+            "name": "Victoria Martinez",
+            "avatar": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 35,
         "title": "Decentralized Identity",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
-        "likes": 192
+        "likes": 192,
+        "user": {
+            "name": "Christopher Lee",
+            "avatar": "https://images.unsplash.com/photo-1494790108755-2616b612b977?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 36,
         "title": "Generative AI Models",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?w=400&h=300&fit=crop",
-        "likes": 176
+        "likes": 176,
+        "user": {
+            "name": "Hannah Kim",
+            "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 37,
         "title": "Responsive Web Layouts",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=400&h=300&fit=crop",
-        "likes": 363
+        "likes": 363,
+        "user": {
+            "name": "Matthew Brown",
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 38,
         "title": "UX Case Studies",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=400&h=300&fit=crop",
-        "likes": 292
+        "likes": 292,
+        "user": {
+            "name": "Chloe Johnson",
+            "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 39,
         "title": "Decentralized Identity",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop",
-        "likes": 106
+        "likes": 106,
+        "user": {
+            "name": "Jacob Wilson",
+            "avatar": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 40,
         "title": "Decentralized Identity",
         "category": "Blockchain & Web3",
         "image": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=300&fit=crop",
-        "likes": 363
+        "likes": 363,
+        "user": {
+            "name": "Aria Patel",
+            "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 41,
         "title": "Decentralized Identity",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=400&h=300&fit=crop",
-        "likes": 41
+        "likes": 41,
+        "user": {
+            "name": "Ryan Cooper",
+            "avatar": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 42,
         "title": "Decentralized Identity",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1609921212029-bb5a28e60960?w=400&h=300&fit=crop",
-        "likes": 171
+        "likes": 171,
+        "user": {
+            "name": "Mia Thompson",
+            "avatar": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 43,
         "title": "Logo Design Techniques",
         "category": "Blockchain & Web3",
         "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop",
-        "likes": 42
+        "likes": 42,
+        "user": {
+            "name": "Logan Martinez",
+            "avatar": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 44,
         "title": "Ethereum Smart Contracts",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=400&h=300&fit=crop",
-        "likes": 374
+        "likes": 374,
+        "user": {
+            "name": "Ava Davis",
+            "avatar": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 45,
         "title": "Ethereum Smart Contracts",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=400&h=300&fit=crop",
-        "likes": 474
+        "likes": 474,
+        "user": {
+            "name": "Caleb Rodriguez",
+            "avatar": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 46,
         "title": "Modern UI Trends",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1484807352052-23338990c6c6?w=400&h=300&fit=crop",
-        "likes": 238
+        "likes": 238,
+        "user": {
+            "name": "Elena Kowalski",
+            "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 47,
         "title": "UX Case Studies",
         "category": "Blockchain & Web3",
         "image": "https://images.unsplash.com/photo-1644088379091-d574269d422f?w=400&h=300&fit=crop",
-        "likes": 444
+        "likes": 444,
+        "user": {
+            "name": "Owen Clark",
+            "avatar": "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 48,
         "title": "UX Case Studies",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1545235617-9465d2a55698?w=400&h=300&fit=crop",
-        "likes": 85
+        "likes": 85,
+        "user": {
+            "name": "Layla Singh",
+            "avatar": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 49,
         "title": "UX Case Studies",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1559028006-448665bd7c7f?w=400&h=300&fit=crop",
-        "likes": 474
+        "likes": 474,
+        "user": {
+            "name": "Gabriel Lee",
+            "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 50,
         "title": "Introduction to Neural Networks",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=400&h=300&fit=crop",
-        "likes": 154
+        "likes": 154,
+        "user": {
+            "name": "Scarlett Wang",
+            "avatar": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 51,
         "title": "Decentralized Identity",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?w=400&h=300&fit=crop",
-        "likes": 39
+        "likes": 39,
+        "user": {
+            "name": "Isaac Miller",
+            "avatar": "https://images.unsplash.com/photo-1494790108755-2616b612b977?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 52,
         "title": "UX Case Studies",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=400&h=300&fit=crop",
-        "likes": 176
+        "likes": 176,
+        "user": {
+            "name": "Penelope Anderson",
+            "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 53,
         "title": "Decentralized Identity",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop",
-        "likes": 158
+        "likes": 158,
+        "user": {
+            "name": "Hunter Jackson",
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 54,
         "title": "Responsive Web Layouts",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop",
-        "likes": 98
+        "likes": 98,
+        "user": {
+            "name": "Nora Parker",
+            "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 55,
         "title": "Generative AI Models",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=400&h=300&fit=crop",
-        "likes": 343
+        "likes": 343,
+        "user": {
+            "name": "Julian Thompson",
+            "avatar": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 56,
         "title": "Decentralized Identity",
         "category": "Blockchain & Web3",
         "image": "https://images.unsplash.com/photo-1639322537228-f710d846310a?w=400&h=300&fit=crop",
-        "likes": 77
+        "likes": 77,
+        "user": {
+            "name": "Stella Chen",
+            "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 57,
         "title": "Typography Basics",
         "category": "Blockchain & Web3",
         "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
-        "likes": 349
+        "likes": 349,
+        "user": {
+            "name": "Aaron Williams",
+            "avatar": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 58,
         "title": "Typography Basics",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=400&h=300&fit=crop",
-        "likes": 76
+        "likes": 76,
+        "user": {
+            "name": "Ruby Martinez",
+            "avatar": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 59,
         "title": "Typography Basics",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=400&h=300&fit=crop",
-        "likes": 172
+        "likes": 172,
+        "user": {
+            "name": "Colton Davis",
+            "avatar": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 60,
         "title": "Decentralized Identity",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=400&h=300&fit=crop",
-        "likes": 212
+        "likes": 212,
+        "user": {
+            "name": "Hazel Rodriguez",
+            "avatar": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 61,
         "title": "Modern UI Trends",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
-        "likes": 362
+        "likes": 362,
+        "user": {
+            "name": "Wyatt Kim",
+            "avatar": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 62,
         "title": "Logo Design Techniques",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=300&fit=crop",
-        "likes": 349
+        "likes": 349,
+        "user": {
+            "name": "Violet Liu",
+            "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 63,
         "title": "Generative AI Models",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?w=400&h=300&fit=crop",
-        "likes": 38
+        "likes": 38,
+        "user": {
+            "name": "Easton Lee",
+            "avatar": "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 64,
         "title": "UX Case Studies",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop",
-        "likes": 454
+        "likes": 454,
+        "user": {
+            "name": "Skylar Green",
+            "avatar": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 65,
         "title": "Introduction to Neural Networks",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=300&fit=crop",
-        "likes": 400
+        "likes": 400,
+        "user": {
+            "name": "Brayden Cooper",
+            "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 66,
         "title": "Responsive Web Layouts",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
-        "likes": 248
+        "likes": 248,
+        "user": {
+            "name": "Aurora Patel",
+            "avatar": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 67,
         "title": "Generative AI Models",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=400&h=300&fit=crop",
-        "likes": 404
+        "likes": 404,
+        "user": {
+            "name": "Hudson Brown",
+            "avatar": "https://images.unsplash.com/photo-1494790108755-2616b612b977?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 68,
         "title": "Ethereum Smart Contracts",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop",
-        "likes": 172
+        "likes": 172,
+        "user": {
+            "name": "Nova Wang",
+            "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 69,
         "title": "Modern UI Trends",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1558655146-364adaf25c26?w=400&h=300&fit=crop",
-        "likes": 124
+        "likes": 124,
+        "user": {
+            "name": "Grayson Miller",
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 70,
         "title": "Ethereum Smart Contracts",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=400&h=300&fit=crop",
-        "likes": 258
+        "likes": 258,
+        "user": {
+            "name": "Willow Johnson",
+            "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 71,
         "title": "Typography Basics",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=400&h=300&fit=crop",
-        "likes": 143
+        "likes": 143,
+        "user": {
+            "name": "Asher Wilson",
+            "avatar": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 72,
         "title": "Responsive Web Layouts",
         "category": "Blockchain & Web3",
         "image": "https://images.unsplash.com/photo-1622630998477-20aa696ecb05?w=400&h=300&fit=crop",
-        "likes": 227
+        "likes": 227,
+        "user": {
+            "name": "Luna Anderson",
+            "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 73,
         "title": "UX Case Studies",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop",
-        "likes": 236
+        "likes": 236,
+        "user": {
+            "name": "Felix Garcia",
+            "avatar": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 74,
         "title": "UX Case Studies",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1516110833967-0b5716ca75d5?w=400&h=300&fit=crop",
-        "likes": 420
+        "likes": 420,
+        "user": {
+            "name": "Ivy Martinez",
+            "avatar": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 75,
         "title": "UX Case Studies",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
-        "likes": 499
+        "likes": 499,
+        "user": {
+            "name": "Theo Thompson",
+            "avatar": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 76,
         "title": "Full-Stack Projects",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1609921212029-bb5a28e60960?w=400&h=300&fit=crop",
-        "likes": 407
+        "likes": 407,
+        "user": {
+            "name": "Piper Davis",
+            "avatar": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 77,
         "title": "Introduction to Neural Networks",
         "category": "Blockchain & Web3",
         "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
-        "likes": 425
+        "likes": 425,
+        "user": {
+            "name": "Kai Rodriguez",
+            "avatar": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 78,
         "title": "Ethereum Smart Contracts",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop",
-        "likes": 125
+        "likes": 125,
+        "user": {
+            "name": "Everly Clark",
+            "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 79,
         "title": "Decentralized Identity",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1587560699334-cc4ff634909a?w=400&h=300&fit=crop",
-        "likes": 337
+        "likes": 337,
+        "user": {
+            "name": "River Lee",
+            "avatar": "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 80,
         "title": "Full-Stack Projects",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=400&h=300&fit=crop",
-        "likes": 481
+        "likes": 481,
+        "user": {
+            "name": "Sage Singh",
+            "avatar": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 81,
         "title": "Modern UI Trends",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1484807352052-23338990c6c6?w=400&h=300&fit=crop",
-        "likes": 290
+        "likes": 290,
+        "user": {
+            "name": "Remi Kim",
+            "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 82,
         "title": "Decentralized Identity",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop",
-        "likes": 170
+        "likes": 170,
+        "user": {
+            "name": "Phoenix Wang",
+            "avatar": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 83,
         "title": "Generative AI Models",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop",
-        "likes": 304
+        "likes": 304,
+        "user": {
+            "name": "Atlas Miller",
+            "avatar": "https://images.unsplash.com/photo-1494790108755-2616b612b977?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 84,
         "title": "Ethereum Smart Contracts",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop",
-        "likes": 385
+        "likes": 385,
+        "user": {
+            "name": "Wren Anderson",
+            "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 85,
         "title": "Generative AI Models",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&h=300&fit=crop",
-        "likes": 273
+        "likes": 273,
+        "user": {
+            "name": "Orion Jackson",
+            "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 86,
         "title": "Responsive Web Layouts",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
-        "likes": 361
+        "likes": 361,
+        "user": {
+            "name": "Indigo Parker",
+            "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 87,
         "title": "Modern UI Trends",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=400&h=300&fit=crop",
-        "likes": 482
+        "likes": 482,
+        "user": {
+            "name": "Onyx Thompson",
+            "avatar": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 88,
         "title": "Full-Stack Projects",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?w=400&h=300&fit=crop",
-        "likes": 403
+        "likes": 403,
+        "user": {
+            "name": "Echo Chen",
+            "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 89,
         "title": "Ethereum Smart Contracts",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=400&h=300&fit=crop",
-        "likes": 105
+        "likes": 105,
+        "user": {
+            "name": "Storm Williams",
+            "avatar": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 90,
         "title": "Modern UI Trends",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop",
-        "likes": 86
+        "likes": 86,
+        "user": {
+            "name": "Lyra Martinez",
+            "avatar": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 91,
         "title": "Logo Design Techniques",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=400&h=300&fit=crop",
-        "likes": 423
+        "likes": 423,
+        "user": {
+            "name": "Blaze Davis",
+            "avatar": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 92,
         "title": "Decentralized Identity",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1545235617-9465d2a55698?w=400&h=300&fit=crop",
-        "likes": 57
+        "likes": 57,
+        "user": {
+            "name": "Ember Rodriguez",
+            "avatar": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 93,
         "title": "Logo Design Techniques",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?w=400&h=300&fit=crop",
-        "likes": 476
+        "likes": 476,
+        "user": {
+            "name": "Sage Clark",
+            "avatar": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 94,
         "title": "Ethereum Smart Contracts",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=400&h=300&fit=crop",
-        "likes": 69
+        "likes": 69,
+        "user": {
+            "name": "Ocean Lee",
+            "avatar": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 95,
         "title": "Responsive Web Layouts",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=400&h=300&fit=crop",
-        "likes": 28
+        "likes": 28,
+        "user": {
+            "name": "River Green",
+            "avatar": "https://images.unsplash.com/photo-1507591064344-4c6ce005b128?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 96,
         "title": "Ethereum Smart Contracts",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=300&fit=crop",
-        "likes": 453
+        "likes": 453,
+        "user": {
+            "name": "Sky Singh",
+            "avatar": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 97,
         "title": "UX Case Studies",
         "category": "Blockchain & Web3",
         "image": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=300&fit=crop",
-        "likes": 42
+        "likes": 42,
+        "user": {
+            "name": "Vale Kim",
+            "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 98,
         "title": "UX Case Studies",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=400&h=300&fit=crop",
-        "likes": 408
+        "likes": 408,
+        "user": {
+            "name": "Raven Wang",
+            "avatar": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 99,
         "title": "Ethereum Smart Contracts",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=400&h=300&fit=crop",
-        "likes": 318
+        "likes": 318,
+        "user": {
+            "name": "Cruz Miller",
+            "avatar": "https://images.unsplash.com/photo-1494790108755-2616b612b977?w=32&h=32&fit=crop&crop=face"
+        }
     },
     {
         "id": 100,
         "title": "UX Case Studies",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1484807352052-23338990c6c6?w=400&h=300&fit=crop",
-        "likes": 119
+        "likes": 119,
+        "user": {
+            "name": "Jade Anderson",
+            "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=32&h=32&fit=crop&crop=face"
+        }
     }
 ]

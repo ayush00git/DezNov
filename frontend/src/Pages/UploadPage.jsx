@@ -64,7 +64,7 @@ export default function UploadPage() {
       }
     }
   };
-
+  // For handling like increments
   const toggleLike = () => {
     // Removed like functionality
   };

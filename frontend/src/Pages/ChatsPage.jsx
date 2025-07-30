@@ -118,7 +118,7 @@ const ChatInterface = () => {
   return (
     <div className="flex h-screen bg-[#0D0E11]">
       {/* Left Sidebar - Chat List */}
-      <div className={`w-full md:w-1/3 border-r border-[#1A1D23] flex flex-col bg-[#0D0E11] ${showChatList ? 'block' : 'hidden md:flex'}`}>
+      <div className={`w-full md:w-1/4 border-r border-[#1A1D23] flex flex-col bg-[#0D0E11] ${showChatList ? 'block' : 'hidden md:flex'}`}>
         {/* Header */}
         <div className="p-4 border-b border-[#1A1D23]">
           <div className="flex items-center justify-between mb-4">

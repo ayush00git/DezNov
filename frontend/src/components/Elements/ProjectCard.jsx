@@ -49,6 +49,19 @@ const ProjectCard = ({ data }) => {
                 </button>
               </div>
             </div>
+             {/* User Profile */}
+            <div className="flex items-center space-x-2 pt-1">
+              <img
+                src={data.user?.avatar || data.user.avatar}
+                alt={data.user?.name || data.user.name }
+                className="w-6 h-6 rounded-full object-cover"
+              />
+              <span className="text-gray-300 text-sm font-medium">
+                {data.user?.name || 'Anonymous User'}
+              </span>
+            </div>
+          </div>
+        
           </div>
         </div>
 
@@ -65,7 +78,7 @@ const ProjectCard = ({ data }) => {
           </button>
         </div>
       </div>
-    </div>
+    
   );
 };
 
