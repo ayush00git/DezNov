@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { Heart, MessageCircle, Share2 } from 'lucide-react';
+import {useNavigate} from 'react-router-dom'
 
 const ProjectCard = ({ data }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
+  const navigate = useNavigate();
 
   return (
-    <div className="flex items-center justify-center p-4">
+    <div className="flex items-center justify-center p-4"
+    onClick={() => navigate('/project/id')}>
       <div
         className={`w-100 rounded-2xl overflow-hidden relative cursor-pointer transition-all duration-300
         bg-[#121212] border border-[#2A2A2A] hover:border-[#3a3a3a]
