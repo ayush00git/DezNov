@@ -94,6 +94,36 @@ export default function ProfileForm() {
 
   return (
     <div className="min-h-screen bg-[#0D0E11] text-white">
+      {/* Add custom styles for autofill */}
+      <style jsx>{`
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        input:-webkit-autofill:active,
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus,
+        textarea:-webkit-autofill:active {
+          box-shadow: 0 0 0 1000px #0D0E11 inset !important;
+          -webkit-text-fill-color: #ffffff !important;
+          transition: background-color 5000s ease-in-out 0s;
+        }
+        
+        input[type="email"]:-webkit-autofill,
+        input[type="email"]:-webkit-autofill:hover,
+        input[type="email"]:-webkit-autofill:focus {
+          box-shadow: 0 0 0 1000px #0D0E11 inset !important;
+          -webkit-text-fill-color: #d1d5db !important;
+        }
+        
+        input[type="url"]:-webkit-autofill,
+        input[type="url"]:-webkit-autofill:hover,
+        input[type="url"]:-webkit-autofill:focus {
+          box-shadow: 0 0 0 1000px rgba(31, 41, 55, 0.5) inset !important;
+          -webkit-text-fill-color: #9ca3af !important;
+        }
+      `}</style>
+
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[#0D0E11]"></div>
