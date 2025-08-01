@@ -233,7 +233,7 @@ export default function DeznovSignup() {
               </span>
               <button
                 className="text-[#2A9F8D] hover:text-[#3DD3BC] text-sm font-medium transition-colors cursor-pointer"
-                onClick={() => navigate("/login")}
+                onClick={() => navigate("/auth/login")}
               >
                 Log in
               </button>

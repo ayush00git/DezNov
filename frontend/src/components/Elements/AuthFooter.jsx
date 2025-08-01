@@ -20,7 +20,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
             {/* Join Community Button */}
             <button className="relative px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 group cursor-pointer"
-            onClick={() => navigate('/signup')}>
+            onClick={() => navigate('/auth/signup')}>
               <span className="relative z-10">Join the Community</span>
               <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
             </button>

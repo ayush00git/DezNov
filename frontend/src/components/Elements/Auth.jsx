@@ -40,7 +40,7 @@ function Auth({ className = "" }) {
           }`}
           onMouseLeave={() => loginDispatch("mouse_leave")}
           onMouseEnter={() => loginDispatch("mouse_enter")}
-          onClick={() => navigate('/login')}
+          onClick={() => navigate('/auth/login')}
         >
           <svg
             className="w-5 h-5 sm:w-[22px] sm:h-[22px]"
@@ -68,7 +68,7 @@ function Auth({ className = "" }) {
           }`}
           onMouseLeave={() => signupDispatch("mouse_leave")}
           onMouseEnter={() => signupDispatch("mouse_enter")}
-          onClick={() => navigate('/signup')}          
+          onClick={() => navigate('/auth/signup')}          
         >
           <svg
             className="w-4 h-4 sm:w-[18px] sm:h-[18px]"
