@@ -140,7 +140,7 @@ const Navbar = () => {
                 <span className="absolute top-1 right-1 h-2 w-2 bg-green-500 rounded-full"></span>
               </button>
               <button className="p-2 text-gray-600 hover:text-[#1E90FF] rounded-full transition-all duration-200 cursor-pointer"
-              onClick={() => navigate('/profile')}>
+              onClick={() => navigate('/myProfile')}>
                 <User className="h-6 w-6" />
               </button>
             </div>
@@ -194,7 +194,7 @@ const Navbar = () => {
                   <span className="absolute top-2 right-2 h-2 w-2 bg-green-500 rounded-full"></span>
                 </button>
                 <button className="flex flex-col items-center p-3 text-gray-600 hover:text-blue-600 hover:bg-white/50 rounded-lg transition-all duration-200"
-                onClick={() => navigate('/profile')}>
+                onClick={() => navigate('/myProfile')}>
                   <User className="h-6 w-6 mb-1" />
                   <span className="text-xs">Profile</span>
                 </button>
