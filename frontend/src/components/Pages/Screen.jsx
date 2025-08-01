@@ -30,7 +30,7 @@ function Screen() {
           hoverFillColor="#fff"
         />
         <Auth className="absolute" />
-        <div className="absolute flex justify-center items-center bottom-4 h-16 w-16 rounded-full border-2 border-white">
+        <div className="absolute flex justify-center items-center bottom-4 h-16 w-16 rounded-full border-2 border-white cursor-pointer hover:scale-110 transition-transform duration-300" onClick={() => window.scrollBy({ top: window.innerHeight / 2, behavior: 'smooth' })}>
               <svg width="25" height="25" viewBox="0 0 64 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M32 4V74" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M60 48L32 76L4 48" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
