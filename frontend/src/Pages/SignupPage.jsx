@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 export default function DeznovSignup() {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
-    username: "",
+    fullName: "",
+    userName: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -17,22 +18,46 @@ export default function DeznovSignup() {
     });
   };
 
-  const handleSubmit = () => {
-    if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match. Please try again.");
-      return;
+  // confirm password logic
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  if (formData.password !== formData.confirmPassword) {
+    alert("Passwords do not match. Please try again.");
+    return;
+  }
+
+  try {
+    const res = await fetch("http://localhost:8000/auth/signup", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        userName: formData.userName,
+        fullName: formData.fullName,
+        email: formData.email,
+        password: formData.password,
+      }),
+    });
+
+    const data = await res.json(); // it captures the json message from backend
+
+    if (res.ok) {
+      console.log("Signup successful:", data.message || "Account created.");
+      // Optionally reset form or navigate
+    } else {
+      alert(data.message || "Signup failed. Try again.");
     }
-    console.log("Form submitted:", formData);
-  };
+  } catch (err) {
+    console.error("Server error:", err);
+    alert("Something went wrong. Please try again later.");
+  }
+};
+
+
   const navigate = useNavigate();
   // Generate random stars
-  const stars = Array.from({ length: 100 }, (_, i) => ({
-    id: i,
-    left: Math.random() * 100,
-    top: Math.random() * 100,
-    animationDelay: Math.random() * 3,
-    size: Math.random() * 2 + 1,
-  }));
 
   return (
     <>
@@ -64,8 +89,8 @@ export default function DeznovSignup() {
                 </label>
                 <input
                   type="text"
-                  name="username"
-                  value={formData.username}
+                  name="fullName"
+                  value={formData.fullName}
                   onChange={handleInputChange}
                   placeholder="Enter your full name"
                   className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#2a9f8d] focus:border-transparent transition-all"
@@ -78,8 +103,8 @@ export default function DeznovSignup() {
                 </label>
                 <input
                   type="text"
-                  name="username"
-                  value={formData.username}
+                  name="userName"
+                  value={formData.userName}
                   onChange={handleInputChange}
                   placeholder="Enter a username"
                   className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#2a9f8d] focus:border-transparent transition-all"
