@@ -22,6 +22,11 @@ export default function DeznovSignup() {
   const handleSubmit = async (e) => {
   e.preventDefault();
 
+  if (!formData.email.endsWith('@nith.ac.in')) {
+    alert("Please use your NITH email address (@nith.ac.in)");
+    return;
+  }
+  
   if (formData.password !== formData.confirmPassword) {
     alert("Passwords do not match. Please try again.");
     return;
