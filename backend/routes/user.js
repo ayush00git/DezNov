@@ -1,5 +1,5 @@
 const express = require("express");
-
+const protectedRoute = require("../services/security");
 const route = express.Router();
 
 // HomePage GET request
@@ -42,7 +42,7 @@ route.get('/chats', (req, res) => {
 })
 
 // GET request for upload
-route.get('/upload', (req, res) => {
+route.get('/upload', protectedRoute, (req, res) => {
     try {
         return res.status(200).json({ 'msg': 'Upload page loaded successfully!' })
     } catch (error) {

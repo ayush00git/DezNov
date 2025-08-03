@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function DeznovSignup() {
+export default function DeznovLogin() {
+  // Move useNavigate to the top with other hooks
+  const navigate = useNavigate();
+  
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
-    username: "",
     email: "",
     password: "",
-    confirmPassword: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleInputChange = (e) => {
     setFormData({
@@ -16,22 +18,40 @@ export default function DeznovSignup() {
       [e.target.name]: e.target.value,
     });
   };
-  const handleSubmit = () => {
-    if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match. Please try again.");
-      return;
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    try {
+      const response = await fetch("http://localhost:8000/auth/login", {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: formData.email,
+          password: formData.password,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        console.log("Login successful");
+        navigate('/explore');
+      } else {
+        alert(data.message || "Login failed");
+      }
+
+    } catch (error) {
+      console.error("Error during login:", error);
+      alert("Network error. Please check your connection and try again.");
+    } finally {
+      setIsLoading(false);
     }
-    console.log("Form submitted:", formData);
   };
-  const navigate = useNavigate();
-  // Generate random stars
-  const stars = Array.from({ length: 100 }, (_, i) => ({
-    id: i,
-    left: Math.random() * 100,
-    top: Math.random() * 100,
-    animationDelay: Math.random() * 3,
-    size: Math.random() * 2 + 1,
-  }));
 
   return (
     <>
@@ -42,6 +62,7 @@ export default function DeznovSignup() {
         >
           DezNov
         </h1>
+        
         {/* Main form container */}
         <div className="relative z-10 w-full max-w-md mx-4">
           <div className="bg-opacity-90 backdrop-blur-sm rounded-2xl border-2 border-gray-700 p-8 shadow-2xl">
@@ -53,19 +74,20 @@ export default function DeznovSignup() {
               </h1>
             </div>
 
-            {/* Form */}
-            <div className="space-y-6">
-              {/* Username field */}
+            {/* Form - Added proper form element */}
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Email field */}
               <div>
                 <label className="block text-white text-sm font-medium mb-2">
-                  Username or E-mail
+                  E-mail
                 </label>
                 <input
-                  type="text"
-                  name="username"
-                  value={formData.username}
+                  type="email"
+                  name="email"
+                  value={formData.email}
                   onChange={handleInputChange}
-                  placeholder="Enter your username or email"
+                  placeholder="Enter your registered email"
+                  required
                   className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#2a9f8d] focus:border-transparent transition-all"
                 />
               </div>
@@ -82,6 +104,7 @@ export default function DeznovSignup() {
                     value={formData.password}
                     onChange={handleInputChange}
                     placeholder="Enter your password"
+                    required
                     className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#2a9f8d] focus:border-transparent transition-all pr-12"
                   />
                   <button
@@ -130,14 +153,15 @@ export default function DeznovSignup() {
 
               {/* Submit button */}
               <button
-                onClick={handleSubmit}
-                className="w-full bg-[#2A9F8D] hover:bg-[#3DD3BC] text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#2a9f8d] focus:ring-offset-2 focus:ring-offset-gray-900 cursor-pointer"
+                type="submit"
+                disabled={isLoading}
+                className="w-full bg-[#2A9F8D] hover:bg-[#3DD3BC] disabled:bg-gray-600 disabled:cursor-not-allowed text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#2a9f8d] focus:ring-offset-2 focus:ring-offset-gray-900"
               >
-                Log In
+                {isLoading ? "Logging in..." : "Log In"}
               </button>
-            </div>
+            </form>
 
-            {/* Login link */}
+            {/* Sign up link */}
             <div className="text-center mt-6">
               <span className="text-gray-400 text-sm">
                 Do not have an account?{" "}

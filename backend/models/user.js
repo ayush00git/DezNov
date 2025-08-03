@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const { randomBytes, createHmac } = require('crypto');
 const { type } = require('os');
+const { resolve } = require('path');
 
 // User Schema
 const userSchema = new mongoose.Schema({
@@ -53,10 +54,18 @@ userSchema.pre("save", function(next) {
 
 })
 
+// userSchema.methods.validatePassword = function(inputPass) {
+//     return new Promise((resolve) => {
+//         const hashedPassword = createHmac("sha-256", this.salt).update(inputPass).digest("hex");
+//         resolve(hashedPassword === this.password);
+//     });
+// }
+
 userSchema.methods.validatePassword = function(inputPass) {
     const hashedPassword = createHmac("sha-256", this.salt).update(inputPass).digest("hex");
-    return hashedPassword == this.password;
+    return (hashedPassword === this.password);
 }
+
 
 // defining the model
 const User = mongoose.model("user", userSchema);

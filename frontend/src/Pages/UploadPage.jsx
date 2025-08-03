@@ -12,9 +12,9 @@ export default function UploadPage() {
     demoLink: ''
   });
   const [dragActive, setDragActive] = useState(false);
-
   const [currentStep, setCurrentStep] = useState(1);
 
+  
   const categories = [
     'Web Dev',
     'Graphic Design',
