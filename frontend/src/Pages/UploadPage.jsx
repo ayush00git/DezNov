@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Upload, ChevronDown, Github, ExternalLink } from 'lucide-react';
 import Navbar from '../components/Elements/Navbar'
+
 export default function UploadPage() {
   const [formData, setFormData] = useState({
     title: '',
@@ -13,6 +14,37 @@ export default function UploadPage() {
   });
   const [dragActive, setDragActive] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Check authentication when component mounts
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const response = await fetch('http://localhost:8000/upload', {
+          method: 'GET',
+          credentials: 'include', // Send cookies with request
+        });
+        
+        if (response.ok) {
+          setIsAuthenticated(true);
+        } else {
+          // User is not authenticated, redirect to login
+          window.location.href = '/auth/login';
+          return;
+        }
+      } catch (error) {
+        console.error('Auth check failed:', error);
+        // On error, also redirect to login
+        window.location.href = '/auth/login';
+        return;
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    checkAuth();
+  }, []);
 
   
   const categories = [
@@ -64,10 +96,6 @@ export default function UploadPage() {
       }
     }
   };
-  // For handling like increments
-  const toggleLike = () => {
-    // Removed like functionality
-  };
 
   const steps = [1, 2, 3, 4, 5, 6, 7];
 
@@ -83,6 +111,30 @@ export default function UploadPage() {
     setCurrentStep(filledSteps);
   }, [formData]);
 
+  // Show loading while checking authentication
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-[#0D0E11] text-white flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-400 mx-auto mb-4"></div>
+          <p className="text-gray-300">Checking authentication...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // If not authenticated, show nothing (redirect is happening)
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen bg-[#0D0E11] text-white flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-gray-300">Redirecting to login...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Only render the upload page if authenticated
   return (
     <div className="min-h-screen bg-[#0D0E11] text-white mt-32 pb-16">
         <Navbar />

@@ -199,8 +199,8 @@ route.post('/login', async(req, res) => {
 
         res.cookie('auth-token', token, {
             httpOnly: true,
-            // secure: true,  // un-comment during production
-            sameSite: 'none',
+            secure: false,  // un-comment during production
+            sameSite: 'lax',
             maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
         })
 

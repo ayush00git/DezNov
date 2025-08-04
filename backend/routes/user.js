@@ -1,5 +1,5 @@
 const express = require("express");
-const protectedRoute = require("../services/security");
+const { protectedRoute } = require("../services/security");
 const route = express.Router();
 
 // HomePage GET request
@@ -35,7 +35,7 @@ route.get('/myProfile', (req, res) => {
 route.get('/chats', (req, res) => {
     try {
         // chats from the database
-        return res.status(200).json({ 'msg': 'Chats page loaded successfully' });
+        return res.status(200).json({ message: 'Chats page loaded successfully' });
     } catch (error) {
         return res.status(500).json({ 'err': 'Request failed, server overloaded' });
     }
@@ -44,7 +44,11 @@ route.get('/chats', (req, res) => {
 // GET request for upload
 route.get('/upload', protectedRoute, (req, res) => {
     try {
-        return res.status(200).json({ 'msg': 'Upload page loaded successfully!' })
+        console.log("Authenticated user");
+        return res.status(200).json({ 
+            message: 'Upload page loaded successfully!',
+            user: req.user,
+        })
     } catch (error) {
         return res.status(400).json({ 'err': 'Client side error, maybe due to slow internet' });
     }
