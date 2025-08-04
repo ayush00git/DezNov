@@ -207,7 +207,7 @@ route.post('/login', async(req, res) => {
         })
 
         return res.status(200).json({
-            message: 'Login Successfull!',
+            message: 'Login Successfull!', 
             user: {
                 _id: user._id, 
                 userName: user.userName,
