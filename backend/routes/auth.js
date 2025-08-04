@@ -19,6 +19,7 @@ route.get('/login', (req, res) => {
     try {
         return res.status(200).json({ 'msg': 'Login page loaded successfully' });
     } catch (error) {
+        console.log(`Error: ${error}`);
         return res.status(400).json({ 'err': 'Error login page not loaded' });
     }
 })
@@ -181,13 +182,13 @@ route.post('/login', async(req, res) => {
         // validation of password
         const user = await User.findOne({ email });
         if(!user){
-            return res.status(400).json({ message: 'User does not exist or check your email' });
+            return res.status(404).json({ message: 'User does not exist or check your email' });
         }
 
         const isMatched = user.validatePassword(password);
 
         if(!isMatched){
-            return res.status(401).json({ message: 'Password does not matched' });
+            return res.status(400).json({ message: 'Password does not matched' });
         }
 
         // if password gets matched, we'll be generating a token
@@ -197,10 +198,11 @@ route.post('/login', async(req, res) => {
             { expiresIn: '7d' }
         );
 
+        // const isProduction = process.env.NODE_ENV === 'production';
         res.cookie('auth-token', token, {
             httpOnly: true,
-            // secure: true,  // un-comment during production
-            sameSite: 'none',
+            secure: false,  // set to isProduction during deployment
+            sameSite: 'lax',
             maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
         })
 

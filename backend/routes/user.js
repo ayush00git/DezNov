@@ -1,5 +1,5 @@
 const express = require("express");
-const protectedRoute = require("../services/security");
+const { protectedRoute } = require("../services/security");
 const route = express.Router();
 
 // HomePage GET request
