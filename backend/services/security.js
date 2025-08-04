@@ -1,4 +1,4 @@
-const jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken'); 
 
 const protectedRoute = (req, res, next) => {
     const token = req.cookies['auth-token'];
