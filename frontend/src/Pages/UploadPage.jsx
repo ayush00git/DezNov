@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Upload, ChevronDown, Github, ExternalLink } from 'lucide-react';
 import Navbar from '../components/Elements/Navbar'
+import { useNavigate } from 'react-router-dom';
 
 export default function UploadPage() {
   const [formData, setFormData] = useState({
@@ -16,7 +17,7 @@ export default function UploadPage() {
   const [currentStep, setCurrentStep] = useState(1);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-
+  const navigate = useNavigate();
   // Check authentication when component mounts
   useEffect(() => {
     const checkAuth = async () => {
@@ -30,13 +31,15 @@ export default function UploadPage() {
           setIsAuthenticated(true);
         } else {
           // User is not authenticated, redirect to login
-          window.location.href = '/auth/login';
+          // window.location.href = '/auth/login';
+          navigate('/auth/login');
           return;
         }
       } catch (error) {
         console.error('Auth check failed:', error);
         // On error, also redirect to login
-        window.location.href = '/auth/login';
+        // window.location.href = '/auth/login';
+        navigate('/auth/login');
         return;
       } finally {
         setIsLoading(false);
