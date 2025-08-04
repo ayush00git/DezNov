@@ -3,7 +3,6 @@ const jwt = require('jsonwebtoken');
 const protectedRoute = (req, res, next) => {
     const token = req.cookies['auth-token'];
     if(!token){
-        console.log('expired token');
         return res.status(401).json({ message: 'User not authenticated' });
     }
     try {

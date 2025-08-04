@@ -1,39 +1,68 @@
-import React, { useState, useEffect } from "react";
-import { Upload, ChevronDown, Github, ExternalLink } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { Upload, ChevronDown, Github, ExternalLink } from 'lucide-react';
+import Navbar from '../components/Elements/Navbar'
 
-import Navbar from "../components/Elements/Navbar";
 export default function UploadPage() {
   const [formData, setFormData] = useState({
-    title: "",
-    description: "",
-    category: "",
-    tags: ["", ""],
+    title: '',
+    description: '',
+    category: '',
+    tags: ['', ''],
     coverImage: null,
-    githubLink: "",
-    demoLink: "",
+    githubLink: '',
+    demoLink: ''
   });
   const [dragActive, setDragActive] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const navigate = useNavigate();
 
+  // Check authentication when component mounts
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const response = await fetch('http://localhost:8000/upload', {
+          method: 'GET',
+          credentials: 'include', // Send cookies with request
+        });
+        
+        if (response.ok) {
+          setIsAuthenticated(true);
+        } else {
+          // User is not authenticated, redirect to login
+          window.location.href = '/auth/login';
+          return;
+        }
+      } catch (error) {
+        console.error('Auth check failed:', error);
+        // On error, also redirect to login
+        window.location.href = '/auth/login';
+        return;
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    checkAuth();
+  }, []);
+
+  
   const categories = [
-    "Web Dev",
-    "Graphic Design",
-    "UI/UX",
-    "AI/ML",
-    "Blockchain & Web3",
+    'Web Dev',
+    'Graphic Design',
+    'UI/UX',
+    'AI/ML',
+    'Blockchain & Web3'
   ];
 
   const handleInputChange = (field, value) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
+    setFormData(prev => ({ ...prev, [field]: value }));
   };
 
   const handleTagChange = (index, value) => {
     const newTags = [...formData.tags];
     newTags[index] = value;
-    setFormData((prev) => ({ ...prev, tags: newTags }));
+    setFormData(prev => ({ ...prev, tags: newTags }));
   };
 
   const handleDrag = (e) => {
@@ -50,11 +79,11 @@ export default function UploadPage() {
     e.preventDefault();
     e.stopPropagation();
     setDragActive(false);
-
+    
     if (e.dataTransfer.files && e.dataTransfer.files[0]) {
       const file = e.dataTransfer.files[0];
-      if (file.type.startsWith("image/")) {
-        setFormData((prev) => ({ ...prev, coverImage: file }));
+      if (file.type.startsWith('image/')) {
+        setFormData(prev => ({ ...prev, coverImage: file }));
       }
     }
   };
@@ -62,14 +91,10 @@ export default function UploadPage() {
   const handleFileSelect = (e) => {
     if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0];
-      if (file.type.startsWith("image/")) {
-        setFormData((prev) => ({ ...prev, coverImage: file }));
+      if (file.type.startsWith('image/')) {
+        setFormData(prev => ({ ...prev, coverImage: file }));
       }
     }
-  };
-  // For handling like increments
-  const toggleLike = () => {
-    // Removed like functionality
   };
 
   const steps = [1, 2, 3, 4, 5, 6, 7];
@@ -79,90 +104,49 @@ export default function UploadPage() {
     if (formData.title) filledSteps++;
     if (formData.description) filledSteps++;
     if (formData.category) filledSteps++;
-    if (formData.tags.some((tag) => tag.trim() !== "")) filledSteps++;
+    if (formData.tags.some(tag => tag.trim() !== '')) filledSteps++;
     if (formData.coverImage) filledSteps++;
     if (formData.githubLink) filledSteps++;
     if (formData.demoLink) filledSteps++;
     setCurrentStep(filledSteps);
   }, [formData]);
 
-  useEffect(() => {
-  handleGetUpload();
-}, []);
-
-  // getting the cookie
-  const getCookie = (name) => {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(";").shift();
-    return null;
-  };
-
-  // reusable api utilis
-  const apiCallWithAuth = async (url, options = {}) => {
-    try {
-      const token = getCookie("auth-token");
-      if(!token){
-        console.log('Token expired or unauthorized user');
-        console.log(`Token = ${token}`)
-        navigate('/auth/login');
-        return null;
-      }
-
-      const response = await fetch(url, {
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-          ...options.headers,
-        },
-        ...options,
-      });
-
-      if (response.status === 401) {
-        document.cookie = 'auth-token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-        console.log('token expired');
-        navigate("/auth/login");
-        return null;
-      }
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      return await response.json();
-    } catch (error) {
-      console.error("API call failed:", error);
-      throw error;
-    }
-  };
-
-  // GET route protected for the upload page
-  const handleGetUpload = async () => {
-  const data = await apiCallWithAuth('http://localhost:8000/upload', {
-    method: 'GET',
-  });
-  
-  if (data) {
-    console.log('Upload page authorized: ', data);
-    setIsLoading(false);
+  // Show loading while checking authentication
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-[#0D0E11] text-white flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-400 mx-auto mb-4"></div>
+          <p className="text-gray-300">Checking authentication...</p>
+        </div>
+      </div>
+    );
   }
-};
-if(isLoading){
+
+  // If not authenticated, show nothing (redirect is happening)
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen bg-[#0D0E11] text-white flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-gray-300">Redirecting to login...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Only render the upload page if authenticated
   return (
     <div className="min-h-screen bg-[#0D0E11] text-white mt-32 pb-16">
-      <Navbar />
+        <Navbar />
       <div className="container mx-auto px-4 py-8 max-w-7xl">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
           <p className="text-xl md:text-2xl text-gray-300 mb-12">
             Showcase your creativity to the community
           </p>
-          <button
-            className="bg-[#0D0E11] hover:bg-[#252830] 
+          <button className="bg-[#0D0E11] hover:bg-[#252830] 
                            border-2 border-gray-500 text-white px-8 py-4 rounded-full
-                           font-semibold text-lg transition-all duration-300 cursor-pointer"
-          >
+                           font-semibold text-lg transition-all duration-300 cursor-pointer">
             Upload now
           </button>
         </div>
@@ -175,37 +159,27 @@ if(isLoading){
             <div className="flex items-center justify-between mb-12">
               {steps.map((step, index) => (
                 <React.Fragment key={step}>
-                  <div
-                    className={`w-5 h-5 rounded-full transition-all duration-300 ${
-                      index < currentStep
-                        ? "bg-gray-400 shadow-lg shadow-gray-400/50"
-                        : "bg-gray-700"
-                    }`}
-                  />
+                  <div className={`w-5 h-5 rounded-full transition-all duration-300 ${
+                    index < currentStep ? 'bg-gray-400 shadow-lg shadow-gray-400/50' : 'bg-gray-700'
+                  }`} />
                   {index < steps.length - 1 && (
-                    <div
-                      className={`flex-1 h-0.5 mx-4 transition-all duration-300 ${
-                        index < currentStep - 1 ? "bg-gray-400" : "bg-gray-700"
-                      }`}
-                    />
+                    <div className={`flex-1 h-0.5 mx-4 transition-all duration-300 ${
+                      index < currentStep - 1 ? 'bg-gray-400' : 'bg-gray-700'
+                    }`} />
                   )}
                 </React.Fragment>
               ))}
             </div>
 
-            <h2 className="text-3xl font-bold mb-8 text-white">
-              Project Details
-            </h2>
+            <h2 className="text-3xl font-bold mb-8 text-white">Project Details</h2>
 
             {/* Title Input */}
             <div className="mb-8">
-              <label className="block text-lg font-medium mb-3 text-gray-200">
-                Title
-              </label>
+              <label className="block text-lg font-medium mb-3 text-gray-200">Title</label>
               <input
                 type="text"
                 value={formData.title}
-                onChange={(e) => handleInputChange("title", e.target.value)}
+                onChange={(e) => handleInputChange('title', e.target.value)}
                 className="w-full bg-black/30 border border-gray-600 rounded-2xl px-4 py-3 text-white 
                            placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#2A9F8D] 
                             transition-all duration-300 backdrop-blur-sm"
@@ -215,14 +189,10 @@ if(isLoading){
 
             {/* Description Input */}
             <div className="mb-10">
-              <label className="block text-lg font-medium mb-3 text-gray-200">
-                Description
-              </label>
+              <label className="block text-lg font-medium mb-3 text-gray-200">Description</label>
               <textarea
                 value={formData.description}
-                onChange={(e) =>
-                  handleInputChange("description", e.target.value)
-                }
+                onChange={(e) => handleInputChange('description', e.target.value)}
                 rows={4}
                 className="w-full bg-black/30 border border-gray-600 rounded-2xl px-4 py-3 text-white 
                            placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#2A9F8D] 
@@ -232,50 +202,33 @@ if(isLoading){
             </div>
 
             {/* Category & Tags Section */}
-            <h3 className="text-2xl font-bold mb-6 text-white">
-              Category & Tags
-            </h3>
+            <h3 className="text-2xl font-bold mb-6 text-white">Category & Tags</h3>
 
             {/* Category Dropdown */}
             <div className="mb-8">
-              <label className="block text-lg font-medium mb-3 text-gray-200">
-                Category
-              </label>
+              <label className="block text-lg font-medium mb-3 text-gray-200">Category</label>
               <div className="relative">
                 <select
                   value={formData.category}
-                  onChange={(e) =>
-                    handleInputChange("category", e.target.value)
-                  }
+                  onChange={(e) => handleInputChange('category', e.target.value)}
                   className="w-full bg-black/30 border border-gray-600 rounded-2xl px-4 py-3 text-white 
                              focus:outline-none focus:ring-2 focus:ring-[#2A9F8D] focus:border-gray-500 
                              transition-all duration-300 appearance-none cursor-pointer backdrop-blur-sm"
                 >
-                  <option value="" className="bg-gray-900 rounded-t-lg">
-                    Select a category...
-                  </option>
-                  {categories.map((cat) => (
-                    <option
-                      key={cat}
-                      value={cat}
-                      className="bg-gray-900 hover:bg-gray-800 rounded-2xl"
-                    >
+                  <option value="" className="bg-gray-900 rounded-t-lg">Select a category...</option>
+                  {categories.map(cat => (
+                    <option key={cat} value={cat} className="bg-gray-900 hover:bg-gray-800 rounded-2xl">
                       {cat}
                     </option>
                   ))}
                 </select>
-                <ChevronDown
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none"
-                  size={20}
-                />
+                <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none" size={20} />
               </div>
             </div>
 
             {/* Tags Input */}
             <div className="mb-10">
-              <label className="block text-lg font-medium mb-3 text-gray-200">
-                Tags
-              </label>
+              <label className="block text-lg font-medium mb-3 text-gray-200">Tags</label>
               <div className="grid grid-cols-2 gap-4">
                 {formData.tags.map((tag, index) => (
                   <input
@@ -292,7 +245,7 @@ if(isLoading){
               </div>
               {formData.tags.length < 5 && (
                 <button
-                  onClick={() => handleTagChange(formData.tags.length, "")}
+                  onClick={() => handleTagChange(formData.tags.length, '')}
                   className="mt-4 px-4 py-2 bg-[#2A9F8D] text-white font-medium rounded-lg shadow-md hover:bg-[#23876F] transition-all duration-300"
                 >
                   Add a Tag
@@ -301,21 +254,15 @@ if(isLoading){
             </div>
 
             {/* Project Links Section */}
-            <h3 className="text-2xl font-bold mb-6 text-white">
-              Project Links
-            </h3>
+            <h3 className="text-2xl font-bold mb-6 text-white">Project Links</h3>
 
             {/* GitHub Link Input */}
             <div className="mb-8">
-              <label className="block text-lg font-medium mb-3 text-gray-200">
-                GitHub Repository
-              </label>
+              <label className="block text-lg font-medium mb-3 text-gray-200">GitHub Repository</label>
               <input
                 type="url"
                 value={formData.githubLink}
-                onChange={(e) =>
-                  handleInputChange("githubLink", e.target.value)
-                }
+                onChange={(e) => handleInputChange('githubLink', e.target.value)}
                 className="w-full bg-black/30 border border-gray-600 rounded-2xl px-4 py-3 text-white 
                            placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#2A9F8D]
                            focus:border-gray-500 transition-all duration-300 backdrop-blur-sm"
@@ -325,19 +272,19 @@ if(isLoading){
 
             {/* Live Demo Link Input */}
             <div className="mb-10">
-              <label className="block text-lg font-medium mb-3 text-gray-200">
-                Live Demo
-              </label>
+              <label className="block text-lg font-medium mb-3 text-gray-200">Live Demo</label>
               <input
                 type="url"
                 value={formData.demoLink}
-                onChange={(e) => handleInputChange("demoLink", e.target.value)}
+                onChange={(e) => handleInputChange('demoLink', e.target.value)}
                 className="w-full bg-black/30 border border-gray-600 rounded-2xl px-4 py-3 text-white 
                            placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#2A9F8D] 
                            focus:border-gray-500 transition-all duration-300 backdrop-blur-sm"
                 placeholder="https://your-project-demo.com"
               />
             </div>
+
+            
           </div>
 
           {/* Right Section - Preview */}
@@ -346,9 +293,9 @@ if(isLoading){
             <div className="bg-[#0D0E11] backdrop-blur-xl border-gray-700 border-2 rounded-3xl p-8">
               <div className="flex justify-between items-start mb-6">
                 <span className="bg-white/10 text-white px-4 py-2 rounded-full text-sm font-medium border border-white/20">
-                  {formData.category || "Category"}
+                  {formData.category || 'Category'}
                 </span>
-
+                
                 {/* Project Links */}
                 <div className="flex gap-3">
                   {formData.githubLink && (
@@ -375,18 +322,15 @@ if(isLoading){
                   )}
                 </div>
               </div>
-
+              
               <h3 className="text-2xl font-bold mb-4 text-white">
-                {formData.title || "Project Title"}
+                {formData.title || 'Project Title'}
               </h3>
-
+              
               <p className="text-gray-300 text-sm leading-relaxed">
                 {formData.description
-                  ? `${formData.description
-                      .split(" ")
-                      .slice(0, 50)
-                      .join(" ")}...`
-                  : "Your project description will appear here. Add a detailed description to showcase your work and explain the creative process behind this design project."}
+                  ? `${formData.description.split(' ').slice(0, 50).join(' ')}...`
+                  : 'Your project description will appear here. Add a detailed description to showcase your work and explain the creative process behind this design project.'}
               </p>
             </div>
 
@@ -397,10 +341,9 @@ if(isLoading){
               onDragOver={handleDrag}
               onDrop={handleDrop}
               className={`relative border-2 border-dashed rounded-3xl p-12 text-center transition-all duration-300 
-                         ${
-                           dragActive
-                             ? "border-gray-400 bg-[#252830]"
-                             : "border-gray-600 bg-[#0D0E11] hover:border-gray-500 hover:bg-[#1a1c22]"
+                         ${dragActive 
+                           ? 'border-gray-400 bg-[#252830]' 
+                           : 'border-gray-600 bg-[#0D0E11] hover:border-gray-500 hover:bg-[#1a1c22]'
                          }`}
             >
               <input
@@ -409,19 +352,15 @@ if(isLoading){
                 onChange={handleFileSelect}
                 className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
               />
-
+              
               {formData.coverImage ? (
                 <div className="space-y-4">
                   <div className="w-16 h-16 mx-auto bg-green-500/20 rounded-full flex items-center justify-center">
                     <Upload className="w-8 h-8 text-green-400" />
                   </div>
                   <div>
-                    <p className="text-white font-medium">
-                      {formData.coverImage.name}
-                    </p>
-                    <p className="text-gray-400 text-sm">
-                      File uploaded successfully
-                    </p>
+                    <p className="text-white font-medium">{formData.coverImage.name}</p>
+                    <p className="text-gray-400 text-sm">File uploaded successfully</p>
                   </div>
                 </div>
               ) : (
@@ -430,9 +369,7 @@ if(isLoading){
                     <Upload className="w-8 h-8 text-gray-400" />
                   </div>
                   <div>
-                    <p className="text-white font-medium mb-2">
-                      Drag and drop or
-                    </p>
+                    <p className="text-white font-medium mb-2">Drag and drop or</p>
                     <p className="text-gray-400">browse your image</p>
                   </div>
                 </div>
@@ -443,5 +380,4 @@ if(isLoading){
       </div>
     </div>
   );
-}
 }
