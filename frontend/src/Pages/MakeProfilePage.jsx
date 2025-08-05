@@ -3,17 +3,15 @@ import { MapPin, Mail, Phone, Globe, Github, Linkedin, Upload, User, Briefcase, 
 
 export default function ProfileForm() {
   const [formData, setFormData] = useState({
-    username: '',
-    name: '',
+    userName: '',
+    fullName: '',
     title: '',
-    bio: '',
     email: '',
-    aboutText1: '',
-    
+    aboutText: '',
     github: '',
     linkedin: '',
     portfolio: '',
-    profilePic: null
+    profilePicURL: null
   });
 
   const [profilePicPreview, setProfilePicPreview] = useState(null);
@@ -33,9 +31,8 @@ export default function ProfileForm() {
     if (file) {
       setFormData(prev => ({
         ...prev,
-        profilePic: file
+        profilePicURL: file
       }));
-      
       const reader = new FileReader();
       reader.onload = (e) => {
         setProfilePicPreview(e.target.result);
@@ -44,47 +41,15 @@ export default function ProfileForm() {
     }
   };
 
-  const getInitials = (name) => {
-    return name.split(' ').map(word => word.charAt(0)).join('').toUpperCase().slice(0, 2);
+  const getInitials = (fullName) => {
+    return fullName.split(' ').map(word => word.charAt(0)).join('').toUpperCase().slice(0, 2);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-
-    try {
-      const formDataToSend = new FormData();
-      Object.keys(formData).forEach(key => {
-        if (formData[key]) {
-          formDataToSend.append(key, formData[key]);
-        }
-      });
-
-      const response = await fetch('/api/profile', {
-        method: 'POST',
-        body: formDataToSend,
-      });
-
-      if (response.ok) {
-        alert('Profile created successfully!');
-        // Reset form
-        setFormData({
-          username: '',
-          name: '',
-          title: '',
-          bio: '',
-          email: '',
-          aboutText1: '',
-          
-          github: '',
-          linkedin: '',
-          portfolio: '',
-          profilePic: null
-        });
-        setProfilePicPreview(null);
-      } else {
-        throw new Error('Failed to create profile');
-      }
+    try{
+        // fetch post api
     } catch (error) {
       alert('Error creating profile: ' + error.message);
     } finally {
@@ -142,8 +107,8 @@ export default function ProfileForm() {
                       alt="Profile preview" 
                       className="w-full h-full object-cover"
                     />
-                  ) : formData.name ? (
-                    getInitials(formData.name)
+                  ) : formData.fullName ? (
+                    getInitials(formData.fullName)
                   ) : (
                     <div className="text-center">
                       <Upload className="w-8 h-8 mx-auto mb-2 text-gray-600" />
@@ -170,8 +135,8 @@ export default function ProfileForm() {
                 <div className="w-full">
                   <input
                     type="text"
-                    name="username"
-                    value={formData.username}
+                    name="userName"
+                    value={formData.userName}
                     onChange={handleInputChange}
                     placeholder="@username"
                     className="text-2xl font-medium text-[#2A9F8D] bg-transparent border-none outline-none placeholder-gray-500 text-center lg:text-left w-full mb-2"
@@ -179,8 +144,8 @@ export default function ProfileForm() {
                   />
                   <input
                     type="text"
-                    name="name"
-                    value={formData.name}
+                    name="fullName"
+                    value={formData.fullName}
                     onChange={handleInputChange}
                     placeholder="Your Name"
                     className="text-5xl lg:text-6xl font-bold mb-4 text-white bg-transparent border-none outline-none placeholder-gray-500 text-center lg:text-left w-full"
@@ -188,7 +153,6 @@ export default function ProfileForm() {
                   />
                 </div>
               </div>
-              
               <input
                 type="text"
                 name="title"
@@ -198,17 +162,6 @@ export default function ProfileForm() {
                 className="text-xl text-gray-300 mb-6 bg-transparent border-none outline-none placeholder-gray-500 text-center lg:text-left w-full"
                 required
               />
-              
-              <textarea
-                name="bio"
-                value={formData.bio}
-                onChange={handleInputChange}
-                placeholder="Tell us about yourself..."
-                rows={3}
-                className="text-gray-400 text-lg mb-8 max-w-2xl bg-transparent border-none outline-none placeholder-gray-500 text-center lg:text-left w-full resize-none"
-                required
-              />
-              
               {/* Contact Info */}
               <div className="flex flex-col sm:flex-row gap-6 text-gray-300">
                 <div className="flex items-center gap-2">
@@ -260,19 +213,17 @@ export default function ProfileForm() {
                 <h2 className="text-3xl font-bold mb-6">About Me</h2>
                 <div className="space-y-4 text-gray-300 leading-relaxed">
                   <textarea
-                    name="aboutText1"
-                    value={formData.aboutText1}
+                    name="aboutText"
+                    value={formData.aboutText}
                     onChange={handleInputChange}
                     placeholder="Write about your background and experience..."
                     rows={8}
                     className="w-full bg-[#0D0E11] border border-gray-700 rounded-lg px-4 py-3 text-gray-300 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#2A9F8D] focus:border-[#2A9F8D] transition-all duration-300 resize-none"
                     required
                   />
-                  
                 </div>
               </div>
             </div>
-
             <div className="space-y-8">
               <div>
                 <h3 className="text-2xl font-bold mb-4">Connect</h3>
@@ -305,8 +256,6 @@ export default function ProfileForm() {
             </div>
           </div>
         )}
-
-        
       </div>
 
       {/* Submit Button */}
