@@ -54,13 +54,6 @@ userSchema.pre("save", function(next) {
 
 })
 
-// userSchema.methods.validatePassword = function(inputPass) {
-//     return new Promise((resolve) => {
-//         const hashedPassword = createHmac("sha-256", this.salt).update(inputPass).digest("hex");
-//         resolve(hashedPassword === this.password);
-//     });
-// }
-
 userSchema.methods.validatePassword = function(inputPass) {
     const hashedPassword = createHmac("sha-256", this.salt).update(inputPass).digest("hex");
     return (hashedPassword === this.password);
@@ -68,6 +61,6 @@ userSchema.methods.validatePassword = function(inputPass) {
 
 
 // defining the model
-const User = mongoose.model("user", userSchema);
+const User = mongoose.model("users", userSchema);
 
 module.exports = User;
