@@ -27,6 +27,6 @@ app.use(cors({
 
 app.use('/', userRoute);
 app.use('/auth', authRoute);
-app.use('/auth', profileRoute);
+app.use('/', profileRoute);
 
 app.listen(PORT, () => console.log(`Server started at http://localhost:${PORT}`));

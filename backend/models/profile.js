@@ -1,23 +1,8 @@
 const mongoose = require('mongoose');
 
 const profileSchema = new mongoose.Schema({
-    userName: {
-        type: String,
-        unique: true,
-        required: true,
-    },
-
-    fullName: {
-        type: String,
-        required: true,
-    },
 
     title: {
-        type: String,
-        required: true,
-    },
-
-    email: {
         type: String,
         required: true,
     },
@@ -42,10 +27,10 @@ const profileSchema = new mongoose.Schema({
         required: true,
     },
 
-    profilePicURL : {
-        type: String,
-        required: true,
-    },
+    // profilePicURL : {
+    //     type: String,
+    //     required: true,
+    // },
 
     createdBy: {
         type: mongoose.Schema.Types.ObjectId,

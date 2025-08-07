@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 const { randomBytes, createHmac } = require('crypto');
-const { type } = require('os');
-const { resolve } = require('path');
 
 // User Schema
 const userSchema = new mongoose.Schema({

@@ -17,11 +17,11 @@ route.get('/profileSetup', (req, res) => {
 route.post('/profileSetup', async(req, res) => {
     try {
 
-        const { userName, fullName, title, email, aboutText, github, linkedin, portfolio } = req.body;
+        const { title, aboutText, github, linkedin, portfolio } = req.body;
 
-        const user = await User.findOne({ email });
+        const user = await User.findOne({ email }).populate('createdBy', 'userName fullName email');
 
-        if( !userName || !fullName || !title || !email || !aboutText ){
+        if( !title || !aboutText ){
             return res.status(400).json({ message: 'Username, fullname, title, email and about Me are the required fields, please fill them before creating a profile' })
         }
 
