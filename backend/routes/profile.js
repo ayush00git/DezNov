@@ -14,31 +14,5 @@ route.get('/profileSetup', (req, res) => {
     }
 })
 
-route.post('/profileSetup', async(req, res) => {
-    try {
-
-        const { title, aboutText, github, linkedin, portfolio } = req.body;
-
-        const user = await User.findOne({ email }).populate('createdBy', 'userName fullName email');
-
-        if( !title || !aboutText ){
-            return res.status(400).json({ message: 'Username, fullname, title, email and about Me are the required fields, please fill them before creating a profile' })
-        }
-
-        await Profile.create({
-        userName,
-        fullName,
-        title,
-        email,
-        aboutText,
-        github,
-        linkedin,
-        portfolio,
-    })
-    } catch (error) {
-        
-    }
-    
-})
 
 module.exports = route;
