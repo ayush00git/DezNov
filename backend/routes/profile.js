@@ -21,7 +21,7 @@ route.post('/profileSetup', protectedRoute, async(req, res) => {
         // Get user id from req.user (set by protectedRoute)
         const createdBy = req.user._id;
         const { title, aboutText, github, linkedin, portfolio } = req.body;
-
+        console.log("createdBy:", createdBy);
         await Profile.create({
             title,
             aboutText,
