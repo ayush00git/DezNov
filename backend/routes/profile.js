@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const Profile = require("../models/profile");
 const route = express.Router();
 const User = require('../models/user');
+const { protectedRoute } = require("../services/security");
 
 
 // GET request for profileSetup
@@ -15,23 +16,21 @@ route.get('/profileSetup', (req, res) => {
 })
 
 // POST request for profileSetup
-route.post('/profileSetup', async(req, res) => {
+route.post('/profileSetup', protectedRoute, async(req, res) => {
     try {
-
-        const { userName, fullName, email } = req.user;
+        // Get user id from req.user (set by protectedRoute)
+        const createdBy = req.user._id;
         const { title, aboutText, github, linkedin, portfolio } = req.body;
 
         await Profile.create({
-            userName,
-            fullName,
-            email,
-            title, 
+            title,
             aboutText,
             github,
             linkedin,
             portfolio,
-        })
-        return res.status(200).json({ message: 'Profile information get in' });
+            createdBy
+        });
+        return res.status(200).json({ message: 'Profile information saved' });
     } catch (error) {
         return res.status(500).json({ message: `Error: ${error}` })
     }
