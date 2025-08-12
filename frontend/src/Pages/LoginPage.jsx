@@ -69,9 +69,10 @@ export default function DeznovLogin() {
             {/* Header */}
             <div className="text-center mb-8">
               <h1 className="text-2xl font-light text-white mb-2">
-                Join us in{" "}
+                Welcome Back to {" "}
                 <span className="text-[#2A9F8D] font-medium">Deznov</span>
               </h1>
+              <h5 className="text-md text-[rgba(255,255,255,0.5)]">Login to continue</h5>
             </div>
 
             {/* Form - Added proper form element */}
