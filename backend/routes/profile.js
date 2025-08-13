@@ -21,6 +21,12 @@ route.post('/profileSetup', protectedRoute, async(req, res) => {
         // Get user id from req.user (set by protectedRoute)
         const createdBy = req.user._id;
         const { title, aboutText, github, linkedin, portfolio } = req.body;
+
+        const existingProfile = await Profile.findOne({ createdBy });
+        if (existingProfile) {
+            return res.status(409).json({ message: 'Profile already exists for this user.' });
+        }
+        
         console.log("createdBy:", createdBy);
         await Profile.create({
             title,
