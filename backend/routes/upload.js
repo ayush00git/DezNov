@@ -1,7 +1,7 @@
 const express = require("express");
 const route = express.Router();
 const { protectedRoute } = require('../services/security');
-
+const Upload = require("../models/upload");
 // GET request for upload
 route.get('/upload', protectedRoute, (req, res) => {
     try {
@@ -12,7 +12,7 @@ route.get('/upload', protectedRoute, (req, res) => {
 })
 
 // POST request for upload
-route.get('/upload', protectedRoute, async (req, res) => {
+route.post('/upload', protectedRoute, async (req, res) => {
     try {
 
         if( !title || !description || !category ){
@@ -30,7 +30,7 @@ route.get('/upload', protectedRoute, async (req, res) => {
             createdBy: req.user.userId
         })
     } catch (error) {
-        
+        return res.status(500).json({ message: `${error}` });
     }
 })
 
