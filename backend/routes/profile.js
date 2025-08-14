@@ -26,7 +26,7 @@ route.post('/profileSetup', protectedRoute, async(req, res) => {
         if (existingProfile) {
             return res.status(409).json({ message: 'Profile already exists for this user.' });
         }
-        
+
         console.log("createdBy:", createdBy);
         await Profile.create({
             title,
@@ -34,7 +34,7 @@ route.post('/profileSetup', protectedRoute, async(req, res) => {
             github,
             linkedin,
             portfolio,
-            createdBy
+            createdBy: req.user.userId
         });
         return res.status(200).json({ message: 'Profile information saved' });
     } catch (error) {
