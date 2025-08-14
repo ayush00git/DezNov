@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const userRoute = require('./routes/user');
 const authRoute = require('./routes/auth');
+const uploadRouter = require('./routes/upload');
 const profileRoute = require('./routes/profile');
 const mongoose = require('mongoose');
 const cookieParser = require("cookie-parser");
@@ -28,5 +29,6 @@ app.use(cors({
 app.use('/', userRoute);
 app.use('/auth', authRoute);
 app.use('/', profileRoute);
+app.use('/', uploadRouter);
 
 app.listen(PORT, () => console.log(`Server started at http://localhost:${PORT}`));

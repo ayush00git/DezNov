@@ -41,13 +41,6 @@ route.get('/chats', (req, res) => {
     }
 })
 
-// GET request for upload
-route.get('/upload', protectedRoute, (req, res) => {
-    try {
-        return res.status(200).json({ message: 'Upload page loaded successfully!' })
-    } catch (error) {
-        return res.status(500).json({ message: `Server error: ${error}` });
-    }
-})
+
 
 module.exports = route; 
