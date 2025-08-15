@@ -5,6 +5,7 @@ const userRoute = require('./routes/user');
 const authRoute = require('./routes/auth');
 const uploadRouter = require('./routes/upload');
 const profileRoute = require('./routes/profile');
+const updateRouter = require('./routes/update');
 const mongoose = require('mongoose');
 const cookieParser = require("cookie-parser");
 
@@ -30,5 +31,6 @@ app.use('/', userRoute);
 app.use('/auth', authRoute);
 app.use('/', profileRoute);
 app.use('/', uploadRouter);
+app.use('/updates', updateRouter);
 
 app.listen(PORT, () => console.log(`Server started at http://localhost:${PORT}`));
