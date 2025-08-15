@@ -102,7 +102,7 @@ const Navbar = () => {
                 {isNotificationsOpen && (
                   <div className="absolute top-12 right-0 bg-[#0D0E11] border-2 border-gray-200/50 text-white rounded-xl shadow-lg w-100 z-50 overflow-hidden">
                     <div className="p-4 border-b border-[#1A1D23] font-bold text-[#2A9F8D]">
-                      Notifications
+                      Updates
                     </div>
                     <ul className="divide-y divide-[#1A1D23] max-h-64 overflow-y-auto notification-scroll">
                       <li className="p-4 hover:bg-[#1A1D23] transition-colors cursor-pointer">
