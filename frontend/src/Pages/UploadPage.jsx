@@ -246,7 +246,7 @@ export default function UploadPage() {
                   />
                 ))}
               </div>
-              {formData.tags.length < 5 && (
+              {formData.tags.length < 4 && (
                 <button
                   onClick={() => handleTagChange(formData.tags.length, '')}
                   className="mt-4 px-4 py-2 bg-[#2A9F8D] text-white font-medium rounded-lg shadow-md hover:bg-[#23876F] transition-all duration-300"

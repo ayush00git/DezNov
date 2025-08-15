@@ -17,7 +17,7 @@ const uploadSchema = new mongoose.Schema({
         type: [String],
         validate: {
             validator: function(v) {
-                return v.length <= 5;  // max 5 tags are allowed
+                return v.length <= 4;  // max 5 tags are allowed
             },
             message: props => 'Maximum 5 tags are allowed!',
         }

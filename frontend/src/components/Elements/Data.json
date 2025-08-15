@@ -4,6 +4,9 @@
         "title": "Typography Basics",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/sarahchen/typography-ml",
+        "liveUrl": "https://typography-basics-ml.vercel.app",
+        "tags": ["machine-learning", "typography", "python"],
         "likes": 423,
         "user": {
             "name": "Sarah Chen",
@@ -15,6 +18,9 @@
         "title": "Ethereum Smart Contracts",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1559028006-448665bd7c7f?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/mrodriguez/eth-contracts-ui",
+        "liveUrl": "https://eth-smart-contracts.netlify.app",
+        "tags": ["ethereum", "solidity", "web3"],
         "likes": 318,
         "user": {
             "name": "Michael Rodriguez",
@@ -26,6 +32,9 @@
         "title": "Full-Stack Projects",
         "category": "Blockchain & Web3",
         "image": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/alexthompson/fullstack-web3",
+        "liveUrl": "https://fullstack-web3-demo.com",
+        "tags": ["nodejs", "react", "blockchain"],
         "likes": 335,
         "user": {
             "name": "Alex Thompson",
@@ -37,6 +46,9 @@
         "title": "Logo Design Techniques",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/emmajohnson/logo-design-tools",
+        "liveUrl": "https://logo-design-techniques.com",
+        "tags": ["figma", "illustrator", "design"],
         "likes": 455,
         "user": {
             "name": "Emma Johnson",
@@ -48,6 +60,9 @@
         "title": "Generative AI Models",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/davidkim/generative-ai-web",
+        "liveUrl": "https://generative-ai-playground.vercel.app",
+        "tags": ["javascript", "tensorflow", "ai"],
         "likes": 297,
         "user": {
             "name": "David Kim",
@@ -59,6 +74,8 @@
         "title": "Full-Stack Projects",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/jessicawilliams/ml-fullstack",
+        "tags": ["python", "flask", "react"],
         "likes": 69,
         "user": {
             "name": "Jessica Williams",
@@ -70,6 +87,8 @@
         "title": "Typography Basics",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop",
+        "liveUrl": "https://typography-basics-ui.netlify.app",
+        "tags": ["typography", "css", "design"],
         "likes": 435,
         "user": {
             "name": "Ryan Patel",
@@ -81,6 +100,9 @@
         "title": "Typography Basics",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/lisazhang/ai-typography",
+        "liveUrl": "https://ai-typography-generator.com",
+        "tags": ["machine-learning", "nlp", "fonts"],
         "likes": 370,
         "user": {
             "name": "Lisa Zhang",
@@ -92,6 +114,8 @@
         "title": "Typography Basics",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/jameswilson/font-classification",
+        "tags": ["computer-vision", "classification", "fonts"],
         "likes": 128,
         "user": {
             "name": "James Wilson",
@@ -103,6 +127,9 @@
         "title": "Full-Stack Projects",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/sofiamartinez/mern-projects",
+        "liveUrl": "https://mern-fullstack-demo.herokuapp.com",
+        "tags": ["mongodb", "expressjs", "react", "nodejs"],
         "likes": 57,
         "user": {
             "name": "Sofia Martinez",
@@ -114,6 +141,8 @@
         "title": "Decentralized Identity",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=400&h=300&fit=crop",
+        "liveUrl": "https://decentralized-identity-design.com",
+        "tags": ["identity", "blockchain", "design"],
         "likes": 104,
         "user": {
             "name": "Marcus Brown",
@@ -125,6 +154,8 @@
         "title": "Generative AI Models",
         "category": "Blockchain & Web3",
         "image": "https://images.unsplash.com/photo-1644088379091-d574269d422f?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/ninakowalski/ai-blockchain",
+        "tags": ["ai", "blockchain", "smart-contracts"],
         "likes": 62,
         "user": {
             "name": "Nina Kowalski",
@@ -136,6 +167,8 @@
         "title": "UX Case Studies",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1609921212029-bb5a28e60960?w=400&h=300&fit=crop",
+        "liveUrl": "https://ux-case-studies-portfolio.com",
+        "tags": ["ux-research", "user-testing", "prototyping"],
         "likes": 127,
         "user": {
             "name": "Tyler Davis",
@@ -147,6 +180,9 @@
         "title": "Responsive Web Layouts",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1545235617-9465d2a55698?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/rachelgreen/responsive-layouts",
+        "liveUrl": "https://responsive-web-layouts.netlify.app",
+        "tags": ["css-grid", "flexbox", "responsive"],
         "likes": 457,
         "user": {
             "name": "Rachel Green",
@@ -158,6 +194,8 @@
         "title": "Responsive Web Layouts",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/kevinlee/responsive-ui",
+        "tags": ["bootstrap", "css", "responsive"],
         "likes": 76,
         "user": {
             "name": "Kevin Lee",
@@ -169,6 +207,9 @@
         "title": "UX Case Studies",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/amandaclark/ux-web-studies",
+        "liveUrl": "https://ux-case-studies-web.com",
+        "tags": ["user-experience", "web-development", "analytics"],
         "likes": 30,
         "user": {
             "name": "Amanda Clark",
@@ -180,6 +221,8 @@
         "title": "Typography Basics",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=400&h=300&fit=crop",
+        "liveUrl": "https://typography-fundamentals.design",
+        "tags": ["typography", "font-pairing", "hierarchy"],
         "likes": 240,
         "user": {
             "name": "Carlos Mendez",
@@ -191,6 +234,9 @@
         "title": "Ethereum Smart Contracts",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/priyasingh/eth-design-system",
+        "liveUrl": "https://ethereum-design-system.com",
+        "tags": ["ethereum", "design-system", "web3-ui"],
         "likes": 445,
         "user": {
             "name": "Priya Singh",
@@ -202,6 +248,9 @@
         "title": "UX Case Studies",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/jordantaylor/ux-dev-studies",
+        "liveUrl": "https://ux-dev-case-studies.vercel.app",
+        "tags": ["user-research", "frontend", "usability"],
         "likes": 214,
         "user": {
             "name": "Jordan Taylor",
@@ -213,6 +262,9 @@
         "title": "Logo Design Techniques",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/nataliecooper/logo-generator",
+        "liveUrl": "https://ai-logo-generator.app",
+        "tags": ["logo-design", "svg", "canvas-api"],
         "likes": 220,
         "user": {
             "name": "Natalie Cooper",
@@ -224,6 +276,9 @@
         "title": "Logo Design Techniques",
         "category": "Blockchain & Web3",
         "image": "https://images.unsplash.com/photo-1622630998477-20aa696ecb05?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/benjaminmiller/web3-branding",
+        "liveUrl": "https://web3-logo-showcase.com",
+        "tags": ["web3", "branding", "nft"],
         "likes": 453,
         "user": {
             "name": "Benjamin Miller",
@@ -235,6 +290,8 @@
         "title": "Modern UI Trends",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
+        "liveUrl": "https://modern-ui-trends-2024.design",
+        "tags": ["ui-trends", "glassmorphism", "neumorphism"],
         "likes": 140,
         "user": {
             "name": "Olivia Anderson",
@@ -246,6 +303,9 @@
         "title": "Decentralized Identity",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/samueljackson/ai-identity",
+        "liveUrl": "https://ai-decentralized-identity.com",
+        "tags": ["machine-learning", "identity", "privacy"],
         "likes": 387,
         "user": {
             "name": "Samuel Jackson",
@@ -257,6 +317,9 @@
         "title": "Generative AI Models",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/graceliu/ai-design-generator",
+        "liveUrl": "https://ai-design-studio.com",
+        "tags": ["generative-ai", "design-automation", "midjourney"],
         "likes": 380,
         "user": {
             "name": "Grace Liu",
@@ -268,6 +331,9 @@
         "title": "Decentralized Identity",
         "category": "Blockchain & Web3",
         "image": "https://images.unsplash.com/photo-1639322537228-f710d846310a?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/ethanparker/did-protocol",
+        "liveUrl": "https://decentralized-identity-protocol.org",
+        "tags": ["did", "web3", "identity"],
         "likes": 399,
         "user": {
             "name": "Ethan Parker",
@@ -279,6 +345,8 @@
         "title": "Decentralized Identity",
         "category": "Blockchain & Web3",
         "image": "https://images.unsplash.com/photo-1644088379091-d574269d422f?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/mayasharma/blockchain-identity",
+        "tags": ["blockchain", "identity", "smart-contracts"],
         "likes": 157,
         "user": {
             "name": "Maya Sharma",
@@ -290,6 +358,9 @@
         "title": "Responsive Web Layouts",
         "category": "Blockchain & Web3",
         "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/lukethompson/web3-responsive",
+        "liveUrl": "https://web3-responsive-layouts.com",
+        "tags": ["web3", "responsive-design", "dapp"],
         "likes": 500,
         "user": {
             "name": "Luke Thompson",
@@ -301,6 +372,9 @@
         "title": "UX Case Studies",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/isabellarodriguez/ml-ux-studies",
+        "liveUrl": "https://ai-ux-case-studies.netlify.app",
+        "tags": ["user-experience", "ai-ethics", "machine-learning"],
         "likes": 407,
         "user": {
             "name": "Isabella Rodriguez",
@@ -312,6 +386,8 @@
         "title": "Modern UI Trends",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/noahwilliams/ai-ui-trends",
+        "tags": ["ai-interfaces", "neural-networks", "ui-generation"],
         "likes": 134,
         "user": {
             "name": "Noah Williams",
@@ -323,6 +399,8 @@
         "title": "Full-Stack Projects",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1558655146-364adaf25c26?w=400&h=300&fit=crop",
+        "liveUrl": "https://fullstack-design-portfolio.com",
+        "tags": ["design-systems", "component-library", "branding"],
         "likes": 113,
         "user": {
             "name": "Zoe Chen",
@@ -334,6 +412,9 @@
         "title": "Typography Basics",
         "category": "Blockchain & Web3",
         "image": "https://images.unsplash.com/photo-1622630998477-20aa696ecb05?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/adamdavis/web3-typography",
+        "liveUrl": "https://web3-typography-guide.org",
+        "tags": ["web3", "typography", "nft-design"],
         "likes": 291,
         "user": {
             "name": "Adam Davis",
@@ -345,6 +426,9 @@
         "title": "Ethereum Smart Contracts",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/lilywang/ethereum-dapp-starter",
+        "liveUrl": "https://ethereum-smart-contracts-demo.com",
+        "tags": ["solidity", "web3js", "ethereum"],
         "likes": 417,
         "user": {
             "name": "Lily Wang",
@@ -356,6 +440,9 @@
         "title": "Modern UI Trends",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1516110833967-0b5716ca75d5?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/danielgarcia/ai-ui-predictor",
+        "liveUrl": "https://ai-ui-trend-predictor.app",
+        "tags": ["trend-analysis", "computer-vision", "ui-patterns"],
         "likes": 120,
         "user": {
             "name": "Daniel Garcia",
@@ -367,6 +454,8 @@
         "title": "Decentralized Identity",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1587560699334-cc4ff634909a?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/victoriamartinez/ai-identity-verification",
+        "tags": ["biometrics", "face-recognition", "identity"],
         "likes": 119,
         "user": {
             "name": "Victoria Martinez",
@@ -378,6 +467,8 @@
         "title": "Decentralized Identity",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
+        "liveUrl": "https://identity-ux-patterns.design",
+        "tags": ["identity-design", "user-flows", "privacy-ux"],
         "likes": 192,
         "user": {
             "name": "Christopher Lee",
@@ -389,6 +480,9 @@
         "title": "Generative AI Models",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/hannahkim/ai-design-assistant",
+        "liveUrl": "https://ai-ui-generator.design",
+        "tags": ["ai-design", "generative", "ui-automation"],
         "likes": 176,
         "user": {
             "name": "Hannah Kim",
@@ -400,6 +494,9 @@
         "title": "Responsive Web Layouts",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/matthewbrown/ai-responsive-layout",
+        "liveUrl": "https://ai-responsive-generator.com",
+        "tags": ["adaptive-layouts", "ai-optimization", "responsive-ai"],
         "likes": 363,
         "user": {
             "name": "Matthew Brown",
@@ -411,6 +508,9 @@
         "title": "UX Case Studies",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/chloejohnson/ux-portfolio",
+        "liveUrl": "https://chloe-ux-case-studies.com",
+        "tags": ["case-studies", "user-research", "design-process"],
         "likes": 292,
         "user": {
             "name": "Chloe Johnson",
@@ -422,6 +522,9 @@
         "title": "Decentralized Identity",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/jacobwilson/did-web-app",
+        "liveUrl": "https://decentralized-id-demo.vercel.app",
+        "tags": ["decentralized", "identity", "web-components"],
         "likes": 106,
         "user": {
             "name": "Jacob Wilson",
@@ -433,6 +536,9 @@
         "title": "Decentralized Identity",
         "category": "Blockchain & Web3",
         "image": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/ariapatel/web3-identity-platform",
+        "liveUrl": "https://web3-identity-hub.com",
+        "tags": ["web3", "self-sovereign-identity", "did"],
         "likes": 363,
         "user": {
             "name": "Aria Patel",
@@ -444,6 +550,8 @@
         "title": "Decentralized Identity",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=400&h=300&fit=crop",
+        "liveUrl": "https://identity-visual-system.design",
+        "tags": ["visual-identity", "decentralized-branding", "logo-system"],
         "likes": 41,
         "user": {
             "name": "Ryan Cooper",
@@ -455,6 +563,9 @@
         "title": "Decentralized Identity",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1609921212029-bb5a28e60960?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/miathompson/identity-design-system",
+        "liveUrl": "https://decentralized-design-tokens.com",
+        "tags": ["design-tokens", "identity", "brand-system"],
         "likes": 171,
         "user": {
             "name": "Mia Thompson",
@@ -466,6 +577,8 @@
         "title": "Logo Design Techniques",
         "category": "Blockchain & Web3",
         "image": "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/loganmartinez/crypto-logo-generator",
+        "tags": ["crypto-branding", "logo-automation", "nft-logos"],
         "likes": 42,
         "user": {
             "name": "Logan Martinez",
@@ -477,6 +590,8 @@
         "title": "Ethereum Smart Contracts",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=400&h=300&fit=crop",
+        "liveUrl": "https://ethereum-visual-guide.design",
+        "tags": ["ethereum-visualization", "blockchain-design", "infographics"],
         "likes": 374,
         "user": {
             "name": "Ava Davis",
@@ -488,6 +603,9 @@
         "title": "Ethereum Smart Contracts",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/calebrodriguez/eth-ux-patterns",
+        "liveUrl": "https://ethereum-ux-library.com",
+        "tags": ["web3-ux", "smart-contract-ui", "dapp-design"],
         "likes": 474,
         "user": {
             "name": "Caleb Rodriguez",
@@ -499,6 +617,9 @@
         "title": "Modern UI Trends",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1484807352052-23338990c6c6?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/elenakowalski/modern-ui-components",
+        "liveUrl": "https://modern-ui-showcase.dev",
+        "tags": ["ui-components", "modern-css", "animation"],
         "likes": 238,
         "user": {
             "name": "Elena Kowalski",
@@ -510,6 +631,9 @@
         "title": "UX Case Studies",
         "category": "Blockchain & Web3",
         "image": "https://images.unsplash.com/photo-1644088379091-d574269d422f?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/owenclark/web3-ux-research",
+        "liveUrl": "https://web3-ux-case-studies.org",
+        "tags": ["web3-ux", "blockchain-usability", "crypto-onboarding"],
         "likes": 444,
         "user": {
             "name": "Owen Clark",
@@ -521,6 +645,9 @@
         "title": "UX Case Studies",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1545235617-9465d2a55698?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/laylasingh/ux-methodology",
+        "liveUrl": "https://ux-design-process.guide",
+        "tags": ["design-thinking", "user-journey", "wireframing"],
         "likes": 85,
         "user": {
             "name": "Layla Singh",
@@ -532,6 +659,9 @@
         "title": "UX Case Studies",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1559028006-448665bd7c7f?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/gabriellee/enterprise-ux",
+        "liveUrl": "https://enterprise-ux-patterns.com",
+        "tags": ["enterprise-ux", "b2b-design", "dashboard-design"],
         "likes": 474,
         "user": {
             "name": "Gabriel Lee",
@@ -543,6 +673,9 @@
         "title": "Introduction to Neural Networks",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/scarlettwang/neural-net-visualizer",
+        "liveUrl": "https://neural-network-interactive.com",
+        "tags": ["data-visualization", "neural-networks", "educational-design"],
         "likes": 154,
         "user": {
             "name": "Scarlett Wang",
@@ -554,6 +687,8 @@
         "title": "Decentralized Identity",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/isaacmiller/identity-wallet-ui",
+        "tags": ["wallet-design", "identity-management", "mobile-ux"],
         "likes": 39,
         "user": {
             "name": "Isaac Miller",
@@ -565,6 +700,8 @@
         "title": "UX Case Studies",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=400&h=300&fit=crop",
+        "liveUrl": "https://penelope-ux-portfolio.design",
+        "tags": ["portfolio-design", "case-study-presentation", "storytelling"],
         "likes": 176,
         "user": {
             "name": "Penelope Anderson",
@@ -576,6 +713,9 @@
         "title": "Decentralized Identity",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/hunterjackson/identity-api",
+        "liveUrl": "https://identity-management-api.dev",
+        "tags": ["api-development", "identity-verification", "jwt"],
         "likes": 158,
         "user": {
             "name": "Hunter Jackson",
@@ -587,6 +727,9 @@
         "title": "Responsive Web Layouts",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/noraparker/ai-layout-optimizer",
+        "liveUrl": "https://ai-responsive-optimizer.ml",
+        "tags": ["layout-optimization", "ai-css", "responsive-ai"],
         "likes": 98,
         "user": {
             "name": "Nora Parker",
@@ -598,6 +741,9 @@
         "title": "Generative AI Models",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/julianthompson/ai-design-studio",
+        "liveUrl": "https://generative-design-lab.com",
+        "tags": ["generative-design", "ai-art", "procedural-design"],
         "likes": 343,
         "user": {
             "name": "Julian Thompson",
@@ -609,6 +755,8 @@
         "title": "Decentralized Identity",
         "category": "Blockchain & Web3",
         "image": "https://images.unsplash.com/photo-1639322537228-f710d846310a?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/stellachen/did-resolver",
+        "tags": ["did-resolver", "identity-resolution", "web3-identity"],
         "likes": 77,
         "user": {
             "name": "Stella Chen",
@@ -620,6 +768,9 @@
         "title": "Typography Basics",
         "category": "Blockchain & Web3",
         "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/aaronwilliams/web3-type-system",
+        "liveUrl": "https://web3-typography-system.org",
+        "tags": ["type-system", "web3-fonts", "decentralized-fonts"],
         "likes": 349,
         "user": {
             "name": "Aaron Williams",
@@ -631,6 +782,8 @@
         "title": "Typography Basics",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/rubymartinez/font-classification-ai",
+        "tags": ["font-classification", "computer-vision", "typography-ai"],
         "likes": 76,
         "user": {
             "name": "Ruby Martinez",
@@ -642,6 +795,9 @@
         "title": "Typography Basics",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/coltondavis/type-generator-ai",
+        "liveUrl": "https://ai-typography-generator.ml",
+        "tags": ["font-generation", "gans", "typography"],
         "likes": 172,
         "user": {
             "name": "Colton Davis",
@@ -653,6 +809,9 @@
         "title": "Decentralized Identity",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/hazelrodriguez/identity-middleware",
+        "liveUrl": "https://identity-auth-service.dev",
+        "tags": ["authentication", "middleware", "identity-provider"],
         "likes": 212,
         "user": {
             "name": "Hazel Rodriguez",
@@ -664,6 +823,9 @@
         "title": "Modern UI Trends",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/wyattkim/ui-trend-analysis",
+        "liveUrl": "https://ui-trends-2024.design",
+        "tags": ["trend-analysis", "design-research", "ui-patterns"],
         "likes": 362,
         "user": {
             "name": "Wyatt Kim",
@@ -675,6 +837,9 @@
         "title": "Logo Design Techniques",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/violetliu/ai-logo-maker",
+        "liveUrl": "https://intelligent-logo-designer.ai",
+        "tags": ["logo-generation", "design-automation", "brand-identity"],
         "likes": 349,
         "user": {
             "name": "Violet Liu",
@@ -686,6 +851,8 @@
         "title": "Generative AI Models",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/eastonlee/ai-design-patterns",
+        "tags": ["pattern-generation", "ai-graphics", "procedural-art"],
         "likes": 38,
         "user": {
             "name": "Easton Lee",
@@ -697,6 +864,9 @@
         "title": "UX Case Studies",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/skylargreen/mobile-ux-studies",
+        "liveUrl": "https://mobile-ux-research.com",
+        "tags": ["mobile-ux", "app-design", "user-behavior"],
         "likes": 454,
         "user": {
             "name": "Skylar Green",
@@ -708,6 +878,9 @@
         "title": "Introduction to Neural Networks",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/braydencooper/neural-net-tutorial",
+        "liveUrl": "https://neural-networks-101.ml",
+        "tags": ["neural-networks", "deep-learning", "tutorial"],
         "likes": 400,
         "user": {
             "name": "Brayden Cooper",
@@ -719,6 +892,9 @@
         "title": "Responsive Web Layouts",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/aurorapatel/smart-layouts",
+        "liveUrl": "https://ai-responsive-layouts.tech",
+        "tags": ["adaptive-design", "ai-layouts", "machine-learning"],
         "likes": 248,
         "user": {
             "name": "Aurora Patel",
@@ -730,6 +906,9 @@
         "title": "Generative AI Models",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/hudsonbrown/ai-art-generator",
+        "liveUrl": "https://generative-art-studio.ai",
+        "tags": ["ai-art", "stable-diffusion", "midjourney"],
         "likes": 404,
         "user": {
             "name": "Hudson Brown",
@@ -741,6 +920,9 @@
         "title": "Ethereum Smart Contracts",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/novawang/ethereum-dapp-toolkit",
+        "liveUrl": "https://ethereum-dev-toolkit.com",
+        "tags": ["smart-contracts", "web3", "ethereum"],
         "likes": 172,
         "user": {
             "name": "Nova Wang",
@@ -752,6 +934,8 @@
         "title": "Modern UI Trends",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1558655146-364adaf25c26?w=400&h=300&fit=crop",
+        "liveUrl": "https://ui-design-trends.studio",
+        "tags": ["visual-trends", "ui-design", "color-theory"],
         "likes": 124,
         "user": {
             "name": "Grayson Miller",
@@ -763,6 +947,9 @@
         "title": "Ethereum Smart Contracts",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/willowjohnson/defi-contracts",
+        "liveUrl": "https://defi-smart-contracts.org",
+        "tags": ["defi", "smart-contracts", "yield-farming"],
         "likes": 258,
         "user": {
             "name": "Willow Johnson",
@@ -774,6 +961,9 @@
         "title": "Typography Basics",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/asherwilson/type-design-fundamentals",
+        "liveUrl": "https://typography-fundamentals.design",
+        "tags": ["type-design", "font-creation", "typography"],
         "likes": 143,
         "user": {
             "name": "Asher Wilson",
@@ -785,6 +975,9 @@
         "title": "Responsive Web Layouts",
         "category": "Blockchain & Web3",
         "image": "https://images.unsplash.com/photo-1622630998477-20aa696ecb05?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/lunaanderson/web3-responsive-framework",
+        "liveUrl": "https://web3-responsive-kit.dev",
+        "tags": ["web3-framework", "responsive-web3", "dapp-ui"],
         "likes": 227,
         "user": {
             "name": "Luna Anderson",
@@ -796,6 +989,9 @@
         "title": "UX Case Studies",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/felixgarcia/ai-ux-optimization",
+        "liveUrl": "https://ai-driven-ux.research",
+        "tags": ["ai-ux", "user-behavior-analysis", "predictive-ux"],
         "likes": 236,
         "user": {
             "name": "Felix Garcia",
@@ -807,6 +1003,9 @@
         "title": "UX Case Studies",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1516110833967-0b5716ca75d5?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/ivymartinez/conversational-ai-ux",
+        "liveUrl": "https://conversational-ux-patterns.com",
+        "tags": ["conversational-ui", "chatbot-ux", "voice-interfaces"],
         "likes": 420,
         "user": {
             "name": "Ivy Martinez",
@@ -818,6 +1017,9 @@
         "title": "UX Case Studies",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/theothompson/performance-ux-studies",
+        "liveUrl": "https://performance-driven-ux.dev",
+        "tags": ["performance-optimization", "core-web-vitals", "ux-metrics"],
         "likes": 499,
         "user": {
             "name": "Theo Thompson",
@@ -829,6 +1031,8 @@
         "title": "Full-Stack Projects",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1609921212029-bb5a28e60960?w=400&h=300&fit=crop",
+        "liveUrl": "https://fullstack-design-portfolio.studio",
+        "tags": ["design-engineering", "design-systems", "component-driven"],
         "likes": 407,
         "user": {
             "name": "Piper Davis",
@@ -840,6 +1044,9 @@
         "title": "Introduction to Neural Networks",
         "category": "Blockchain & Web3",
         "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/kairodriguez/blockchain-ml",
+        "liveUrl": "https://blockchain-neural-networks.org",
+        "tags": ["blockchain-ai", "decentralized-ml", "federated-learning"],
         "likes": 425,
         "user": {
             "name": "Kai Rodriguez",
@@ -851,6 +1058,9 @@
         "title": "Ethereum Smart Contracts",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/everlyclark/ethereum-testing-suite",
+        "liveUrl": "https://smart-contract-testing.dev",
+        "tags": ["smart-contract-testing", "hardhat", "waffle"],
         "likes": 125,
         "user": {
             "name": "Everly Clark",
@@ -862,6 +1072,9 @@
         "title": "Decentralized Identity",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1587560699334-cc4ff634909a?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/riverlee/ai-identity-verification",
+        "liveUrl": "https://ai-identity-system.tech",
+        "tags": ["identity-verification", "biometric-ai", "facial-recognition"],
         "likes": 337,
         "user": {
             "name": "River Lee",
@@ -873,6 +1086,9 @@
         "title": "Full-Stack Projects",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/sagesingh/ml-fullstack-platform",
+        "liveUrl": "https://ml-platform-demo.ai",
+        "tags": ["mlops", "model-deployment", "tensorflow-serving"],
         "likes": 481,
         "user": {
             "name": "Sage Singh",
@@ -884,6 +1100,9 @@
         "title": "Modern UI Trends",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1484807352052-23338990c6c6?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/remikim/modern-web-components",
+        "liveUrl": "https://modern-ui-components.dev",
+        "tags": ["web-components", "lit-element", "custom-elements"],
         "likes": 290,
         "user": {
             "name": "Remi Kim",
@@ -895,6 +1114,9 @@
         "title": "Decentralized Identity",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/phoenixwang/did-authentication",
+        "liveUrl": "https://decentralized-auth.dev",
+        "tags": ["decentralized-auth", "did-authentication", "self-sovereign-identity"],
         "likes": 170,
         "user": {
             "name": "Phoenix Wang",
@@ -906,6 +1128,9 @@
         "title": "Generative AI Models",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/atlasmiller/generative-model-zoo",
+        "liveUrl": "https://generative-ai-playground.ml",
+        "tags": ["generative-models", "gans", "vaes"],
         "likes": 304,
         "user": {
             "name": "Atlas Miller",
@@ -917,6 +1142,9 @@
         "title": "Ethereum Smart Contracts",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/wrenanderson/ethereum-gas-optimizer",
+        "liveUrl": "https://gas-optimization-tools.eth",
+        "tags": ["gas-optimization", "smart-contracts", "ethereum"],
         "likes": 385,
         "user": {
             "name": "Wren Anderson",
@@ -928,6 +1156,9 @@
         "title": "Generative AI Models",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/orionjackson/ai-ui-generator",
+        "liveUrl": "https://ai-interface-designer.com",
+        "tags": ["ai-ui-generation", "design-automation", "interface-ai"],
         "likes": 273,
         "user": {
             "name": "Orion Jackson",
@@ -939,6 +1170,8 @@
         "title": "Responsive Web Layouts",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
+        "liveUrl": "https://responsive-design-showcase.design",
+        "tags": ["responsive-design", "grid-systems", "layout-design"],
         "likes": 361,
         "user": {
             "name": "Indigo Parker",
@@ -950,6 +1183,9 @@
         "title": "Modern UI Trends",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/onyxthompson/trend-tracking-ui",
+        "liveUrl": "https://ui-trend-tracker.dev",
+        "tags": ["trend-tracking", "ui-analytics", "design-metrics"],
         "likes": 482,
         "user": {
             "name": "Onyx Thompson",
@@ -961,6 +1197,9 @@
         "title": "Full-Stack Projects",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1593720213428-28a5b9e94613?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/echoche/design-system-fullstack",
+        "liveUrl": "https://fullstack-design-system.com",
+        "tags": ["design-systems", "component-library", "design-ops"],
         "likes": 403,
         "user": {
             "name": "Echo Chen",
@@ -972,6 +1211,9 @@
         "title": "Ethereum Smart Contracts",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/stormwilliams/nft-marketplace",
+        "liveUrl": "https://decentralized-nft-market.eth",
+        "tags": ["nft-marketplace", "erc721", "ipfs"],
         "likes": 105,
         "user": {
             "name": "Storm Williams",
@@ -983,6 +1225,8 @@
         "title": "Modern UI Trends",
         "category": "Web Dev",
         "image": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/lyramartinez/ui-trend-predictor",
+        "tags": ["trend-prediction", "design-ai", "ui-forecasting"],
         "likes": 86,
         "user": {
             "name": "Lyra Martinez",
@@ -994,6 +1238,9 @@
         "title": "Logo Design Techniques",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1626785774573-4b799315345d?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/blazedavis/advanced-logo-techniques",
+        "liveUrl": "https://logo-design-masterclass.design",
+        "tags": ["logo-design", "brand-identity", "vector-graphics"],
         "likes": 423,
         "user": {
             "name": "Blaze Davis",
@@ -1005,6 +1252,9 @@
         "title": "Decentralized Identity",
         "category": "UI/UX Design",
         "image": "https://images.unsplash.com/photo-1545235617-9465d2a55698?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/emberrodriguez/identity-ux-patterns",
+        "liveUrl": "https://identity-design-patterns.ux",
+        "tags": ["identity-ux", "privacy-design", "authentication-flows"],
         "likes": 57,
         "user": {
             "name": "Ember Rodriguez",
@@ -1016,9 +1266,12 @@
         "title": "Logo Design Techniques",
         "category": "Graphic Design",
         "image": "https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/sageclark/systematic-logo-design",
+        "liveUrl": "https://logo-system-generator.design",
+        "tags": ["systematic-design", "logo-systems", "brand-architecture"],
         "likes": 476,
         "user": {
-            "name": "Sage Clark",
+                       "name": "Sage Clark",
             "avatar": "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=32&h=32&fit=crop&crop=face"
         }
     },
@@ -1027,6 +1280,9 @@
         "title": "Ethereum Smart Contracts",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/oceanlee/ai-smart-contracts",
+        "liveUrl": "https://ai-powered-contracts.eth",
+        "tags": ["ai-contracts", "smart-contract-optimization", "blockchain-ai"],
         "likes": 69,
         "user": {
             "name": "Ocean Lee",
@@ -1038,6 +1294,8 @@
         "title": "Responsive Web Layouts",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/rivergreen/ai-layout-engine",
+        "tags": ["layout-ai", "responsive-automation", "css-ai"],
         "likes": 28,
         "user": {
             "name": "River Green",
@@ -1049,6 +1307,9 @@
         "title": "Ethereum Smart Contracts",
         "category": "AI-ML",
         "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/skysingh/predictive-contracts",
+        "liveUrl": "https://predictive-smart-contracts.ai",
+        "tags": ["predictive-contracts", "oracle-ai", "smart-contract-ml"],
         "likes": 453,
         "user": {
             "name": "Sky Singh",
@@ -1060,43 +1321,55 @@
         "title": "UX Case Studies",
         "category": "Blockchain & Web3",
         "image": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/valekim/web3-ux-research",
+        "liveUrl": "https://web3-ux-insights.org",
+        "tags": ["web3-ux", "crypto-usability", "defi-experience"],
         "likes": 42,
         "user": {
             "name": "Vale Kim",
             "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face"
         }
     },
-    {
+       {
         "id": 98,
         "title": "UX Case Studies",
-        "category": "Graphic Design",
-        "image": "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=400&h=300&fit=crop",
-        "likes": 408,
+        "category": "Blockchain & Web3",
+        "image": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/valekim/web3-ux-research",
+        "liveUrl": "https://web3-ux-insights.org",
+        "tags": ["web3-ux", "crypto-usability", "defi-experience"],
+        "likes": 42,
         "user": {
-            "name": "Raven Wang",
-            "avatar": "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=32&h=32&fit=crop&crop=face"
+            "name": "Vale Kim",
+            "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face"
         }
     },
-    {
+       {
         "id": 99,
-        "title": "Ethereum Smart Contracts",
-        "category": "Graphic Design",
-        "image": "https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=400&h=300&fit=crop",
-        "likes": 318,
+        "title": "UX Case Studies",
+        "category": "Blockchain & Web3",
+        "image": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/valekim/web3-ux-research",
+        "liveUrl": "https://web3-ux-insights.org",
+        "tags": ["web3-ux", "crypto-usability", "defi-experience"],
+        "likes": 42,
         "user": {
-            "name": "Cruz Miller",
-            "avatar": "https://images.unsplash.com/photo-1494790108755-2616b612b977?w=32&h=32&fit=crop&crop=face"
+            "name": "Vale Kim",
+            "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face"
         }
     },
-    {
+       {
         "id": 100,
         "title": "UX Case Studies",
-        "category": "Web Dev",
-        "image": "https://images.unsplash.com/photo-1484807352052-23338990c6c6?w=400&h=300&fit=crop",
-        "likes": 119,
+        "category": "Blockchain & Web3",
+        "image": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=400&h=300&fit=crop",
+        "githubUrl": "https://github.com/valekim/web3-ux-research",
+        "liveUrl": "https://web3-ux-insights.org",
+        "tags": ["web3-ux", "crypto-usability", "defi-experience"],
+        "likes": 42,
         "user": {
-            "name": "Jade Anderson",
-            "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=32&h=32&fit=crop&crop=face"
+            "name": "Vale Kim",
+            "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop&crop=face"
         }
     }
 ]
