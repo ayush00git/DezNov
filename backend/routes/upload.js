@@ -15,11 +15,12 @@ route.get('/upload', protectedRoute, (req, res) => {
 route.post('/upload', protectedRoute, async (req, res) => {
     try {
 
+        const { title, description, category, tags, githubLink, demoLink } = req.body;
+
         if( !title || !description || !category ){
             return res.status(400).json({ message: 'Title, description and category are required fields' });
         }
         // const createdBy = req.user._id;
-        const { title, description, category, tags, githubLink, demoLink } = req.body;
         await Upload.create({
             title,
             description,
@@ -29,6 +30,7 @@ route.post('/upload', protectedRoute, async (req, res) => {
             demoLink,
             createdBy: req.user.userId
         })
+        return res.status(200).json({ message: 'Uploaded successfully!' })
     } catch (error) {
         return res.status(500).json({ message: `${error}` });
     }
