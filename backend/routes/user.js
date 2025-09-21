@@ -21,16 +21,6 @@ route.get('/explore', (req, res) => {
     }
 })
 
-// GET request for MyProfile page
-route.get('/myProfile', (req, res) => {
-    try {
-        // profile data will come from database
-        return res.status(200).json({ message: `Profile page loaded success!` });
-    } catch (error) {
-        return res.status(500).json({ message: `Server overloaded: ${error}` });message
-    }
-})
-
 // GET requests for chats
 route.get('/chats', (req, res) => {
     try {
