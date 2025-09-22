@@ -8,6 +8,7 @@ import ChatsPage from './Pages/ChatsPage'
 import UploadPage from './Pages/UploadPage'
 import ProjectDetailPage from './Pages/ProjectViewerPage'
 import MakeProfilePage from './Pages/MakeProfilePage'
+import ChangePass from './Pages/ChangePass'
 
 function App() {
   return(
@@ -21,6 +22,7 @@ function App() {
       <Route path="/upload" element={<UploadPage />} />
       <Route path="/project/id" element={<ProjectDetailPage />} />
       <Route path="/profileSetup" element={<MakeProfilePage />} />
+      <Route path="/changePassword" element={<ChangePass />} />
     </Routes>
   )
 }

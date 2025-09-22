@@ -1,74 +1,78 @@
-const express = require('express');
+const express = require("express");
 const User = require("../models/user");
 const jwt = require("jsonwebtoken");
 const nodemailer = require("nodemailer");
-const { validatePassword } = require("../models/user")
+const { validatePassword } = require("../models/user");
 const route = express.Router();
 
 // GET requests for signup page
-route.get('/signup', (req, res) => {
-    try {
-        return res.status(200).json({ 'msg': 'Signup page loaded successfully' });
-    } catch (error) {
-        return res.status(400).json({ 'err': 'Error signup page not loaded' });
-    }
-})
+route.get("/signup", (req, res) => {
+  try {
+    return res.status(200).json({ msg: "Signup page loaded successfully" });
+  } catch (error) {
+    return res.status(400).json({ err: "Error signup page not loaded" });
+  }
+});
 
 // GET requests for login page
-route.get('/login', (req, res) => {
-    try {
-        return res.status(200).json({ 'msg': 'Login page loaded successfully' });
-    } catch (error) {
-        console.log(`Error: ${error}`);
-        return res.status(400).json({ 'err': 'Error login page not loaded' });
-    }
-})
+route.get("/login", (req, res) => {
+  try {
+    return res.status(200).json({ msg: "Login page loaded successfully" });
+  } catch (error) {
+    console.log(`Error: ${error}`);
+    return res.status(400).json({ err: "Error login page not loaded" });
+  }
+});
 
 // POST request for singup route
-route.post('/signup', async(req, res) => {
-    try {
-        const { fullName, userName, email, password } = req.body;
+route.post("/signup", async (req, res) => {
+  try {
+    const { fullName, userName, email, password } = req.body;
 
-        if( !fullName || !userName || !email || !password ){
-            return res.status(400).json({ message: 'All fields are required' });
-        }
+    if (!fullName || !userName || !email || !password) {
+      return res.status(400).json({ message: "All fields are required" });
+    }
 
-        if(!email.endsWith("@nith.ac.in")){
-            return res.status(400).json({ message: 'Enter you NITH email, rest emails are not valid for registration' });
-        }
-
-        const existingUser = await User.findOne({
-            $or: [
-                { email },
-                { userName }
-            ]
+    if (!email.endsWith("@nith.ac.in")) {
+      return res
+        .status(400)
+        .json({
+          message:
+            "Enter you NITH email, rest emails are not valid for registration",
         });
-        if(existingUser){
-            return res.status(409).json({ message: 'User with that email or userName already exists' });
-        }
-        
-        // temp token for email verification
-        const token = jwt.sign(
-            { fullName, userName, email, password },
-            process.env.EMAIL_SECRET,
-            { expiresIn: '5m' }
-        );
-        // creating a transporter
-        const verificationURL = `http://localhost:8000/auth/verify-email?token=${token}`;
-        const transporter = nodemailer.createTransport({
-            service: "gmail",
-            auth: {
-                user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASS,
-            },
-        });
+    }
 
-        // send email
-        await transporter.sendMail({
-            from: `"DezNov Team" <${process.env.EMAIL_USER}>`,
-            to: email,
-            subject: "🚀 Welcome to DezNov - Verify Your Account",
-            html: `
+    const existingUser = await User.findOne({
+      $or: [{ email }, { userName }],
+    });
+    if (existingUser) {
+      return res
+        .status(409)
+        .json({ message: "User with that email or userName already exists" });
+    }
+
+    // temp token for email verification
+    const token = jwt.sign(
+      { fullName, userName, email, password },
+      process.env.EMAIL_SECRET,
+      { expiresIn: "5m" }
+    );
+    // creating a transporter
+    const verificationURL = `http://localhost:8000/auth/verify-email?token=${token}`;
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
+
+    // send email
+    await transporter.sendMail({
+      from: `"DezNov Team" <${process.env.EMAIL_USER}>`,
+      to: email,
+      subject: "🚀 Welcome to DezNov - Verify Your Account",
+      html: `
                 <!DOCTYPE html>
                 <html>
                 <head>
@@ -86,7 +90,9 @@ route.post('/signup', async(req, res) => {
 
                     <!-- Content -->
                     <div style="padding: 40px 30px;">
-                    <h2 style="color: #FFFFFF; font-size: 24px; margin: 0 0 20px 0; font-weight: 600;">Hey ${fullName || userName}! 👋</h2>
+                    <h2 style="color: #FFFFFF; font-size: 24px; margin: 0 0 20px 0; font-weight: 600;">Hey ${
+                      fullName || userName
+                    }! 👋</h2>
                     
                     <p style="color: #B0B3B8; font-size: 16px; line-height: 1.6; margin: 0 0 30px 0;">
                         You're just one click away from joining the DezNov community. Let's get your account verified and ready to go!
@@ -138,17 +144,18 @@ route.post('/signup', async(req, res) => {
                 </body>
                 </html>
             `,
-});
+    });
 
-    return res.status(200).json({ message: 'Email sent for verification, data sent to mongoDB' });
-
-    } catch (error) {
-        return res.status(500).json({ message: 'Error in creating the user' });
-    }
+    return res
+      .status(200)
+      .json({ message: "Email sent for verification, data sent to mongoDB" });
+  } catch (error) {
+    return res.status(500).json({ message: "Error in creating the user" });
+  }
 });
 
 // get route for the verification
-route.get('/verify-email', async (req, res) => {
+route.get("/verify-email", async (req, res) => {
   const { token } = req.query;
   try {
     const payload = jwt.verify(token, process.env.EMAIL_SECRET);
@@ -156,72 +163,108 @@ route.get('/verify-email', async (req, res) => {
     // create the user once it is verified
     const { fullName, userName, email, password } = payload;
     await User.create({
-        fullName,
-        userName,
-        email,
-        password,
-        isVerified: true
+      fullName,
+      userName,
+      email,
+      password,
+      isVerified: true,
     });
 
-    res.status(200).json({ message: 'Email verified successfully! Account created' });
+    res
+      .status(200)
+      .json({ message: "Email verified successfully! Account created" });
   } catch (err) {
-    res.status(400).json({ message: 'Invalid or expired token.' });
+    res.status(400).json({ message: "Invalid or expired token." });
   }
 });
 
 // POST request for login
-route.post('/login', async(req, res) => {
-    try {
-        const { email, password } = req.body;
-        
-        // all fields are required
-        if( !email || !password ){
-            return res.status(400).json({ message: 'All fields are required' });
-        }
+route.post("/login", async (req, res) => {
+  try {
+    const { email, password } = req.body;
 
-        // validation of password
-        const user = await User.findOne({ email });
-        if(!user){
-            return res.status(404).json({ message: 'User does not exist or check your email' });
-        }
-
-        const isMatched = user.validatePassword(password);
-
-        if(!isMatched){
-            return res.status(400).json({ message: 'Password does not matched' });
-        }
-
-        // if password gets matched, we'll be generating a token
-        const token = jwt.sign(
-            { userId: user._id, email: user.email },
-            process.env.JWT_LOGIN_SECRET,
-            { expiresIn: '7d' }
-        );
-
-        // const isProduction = process.env.NODE_ENV === 'production';
-        res.cookie('auth-token', token, {
-            httpOnly: true,
-            secure: false,  // set to isProduction during deployment
-            sameSite: 'lax',
-            maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
-        })
-
-        return res.status(200).json({
-            message: 'Login Successfull!',
-            user: {
-                _id: user._id, 
-                userName: user.userName,
-                fullName: user.fullName,
-                email: user.email,
-                role: user.role
-            }
-        })
-        
-        
-    } catch (error) {
-        console.log(`Login Error: ${error}`)
-        return res.status(500).json({ message: 'Error in logging in the user, please try again' });
+    // all fields are required
+    if (!email || !password) {
+      return res.status(400).json({ message: "All fields are required" });
     }
-})
+
+    // validation of password
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res
+        .status(404)
+        .json({ message: "User does not exist or check your email" });
+    }
+
+    const isMatched = user.validatePassword(password);
+
+    if (!isMatched) {
+      return res.status(400).json({ message: "Password does not matched" });
+    }
+
+    // if password gets matched, we'll be generating a token
+    const token = jwt.sign(
+      { userId: user._id, email: user.email },
+      process.env.JWT_LOGIN_SECRET,
+      { expiresIn: "7d" }
+    );
+
+    // const isProduction = process.env.NODE_ENV === 'production';
+    res.cookie("auth-token", token, {
+      httpOnly: true,
+      secure: false, // set to isProduction during deployment
+      sameSite: "lax",
+      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+    });
+
+    return res.status(200).json({
+      message: "Login Successfull!",
+      user: {
+        _id: user._id,
+        userName: user.userName,
+        fullName: user.fullName,
+        email: user.email,
+        role: user.role,
+      },
+    });
+  } catch (error) {
+    console.log(`Login Error: ${error}`);
+    return res
+      .status(500)
+      .json({ message: "Error in logging in the user, please try again" });
+  }
+});
+
+// PUT request for changing the password
+route.put("/change-password", async (req, res) => {
+  try {
+    const { email, currentPassword, newPassword } = req.body;
+
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(400).json({ messgae: "User is not registered" });
+    }
+
+    if (!user.validatePassword(currentPassword)) {
+      return res
+        .status(400)
+        .json({ message: "Current password is not correct" });
+    }
+
+    user.password = newPassword;
+    await user.save();
+
+    console.log("Password changed successfully");
+    return res
+      .status(200)
+      .json({
+        messgae:
+          "Password changed successfully, you can login to your account now",
+      });
+  } catch (error) {
+    console.log(`Error: ${error}`);
+    return res.status(400).json({ messgae: `Error: ${error}` });
+  }
+});
 
 module.exports = route;
