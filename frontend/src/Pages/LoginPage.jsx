@@ -151,12 +151,16 @@ export default function DeznovLogin() {
                   </button>
                 </div>
               </div>
-
+              {/* Change Password */}
+              <div className="text-[#3DD3BC] cursor-pointer hover:underline absolute right-8 bottom-29"
+              onClick={() => navigate('/changePassword')}>
+                Forget Password?
+              </div>
               {/* Submit button */}
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full bg-[#2A9F8D] hover:bg-[#3DD3BC] disabled:bg-gray-600 disabled:cursor-not-allowed text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#2a9f8d] focus:ring-offset-2 focus:ring-offset-gray-900"
+                className="w-full bg-[#2A9F8D] mt-4 hover:bg-[#3DD3BC] disabled:bg-gray-600 disabled:cursor-not-allowed text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#2a9f8d] focus:ring-offset-2 focus:ring-offset-gray-900"
               >
                 {isLoading ? "Logging in..." : "Log In"}
               </button>
