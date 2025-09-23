@@ -52,15 +52,15 @@ export default function ChangePass() {
     e.preventDefault();
 
     if (!oldPasswordForm.email) {
-      alert("Email is required!");
+      console.log("Email is required!");
       return;
     }
     if (oldPasswordForm.newPassword !== oldPasswordForm.confirmPassword) {
-      alert("New passwords don't match!");
+      console.log("New passwords don't match!");
       return;
     }
     if (oldPasswordForm.newPassword.length < 6) {
-      alert("New password must be at least 6 characters long!");
+      console.log("New password must be at least 6 characters long!");
       return;
     }
 
@@ -83,15 +83,17 @@ export default function ChangePass() {
       const data = await response.json();
 
       if (response.ok) {
-        alert("Password changed successfully!");
-        navigate('/auth/login');
+        console.log("Password changed successfully!");
+        setTimeout(() => {
+          navigate('/auth/login');
+        }, 2000);
       } else {
-        alert(data.message || "Failed to change password");
+        console.log(data.message || "Failed to change password");
       }
 
     } catch (error) {
       console.error("Error during password change:", error);
-      alert("Network error. Please check your connection and try again.");
+      console.log("Network error. Please check your connection and try again.");
     } finally {
       setIsLoading(false);
     }
@@ -117,12 +119,12 @@ export default function ChangePass() {
       if (response.ok) {
         setEmailSent(true);
       } else {
-        alert(data.message || "Failed to send reset email");
+        console.log(data.message || "Failed to send reset email");
       }
 
     } catch (error) {
       console.error("Error during password reset:", error);
-      alert("Network error. Please check your connection and try again.");
+      console.log("Network error. Please check your connection and try again.");
     } finally {
       setIsLoading(false);
     }
