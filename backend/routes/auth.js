@@ -238,14 +238,14 @@ route.post("/login", async (req, res) => {
 // PUT request for changing the password
 route.put("/change-password", async (req, res) => {
   try {
-    const { email, currentPassword, newPassword } = req.body;
+    const { email, oldPassword, newPassword } = req.body;
 
     const user = await User.findOne({ email });
     if (!user) {
-      return res.status(400).json({ messgae: "User is not registered" });
+      return res.status(400).json({ message: "User is not registered" });
     }
 
-    if (!user.validatePassword(currentPassword)) {
+    if (!user.validatePassword(oldPassword)) {
       return res
         .status(400)
         .json({ message: "Current password is not correct" });
@@ -263,7 +263,7 @@ route.put("/change-password", async (req, res) => {
       });
   } catch (error) {
     console.log(`Error: ${error}`);
-    return res.status(400).json({ messgae: `Error: ${error}` });
+    return res.status(400).json({ message: `Error: ${error}` });
   }
 });
 
