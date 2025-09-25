@@ -1,10 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 export default function ChangePass() {
-  const navigate = (path) => {
-    console.log(`Navigating to: ${path}`);
-    // In a real implementation, this would use React Router
-  };
+  // Uncomment below if using React Router
+  const navigate = useNavigate();
   
   const [activeTab, setActiveTab] = useState("oldPassword");
   const [showPasswords, setShowPasswords] = useState({
@@ -26,6 +25,7 @@ export default function ChangePass() {
   
   const [isLoading, setIsLoading] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
+  const [successMsg, setSuccessMsg] = useState("");
 
   const handleOldPasswordInputChange = (e) => {
     setOldPasswordForm({
@@ -48,19 +48,21 @@ export default function ChangePass() {
     });
   };
 
+  const [passwordsMatch, setPasswordsMatch] = useState(true);
+
   const handleOldPasswordSubmit = async (e) => {
     e.preventDefault();
 
     if (!oldPasswordForm.email) {
-      console.log("Email is required!");
+      // Optionally show error UI
       return;
     }
     if (oldPasswordForm.newPassword !== oldPasswordForm.confirmPassword) {
-      console.log("New passwords don't match!");
+      setPasswordsMatch(false);
       return;
     }
     if (oldPasswordForm.newPassword.length < 6) {
-      console.log("New password must be at least 6 characters long!");
+      // Optionally show error UI
       return;
     }
 
@@ -83,20 +85,34 @@ export default function ChangePass() {
       const data = await response.json();
 
       if (response.ok) {
-        console.log("Password changed successfully!");
+        setSuccessMsg("Password changed successfully! Redirecting to login...");
         setTimeout(() => {
+          setSuccessMsg("");
           navigate('/auth/login');
         }, 2000);
       } else {
-        console.log(data.message || "Failed to change password");
+        setSuccessMsg("");
+        // Optionally show error UI
       }
 
     } catch (error) {
-      console.error("Error during password change:", error);
-      console.log("Network error. Please check your connection and try again.");
+      setSuccessMsg("");
     } finally {
       setIsLoading(false);
     }
+  };
+
+  // Live check for password match
+  const handleConfirmPasswordChange = (e) => {
+    const value = e.target.value;
+    setOldPasswordForm((prev) => ({ ...prev, confirmPassword: value }));
+    setPasswordsMatch(value === oldPasswordForm.newPassword);
+  };
+
+  const handleNewPasswordChange = (e) => {
+    const value = e.target.value;
+    setOldPasswordForm((prev) => ({ ...prev, newPassword: value }));
+    setPasswordsMatch(oldPasswordForm.confirmPassword === value);
   };
 
   const handleEmailSubmit = async (e) => {
@@ -211,6 +227,11 @@ export default function ChangePass() {
           {/* Old Password Tab */}
           {activeTab === "oldPassword" && (
             <form onSubmit={handleOldPasswordSubmit} className="space-y-6">
+              {successMsg && (
+                <div className="w-full bg-green-600 text-white text-center py-2 rounded mb-2 animate-fade-in">
+                  {successMsg}
+                </div>
+              )}
               {/* Email field */}
               <div>
                 <label className="block text-white text-sm font-medium mb-2">
@@ -252,6 +273,7 @@ export default function ChangePass() {
                 </div>
               </div>
 
+
               {/* New Password field */}
               <div>
                 <label className="block text-white text-sm font-medium mb-2">
@@ -262,7 +284,7 @@ export default function ChangePass() {
                     type={showPasswords.newPassword ? "text" : "password"}
                     name="newPassword"
                     value={oldPasswordForm.newPassword}
-                    onChange={handleOldPasswordInputChange}
+                    onChange={handleNewPasswordChange}
                     placeholder="Enter your new password"
                     required
                     className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#2a9f8d] focus:border-transparent transition-all pr-12"
@@ -287,7 +309,7 @@ export default function ChangePass() {
                     type={showPasswords.confirmPassword ? "text" : "password"}
                     name="confirmPassword"
                     value={oldPasswordForm.confirmPassword}
-                    onChange={handleOldPasswordInputChange}
+                    onChange={handleConfirmPasswordChange}
                     placeholder="Confirm your new password"
                     required
                     className="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#2a9f8d] focus:border-transparent transition-all pr-12"
@@ -300,6 +322,9 @@ export default function ChangePass() {
                     <PasswordIcon show={showPasswords.confirmPassword} />
                   </button>
                 </div>
+                {!passwordsMatch && (
+                  <div className="text-red-500 text-xs mt-2">New passwords do not match</div>
+                )}
               </div>
 
               {/* Submit button */}
