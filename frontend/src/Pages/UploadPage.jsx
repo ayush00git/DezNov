@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import api from '../services/api';
 import { Upload, ChevronDown, Github, ExternalLink } from 'lucide-react';
 import Navbar from '../components/Elements/Navbar'
 import { useNavigate } from 'react-router-dom';
@@ -22,34 +23,20 @@ export default function UploadPage() {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const response = await fetch('http://localhost:8000/upload', {
-          method: 'GET',
-          credentials: 'include', // Send cookies with request
-        });
-        
-        if (response.ok) {
-          setIsAuthenticated(true);
-        } else {
-          // User is not authenticated, redirect to login
-          // window.location.href = '/auth/login';
-          navigate('/auth/login');
-          return;
-        }
+        await api.get('/upload');
+        setIsAuthenticated(true);
       } catch (error) {
         console.error('Auth check failed:', error);
-        // On error, also redirect to login
-        // window.location.href = '/auth/login';
         navigate('/auth/login');
-        return;
       } finally {
         setIsLoading(false);
       }
     };
 
     checkAuth();
-  }, []);
+  }, [navigate]);
 
-  
+
   const categories = [
     'Web Dev',
     'Graphic Design',
@@ -82,7 +69,7 @@ export default function UploadPage() {
     e.preventDefault();
     e.stopPropagation();
     setDragActive(false);
-    
+
     if (e.dataTransfer.files && e.dataTransfer.files[0]) {
       const file = e.dataTransfer.files[0];
       if (file.type.startsWith('image/')) {
@@ -140,7 +127,7 @@ export default function UploadPage() {
   // Only render the upload page if authenticated
   return (
     <div className="min-h-screen bg-[#0D0E11] text-white mt-32 pb-16">
-        <Navbar />
+      <Navbar />
       <div className="container mx-auto px-4 py-8 max-w-7xl">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
@@ -162,13 +149,11 @@ export default function UploadPage() {
             <div className="flex items-center justify-between mb-12">
               {steps.map((step, index) => (
                 <React.Fragment key={step}>
-                  <div className={`w-5 h-5 rounded-full transition-all duration-300 ${
-                    index < currentStep ? 'bg-gray-400 shadow-lg shadow-gray-400/50' : 'bg-gray-700'
-                  }`} />
-                  {index < steps.length - 1 && (
-                    <div className={`flex-1 h-0.5 mx-4 transition-all duration-300 ${
-                      index < currentStep - 1 ? 'bg-gray-400' : 'bg-gray-700'
+                  <div className={`w-5 h-5 rounded-full transition-all duration-300 ${index < currentStep ? 'bg-gray-400 shadow-lg shadow-gray-400/50' : 'bg-gray-700'
                     }`} />
+                  {index < steps.length - 1 && (
+                    <div className={`flex-1 h-0.5 mx-4 transition-all duration-300 ${index < currentStep - 1 ? 'bg-gray-400' : 'bg-gray-700'
+                      }`} />
                   )}
                 </React.Fragment>
               ))}
@@ -287,7 +272,30 @@ export default function UploadPage() {
               />
             </div>
 
-            
+            <button
+              onClick={async () => {
+                try {
+                  await api.post('/upload', {
+                    title: formData.title,
+                    description: formData.description,
+                    category: formData.category,
+                    tags: formData.tags,
+                    githubLink: formData.githubLink,
+                    demoLink: formData.demoLink
+                  });
+                  alert('Project uploaded successfully!');
+                  navigate('/explore');
+                } catch (error) {
+                  console.error(error);
+                  alert(error.response?.data?.message || 'Upload failed');
+                }
+              }}
+              className="w-full bg-[#2A9F8D] hover:bg-[#23876F] text-white font-bold py-4 rounded-xl transition-all duration-300 shadow-lg shadow-[#2A9F8D]/20 cursor-pointer"
+            >
+              Upload Project
+            </button>
+
+
           </div>
 
           {/* Right Section - Preview */}
@@ -298,7 +306,7 @@ export default function UploadPage() {
                 <span className="bg-white/10 text-white px-4 py-2 rounded-full text-sm font-medium border border-white/20">
                   {formData.category || 'Category'}
                 </span>
-                
+
                 {/* Project Links */}
                 <div className="flex gap-3">
                   {formData.githubLink && (
@@ -325,11 +333,11 @@ export default function UploadPage() {
                   )}
                 </div>
               </div>
-              
+
               <h3 className="text-2xl font-bold mb-4 text-white">
                 {formData.title || 'Project Title'}
               </h3>
-              
+
               <p className="text-gray-300 text-sm leading-relaxed">
                 {formData.description
                   ? `${formData.description.split(' ').slice(0, 50).join(' ')}...`
@@ -344,10 +352,10 @@ export default function UploadPage() {
               onDragOver={handleDrag}
               onDrop={handleDrop}
               className={`relative border-2 border-dashed rounded-3xl p-12 text-center transition-all duration-300 
-                         ${dragActive 
-                           ? 'border-gray-400 bg-[#252830]' 
-                           : 'border-gray-600 bg-[#0D0E11] hover:border-gray-500 hover:bg-[#1a1c22]'
-                         }`}
+                         ${dragActive
+                  ? 'border-gray-400 bg-[#252830]'
+                  : 'border-gray-600 bg-[#0D0E11] hover:border-gray-500 hover:bg-[#1a1c22]'
+                }`}
             >
               <input
                 type="file"
@@ -355,7 +363,7 @@ export default function UploadPage() {
                 onChange={handleFileSelect}
                 className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
               />
-              
+
               {formData.coverImage ? (
                 <div className="space-y-4">
                   <div className="w-16 h-16 mx-auto bg-green-500/20 rounded-full flex items-center justify-center">

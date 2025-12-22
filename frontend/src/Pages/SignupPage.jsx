@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import api from "../services/api";
+import Toast from "../components/Elements/Toast";
 
 export default function DeznovSignup() {
   const [showPassword, setShowPassword] = useState(false);
@@ -19,53 +21,57 @@ export default function DeznovSignup() {
   };
 
   // confirm password logic
+  const [toast, setToast] = useState({ message: '', type: '' });
+  const navigate = useNavigate();
+
+  const showToast = (message, type = 'info') => {
+    setToast({ message, type });
+  };
+
   const handleSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  if (!formData.email.endsWith('@nith.ac.in')) {
-    alert("Please use your NITH email address (@nith.ac.in)");
-    return;
-  }
-  
-  if (formData.password !== formData.confirmPassword) {
-    alert("Passwords do not match. Please try again.");
-    return;
-  }
+    if (!formData.email.endsWith('@nith.ac.in')) {
+      showToast("Please use your NITH email address (@nith.ac.in)", 'error');
+      return;
+    }
 
-  try {
-    const res = await fetch("http://localhost:8000/auth/signup", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
+    if (formData.password !== formData.confirmPassword) {
+      showToast("Passwords do not match. Please try again.", 'error');
+      return;
+    }
+
+    try {
+      const response = await api.post("/auth/signup", {
         userName: formData.userName,
         fullName: formData.fullName,
         email: formData.email,
         password: formData.password,
-      }),
-    });
+      });
 
-    const data = await res.json(); // it captures the json message from backend
+      // Axios throws on 4xx/5xx, so if we reach here, it's 2xx
+      console.log("Signup successful:", response.data.message || "Account created.");
+      showToast(response.data.message || "Signup successful! Please verify your email.", 'success');
+      setTimeout(() => navigate("/auth/login"), 2000);
 
-    if (res.ok) {
-      console.log("Signup successful:", data.message || "Account created.");
-      // Optionally reset form or navigate
-    } else {
-      alert(data.message || "Signup failed. Try again.");
+    } catch (err) {
+      console.error("Server error:", err);
+      // err.response is available in axios errors
+      const errorMsg = err.response?.data?.message || err.response?.data?.err || "Signup failed. Try again.";
+      showToast(errorMsg, 'error');
     }
-  } catch (err) {
-    console.error("Server error:", err);
-    alert("Something went wrong. Please try again later.");
-  }
-};
-
-
-  const navigate = useNavigate();
+  };
   // Generate random stars
+  // Removed star code related logic which was not visible but "Generate random stars" comment was there? 
+  // Ah, the code snippet stops before return.
 
   return (
     <>
+      <Toast
+        message={toast.message}
+        type={toast.type}
+        onClose={() => setToast({ ...toast, message: '' })}
+      />
       <div className="min-h-screen bg-[#0D0E11] relative overflow-hidden flex items-center justify-center">
         {/* Animated stars background */}
         <h1

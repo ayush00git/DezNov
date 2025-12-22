@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import api from '../services/api';
 import { MapPin, Mail, Phone, Globe, Github, Linkedin, Upload, User, Briefcase, FileText } from 'lucide-react';
 
 export default function ProfileForm() {
@@ -48,10 +49,22 @@ export default function ProfileForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    try{
-        // fetch post api
+    try {
+      const response = await api.post('/profileSetup', {
+        title: formData.title,
+        aboutText: formData.aboutText,
+        github: formData.github,
+        linkedin: formData.linkedin,
+        portfolio: formData.portfolio
+      });
+      console.log(response.data);
+      alert('Profile created successfully!');
+      // Navigate to myProfile or home?
+      // navigate('/myProfile'); // user needs to import useNavigate
     } catch (error) {
-      alert('Error creating profile: ' + error.message);
+      console.error(error);
+      const errorMsg = error.response?.data?.message || 'Error creating profile';
+      alert(errorMsg);
     } finally {
       setIsSubmitting(false);
     }
@@ -96,15 +109,15 @@ export default function ProfileForm() {
           <div className="flex flex-col lg:flex-row items-center gap-12">
             {/* Profile Image Upload */}
             <div className="relative group">
-              <div 
+              <div
                 className="w-48 h-48 rounded-full p-1 shadow-2xl cursor-pointer"
                 onClick={() => document.getElementById('profilePic').click()}
               >
                 <div className="w-full h-full rounded-full bg-gradient-to-br from-gray-200 to-gray-400 flex items-center justify-center text-4xl font-bold text-gray-700 overflow-hidden relative">
                   {profilePicPreview ? (
-                    <img 
-                      src={profilePicPreview} 
-                      alt="Profile preview" 
+                    <img
+                      src={profilePicPreview}
+                      alt="Profile preview"
                       className="w-full h-full object-cover"
                     />
                   ) : formData.fullName ? (
@@ -191,11 +204,10 @@ export default function ProfileForm() {
                 key={tab}
                 type="button"
                 onClick={() => setActiveTab(tab)}
-                className={`py-4 px-2 border-b-2 font-medium text-sm uppercase tracking-wide transition-colors duration-200 ${
-                  activeTab === tab
-                    ? 'border-white text-white'
-                    : 'border-transparent text-gray-400 hover:text-gray-200 hover:border-gray-600'
-                }`}
+                className={`py-4 px-2 border-b-2 font-medium text-sm uppercase tracking-wide transition-colors duration-200 ${activeTab === tab
+                  ? 'border-white text-white'
+                  : 'border-transparent text-gray-400 hover:text-gray-200 hover:border-gray-600'
+                  }`}
               >
                 {tab}
               </button>

@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import api from "../services/api";
+import Toast from "../components/Elements/Toast";
 
 export default function DeznovLogin() {
   // Move useNavigate to the top with other hooks
   const navigate = useNavigate();
-  
+
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
@@ -19,35 +21,30 @@ export default function DeznovLogin() {
     });
   };
 
+  const [toast, setToast] = useState({ message: '', type: '' });
+
+  const showToast = (message, type = 'info') => {
+    setToast({ message, type });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
 
     try {
-      const response = await fetch("http://localhost:8000/auth/login", {
-        method: "POST",
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: formData.email,
-          password: formData.password,
-        }),
+      const response = await api.post("/auth/login", {
+        email: formData.email,
+        password: formData.password,
       });
 
-      const data = await response.json();
-
-      if (response.ok) {
-        console.log("Login successful");
-        navigate('/explore');
-      } else {
-        alert(data.message || "Login failed");
+      if (response.status === 200) {
+        showToast("Login successful! Redirecting...", 'success');
+        setTimeout(() => navigate('/explore'), 1500);
       }
-
     } catch (error) {
       console.error("Error during login:", error);
-      alert("Network error. Please check your connection and try again.");
+      const errorMsg = error.response?.data?.message || "Login failed";
+      showToast(errorMsg, 'error');
     } finally {
       setIsLoading(false);
     }
@@ -55,6 +52,11 @@ export default function DeznovLogin() {
 
   return (
     <>
+      <Toast
+        message={toast.message}
+        type={toast.type}
+        onClose={() => setToast({ ...toast, message: '' })}
+      />
       <div className="min-h-screen bg-[#0D0E11] relative overflow-hidden flex items-center justify-center">
         <h1
           className="text-white text-3xl absolute top-4 left-4 font-extrabold cursor-pointer"
@@ -62,7 +64,7 @@ export default function DeznovLogin() {
         >
           DezNov
         </h1>
-        
+
         {/* Main form container */}
         <div className="relative z-10 w-full max-w-md mx-4">
           <div className="bg-opacity-90 backdrop-blur-sm rounded-2xl border-2 border-gray-700 p-8 shadow-2xl">
@@ -153,7 +155,7 @@ export default function DeznovLogin() {
               </div>
               {/* Change Password */}
               <div className="text-[#3DD3BC] cursor-pointer hover:underline absolute right-8 bottom-29"
-              onClick={() => navigate('/changePassword')}>
+                onClick={() => navigate('/changePassword')}>
                 Forget Password?
               </div>
               {/* Submit button */}
