@@ -13,8 +13,8 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 
 mongoose.connect(process.env.MONGO_URI)
-.then(() => console.log(`MongoDB Connected! All set to go`))
-.catch((err) => console.log(`Mongo Error: ${err}`))
+    .then(() => console.log(`MongoDB Connected! All set to go`))
+    .catch((err) => console.log(`Mongo Error: ${err}`))
 
 app.use(cookieParser());
 app.use(express.json());
@@ -27,10 +27,10 @@ app.use(cors({
     credentials: true,
 }));
 
-app.use('/', userRoute);
-app.use('/auth', authRoute);
-app.use('/', profileRoute);
-app.use('/', uploadRouter);
-app.use('/updates', updateRouter);
+app.use('/api/user', userRoute);
+app.use('/api/auth', authRoute);
+app.use('/api/profile', profileRoute);
+app.use('/api/upload', uploadRouter);
+app.use('/api/updates', updateRouter);
 
 app.listen(PORT, () => console.log(`Server started at http://localhost:${PORT}`));

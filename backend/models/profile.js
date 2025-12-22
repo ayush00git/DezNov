@@ -27,10 +27,10 @@ const profileSchema = new mongoose.Schema({
         required: true,
     },
 
-    // profilePicURL : {
-    //     type: String,
-    //     required: true,
-    // },
+    profilePicURL : {
+        type: String,
+        required: true,
+    },
 
     createdBy: {
         type: mongoose.Schema.Types.ObjectId,
