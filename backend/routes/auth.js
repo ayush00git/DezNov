@@ -4,6 +4,9 @@ const jwt = require("jsonwebtoken");
 const nodemailer = require("nodemailer");
 const { validatePassword } = require("../models/user");
 const route = express.Router();
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 // GET requests for signup page
 route.get("/signup", (req, res) => {

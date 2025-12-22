@@ -35,5 +35,14 @@ route.post('/upload', protectedRoute, async (req, res) => {
         return res.status(500).json({ message: `${error}` });
     }
 })
+// GET request for all uploads (Feed)
+route.get('/allValues', async (req, res) => {
+    try {
+        const uploads = await Upload.find().populate('createdBy', 'fullName userName');
+        return res.status(200).json({ uploads });
+    } catch (error) {
+        return res.status(500).json({ message: `Error: ${error}` });
+    }
+})
 
 module.exports = route;
