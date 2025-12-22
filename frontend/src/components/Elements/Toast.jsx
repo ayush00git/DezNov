@@ -26,7 +26,7 @@ export default function Toast({ message, type = 'info', onClose, duration = 5000
     };
 
     return (
-        <div className={`fixed top-6 right-6 z-50 flex items-center gap-3 px-4 py-3 rounded-xl border backdrop-blur-md shadow-2xl animate-in slide-in-from-top-2 fade-in duration-300 ${styles[type] || styles.info}`}>
+        <div className={`fixed top-6 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 px-4 py-3 rounded-xl border backdrop-blur-md shadow-2xl animate-in slide-in-from-top-2 fade-in duration-300 ${styles[type] || styles.info}`}>
             {icons[type]}
             <p className="text-sm font-medium pr-2">{message}</p>
             <button

@@ -18,7 +18,7 @@ function MainPage() {
                 // Wait, I can't add import in this chunk if it's not the top of file.
                 // I will add import in a separate step.
                 const { default: api } = await import('../services/api');
-                const response = await api.get('/allValues');
+                const response = await api.get('/upload/allValues');
                 if (response.data.uploads) {
                     const mapped = response.data.uploads.map(u => ({
                         id: u._id,

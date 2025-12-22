@@ -14,7 +14,7 @@ export default function ModernProfilePage() {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await api.get('/myProfile');
+        const response = await api.get('/profile/myProfile');
         setProfileData(response.data);
       } catch (error) {
         console.error("Error fetching profile", error);

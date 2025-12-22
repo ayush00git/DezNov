@@ -23,7 +23,7 @@ export default function UploadPage() {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        await api.get('/upload');
+        await api.get('/upload/upload');
         setIsAuthenticated(true);
       } catch (error) {
         console.error('Auth check failed:', error);
@@ -275,7 +275,7 @@ export default function UploadPage() {
             <button
               onClick={async () => {
                 try {
-                  await api.post('/upload', {
+                  await api.post('/upload/upload', {
                     title: formData.title,
                     description: formData.description,
                     category: formData.category,

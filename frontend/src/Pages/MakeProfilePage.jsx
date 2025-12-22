@@ -50,12 +50,14 @@ export default function ProfileForm() {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      const response = await api.post('/profileSetup', {
+      const response = await api.post('/profile/profileSetup', {
         title: formData.title,
         aboutText: formData.aboutText,
         github: formData.github,
         linkedin: formData.linkedin,
-        portfolio: formData.portfolio
+        portfolio: formData.portfolio,
+        // Send a default avatar if no image (mocking upload)
+        profilePicURL: `https://ui-avatars.com/api/?name=${formData.fullName}&background=random`
       });
       console.log(response.data);
       alert('Profile created successfully!');

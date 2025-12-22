@@ -1,38 +1,44 @@
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import api from '../services/api';
+import Toast from '../components/Elements/Toast';
 
 export default function ChangePass() {
-  // Uncomment below if using React Router
   const navigate = useNavigate();
-  
+
   const [activeTab, setActiveTab] = useState("oldPassword");
   const [showPasswords, setShowPasswords] = useState({
     oldPassword: false,
     newPassword: false,
     confirmPassword: false
   });
-  
+
   const [oldPasswordForm, setOldPasswordForm] = useState({
     email: "",
     oldPassword: "",
     newPassword: "",
     confirmPassword: ""
   });
-  
+
   const [emailForm, setEmailForm] = useState({
     email: ""
   });
-  
+
   const [isLoading, setIsLoading] = useState(false);
   const [emailSent, setEmailSent] = useState(false);
   const [successMsg, setSuccessMsg] = useState("");
+  const [toast, setToast] = useState({ message: '', type: '' });
+
+  const showToast = (message, type = 'info') => {
+    setToast({ message, type });
+  };
 
   const handleOldPasswordInputChange = (e) => {
     setOldPasswordForm({
       ...oldPasswordForm,
       [e.target.name]: e.target.value,
     });
-  } 
+  }
 
   const handleEmailInputChange = (e) => {
     setEmailForm({
@@ -50,53 +56,43 @@ export default function ChangePass() {
 
   const [passwordsMatch, setPasswordsMatch] = useState(true);
 
+  // Import api service at the top (added in previous step or here if replacing top)
+
   const handleOldPasswordSubmit = async (e) => {
     e.preventDefault();
 
     if (!oldPasswordForm.email) {
-      // Optionally show error UI
+      showToast("Email is required", "error");
       return;
     }
     if (oldPasswordForm.newPassword !== oldPasswordForm.confirmPassword) {
       setPasswordsMatch(false);
+      showToast("Passwords do not match", "error");
       return;
     }
     if (oldPasswordForm.newPassword.length < 6) {
-      // Optionally show error UI
+      showToast("Password must be at least 6 characters", "error");
       return;
     }
 
     setIsLoading(true);
 
     try {
-      const response = await fetch("http://localhost:8000/auth/change-password", {
-        method: "PUT",
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: oldPasswordForm.email,
-          oldPassword: oldPasswordForm.oldPassword,
-          newPassword: oldPasswordForm.newPassword,
-        }),
+      const response = await api.post("/auth/change-password/oldpass", {
+        email: oldPasswordForm.email,
+        oldPassword: oldPasswordForm.oldPassword,
+        newPassword: oldPasswordForm.newPassword,
       });
 
-      const data = await response.json();
-
-      if (response.ok) {
-        setSuccessMsg("Password changed successfully! Redirecting to login...");
+      if (response.status === 200) {
+        showToast("Password changed successfully! Redirecting...", "success");
         setTimeout(() => {
-          setSuccessMsg("");
           navigate('/auth/login');
         }, 2000);
-      } else {
-        setSuccessMsg("");
-        // Optionally show error UI
       }
-
     } catch (error) {
-      setSuccessMsg("");
+      const msg = error.response?.data?.message || "Failed to change password";
+      showToast(msg, "error");
     } finally {
       setIsLoading(false);
     }
@@ -120,27 +116,19 @@ export default function ChangePass() {
     setIsLoading(true);
 
     try {
-      const response = await fetch("http://localhost:8000/auth/forgot-password", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: emailForm.email,
-        }),
+      const response = await api.post("/auth/change-password/email", {
+        email: emailForm.email,
       });
 
-      const data = await response.json();
-
-      if (response.ok) {
+      if (response.status === 200) {
         setEmailSent(true);
-      } else {
-        console.log(data.message || "Failed to send reset email");
       }
-
     } catch (error) {
       console.error("Error during password reset:", error);
-      console.log("Network error. Please check your connection and try again.");
+      const msg = error.response?.status === 404
+        ? "Email reset service unavailable (Backend route missing)"
+        : (error.response?.data?.message || "Failed to send reset email");
+      showToast(msg, "error");
     } finally {
       setIsLoading(false);
     }
@@ -181,13 +169,18 @@ export default function ChangePass() {
 
   return (
     <div className="min-h-screen bg-[#0D0E11] relative overflow-hidden flex items-center justify-center">
+      <Toast
+        message={toast.message}
+        type={toast.type}
+        onClose={() => setToast({ ...toast, message: '' })}
+      />
       <h1
         className="text-white text-3xl absolute top-4 left-4 font-extrabold cursor-pointer"
         onClick={() => navigate("/")}
       >
         DezNov
       </h1>
-      
+
       {/* Main form container */}
       <div className="relative z-10 w-full max-w-md mx-4">
         <div className="bg-opacity-90 backdrop-blur-sm rounded-2xl border-2 border-gray-700 p-8 shadow-2xl">
@@ -204,21 +197,19 @@ export default function ChangePass() {
           <div className="flex mb-6 bg-gray-800 rounded-lg p-1">
             <button
               onClick={() => setActiveTab("oldPassword")}
-              className={`flex-1 py-2 px-4 text-sm font-medium rounded-md transition-all ${
-                activeTab === "oldPassword"
-                  ? "bg-[#2A9F8D] text-white"
-                  : "text-gray-400 hover:text-white"
-              }`}
+              className={`flex-1 py-2 px-4 text-sm font-medium rounded-md transition-all ${activeTab === "oldPassword"
+                ? "bg-[#2A9F8D] text-white"
+                : "text-gray-400 hover:text-white"
+                }`}
             >
               With Old Password
             </button>
             <button
               onClick={() => setActiveTab("email")}
-              className={`flex-1 py-2 px-4 text-sm font-medium rounded-md transition-all ${
-                activeTab === "email"
-                  ? "bg-[#2A9F8D] text-white"
-                  : "text-gray-400 hover:text-white"
-              }`}
+              className={`flex-1 py-2 px-4 text-sm font-medium rounded-md transition-all ${activeTab === "email"
+                ? "bg-[#2A9F8D] text-white"
+                : "text-gray-400 hover:text-white"
+                }`}
             >
               Via Email
             </button>
@@ -331,7 +322,7 @@ export default function ChangePass() {
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full bg-[#2A9F8D] hover:bg-[#3DD3BC] disabled:bg-gray-600 disabled:cursor-not-allowed text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#2a9f8d] focus:ring-offset-2 focus:ring-offset-gray-900"
+                className="w-full bg-[#2A9F8D] hover:bg-[#3DD3BC] cursor-pointer disabled:bg-gray-600 disabled:cursor-not-allowed text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#2a9f8d] focus:ring-offset-2 focus:ring-offset-gray-900"
               >
                 {isLoading ? "Changing Password..." : "Change Password"}
               </button>
@@ -346,7 +337,7 @@ export default function ChangePass() {
                   <div className="text-center text-gray-400 text-sm mb-4">
                     We'll send you a password reset link to your email address
                   </div>
-                  
+
                   {/* Email field */}
                   <div>
                     <label className="block text-white text-sm font-medium mb-2">

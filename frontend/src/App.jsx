@@ -9,9 +9,10 @@ import UploadPage from './Pages/UploadPage'
 import ProjectDetailPage from './Pages/ProjectViewerPage'
 import MakeProfilePage from './Pages/MakeProfilePage'
 import ChangePass from './Pages/ChangePass'
+import VerifyEmail from './Pages/VerifyEmail'
 
 function App() {
-  return(
+  return (
     <Routes>
       <Route path="/" element={<HeroPage />} />
       <Route path="/explore" element={<MainPage />} />
@@ -23,6 +24,7 @@ function App() {
       <Route path="/project/id" element={<ProjectDetailPage />} />
       <Route path="/profileSetup" element={<MakeProfilePage />} />
       <Route path="/changePassword" element={<ChangePass />} />
+      <Route path="/auth/verify-email" element={<VerifyEmail />} />
     </Routes>
   )
 }
