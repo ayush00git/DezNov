@@ -2,16 +2,6 @@ const mongoose = require('mongoose');
 
 const profileSchema = new mongoose.Schema({
 
-    title: {
-        type: String,
-        required: true,
-    },
-
-    aboutText: {
-        type: String,
-        required: true,
-    },
-
     github: {
         type: String,
         required: true,

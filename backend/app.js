@@ -1,7 +1,6 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-const userRoute = require('./routes/user');
 const authRoute = require('./routes/auth');
 const uploadRouter = require('./routes/upload');
 const profileRoute = require('./routes/profile');
@@ -27,7 +26,6 @@ app.use(cors({
     credentials: true,
 }));
 
-app.use('/api/user', userRoute);
 app.use('/api/auth', authRoute);
 app.use('/api/profile', profileRoute);
 app.use('/api/upload', uploadRouter);

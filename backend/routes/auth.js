@@ -1,9 +1,12 @@
 const express = require("express");
-const User = require("../models/user");
+const User = require("../models/auth");
 const jwt = require("jsonwebtoken");
 const route = express.Router();
 const dotenv = require("dotenv");
 const { sendEmail } = require("../services/sendEmail");
+const { changePass } = require("../services/password-Email");
+const { generateSalt, hashPass } = require("../services/hash");
+
 dotenv.config();
 
 route.get("/signup", (req, res) => {
@@ -164,5 +167,55 @@ route.post("/change-password/oldpass", async (req, res) => {
     return res.status(400).json({ message: `Error: ${error}` });
   }
 });
+
+route.post('/change-password/email', async(req, res) => {
+  const { email } = req.body;
+  try {
+    const registeredUser = await User.findOne({ email });
+    if( !registeredUser ) {
+      return res.status(400).json({ message: "Your email is not registered to any account" });
+    }
+    const payload = {
+      email: registeredUser.email,
+      fullName: registeredUser.fullName,
+    };
+    const token = jwt.sign(payload, process.env.JWT_LOGIN_SECRET, {expiresIn: "10m"});
+    changePass(token);
+    return res.status(200).json({ message: `Check your email for the reset password link` });
+  } catch(error) {
+    console.log(`${error}`);
+    return res.status(500).json({ message: `Internal server error` });
+  }
+})
+
+route.post('/change-password', async(req, res) => {
+  const { token } = req.query;
+  const { newPassword } = req.body;
+  if(!token) {
+    return res.status(400).json({ message: `Invalid token` });
+  }
+  if(!newPassword) {
+    return res.status(400).json({ message: `All the fields are required` });
+  }
+
+  const decoded = jwt.verify(token, process.env.JWT_LOGIN_SECRET);
+
+  try {
+    const currentUser = await User.findOne({ email: decoded.email });
+    if(!currentUser) {
+      return res.status(400).json({ message: "Invalid token" });
+    }
+    console.log(`${newPassword}`);
+    const salt = generateSalt();
+    const newHashPass = hashPass(newPassword, salt);
+    currentUser.salt = salt;
+    currentUser.password = newHashPass;  
+    await currentUser.save();
+    return res.status(200).json({ message: "Password changed successfully! You can now login to your account" });
+  } catch(error) {
+    console.log(`${error}`);
+    return res.status(500).json({ message: `Internal server error` });
+  }
+})
 
 module.exports = route;

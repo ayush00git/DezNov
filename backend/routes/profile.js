@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const Profile = require("../models/profile");
 const route = express.Router();
-const User = require('../models/user');
+const User = require('../models/auth');
 const { protectedRoute } = require("../services/security");
 
 
