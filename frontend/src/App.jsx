@@ -10,6 +10,7 @@ import ProjectDetailPage from './Pages/ProjectViewerPage'
 import MakeProfilePage from './Pages/MakeProfilePage'
 import ChangePass from './Pages/ChangePass'
 import VerifyEmail from './Pages/VerifyEmail'
+import ResetPassword from './Pages/ResetPassword'
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <Route path="/profileSetup" element={<MakeProfilePage />} />
       <Route path="/changePassword" element={<ChangePass />} />
       <Route path="/auth/verify-email" element={<VerifyEmail />} />
+      <Route path="/auth/reset-password" element={<ResetPassword />} />
     </Routes>
   )
 }

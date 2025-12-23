@@ -375,18 +375,7 @@ export default function ChangePass() {
                   <p className="text-gray-400 text-sm">
                     We've sent a password reset link to <span className="text-[#2A9F8D]">{emailForm.email}</span>
                   </p>
-                  <p className="text-gray-400 text-sm">
-                    Please check your email and follow the instructions to reset your password.
-                  </p>
-                  <button
-                    onClick={() => {
-                      setEmailSent(false);
-                      setEmailForm({ email: "" });
-                    }}
-                    className="text-[#2A9F8D] hover:text-[#3DD3BC] text-sm font-medium transition-colors cursor-pointer"
-                  >
-                    Send Another Email
-                  </button>
+
                 </div>
               )}
             </div>
