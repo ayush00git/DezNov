@@ -5,7 +5,9 @@ const generateSalt = () => {
 }
 
 const hashPass = (pass, salt) => {
-    return createHmac("sha-256", salt).digest("hex");
+    const hash = createHmac("sha-256", salt);
+    hash.update(pass);
+    return hash.digest("hex");
 }
 
 module.exports = {

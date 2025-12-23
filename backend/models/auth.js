@@ -40,24 +40,6 @@ const userSchema = new mongoose.Schema({
 
 }, {timestamps: true})
 
-userSchema.pre("save", function(next) {
-    if(!this.isModified("password")) return next();
-
-    const salt = randomBytes(16).toString("hex");
-    const hashedPassword =  createHmac("sha-256", salt).update(this.password).digest("hex");
-    
-    this.password = hashedPassword;
-    this.salt = salt;
-    next();
-
-})
-
-userSchema.methods.validatePassword = function(inputPass) {
-    const hashedPassword = createHmac("sha-256", this.salt).update(inputPass).digest("hex");
-    return (hashedPassword === this.password);
-}
-
-
 // defining the model
 const User = mongoose.model("users", userSchema);
 

@@ -16,7 +16,7 @@ const changePass = async(token) => {
             pass: process.env.EMAIL_PASS,
         },
     });
-    const resetUrl = `http:localhost:8000/api/auth/change-password?token=${token}`
+    const resetUrl = `http://localhost:5173/auth/reset-password?token=${token}`
     try {
         await transporter.sendMail({
             from: process.env.EMAIL_USER,
@@ -41,7 +41,7 @@ const changePass = async(token) => {
                     <!-- Content -->
                     <div style="padding: 40px 30px;">
                     <h2 style="color: #FFFFFF; font-size: 24px; margin: 0 0 20px 0; font-weight: 600;">Hey ${decoded.fullName
-            }! 👋</h2>
+                }! 👋</h2>
                     
                     <p style="color: #B0B3B8; font-size: 16px; line-height: 1.6; margin: 0 0 30px 0;">
                        We just got a request for changing the password of your DezNov account, click the link below to reset your password
@@ -100,6 +100,6 @@ const changePass = async(token) => {
     }
 }
 
-module.exports = { 
+module.exports = {
     changePass
 }

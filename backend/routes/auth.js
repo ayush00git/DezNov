@@ -42,10 +42,13 @@ route.post("/signup", async (req, res) => {
         .json({ message: "User with that email or userName already exists" });
     }
 
+    const salt = generateSalt();
+    const newHashPass = hashPass(password, salt);
+
     const token = jwt.sign(
-      { fullName, userName, email, password },
+      { fullName, userName, email, newHashPass, salt },
       process.env.JWT_LOGIN_SECRET,
-      { expiresIn: "5m" }
+      { expiresIn: "10m" }
     );
     sendEmail(token);
     return res
@@ -64,12 +67,13 @@ route.get("/verify-email", async (req, res) => {
     const payload = jwt.verify(token, process.env.JWT_LOGIN_SECRET);
 
     // create the user once it is verified
-    const { fullName, userName, email, password } = payload;
+    const { fullName, userName, email, newHashPass, salt } = payload;
     await User.create({
       fullName,
       userName,
       email,
-      password,
+      password: newHashPass,
+      salt,
       isVerified: true,
     });
     res
@@ -99,10 +103,9 @@ route.post("/login", async (req, res) => {
         .json({ message: "User does not exist or check your email" });
     }
 
-    const isMatched = user.validatePassword(password);
-
-    if (!isMatched) {
-      return res.status(400).json({ message: "Password does not matched" });
+    const inputHash = hashPass(password, user?.salt);
+    if( inputHash !== user.password ) {
+      return res.status(400).json({ message: `Password is incorrect` });
     }
 
     // if password gets matched, we'll be generating a token
@@ -146,13 +149,15 @@ route.post("/change-password/oldpass", async (req, res) => {
       return res.status(400).json({ message: "User is not registered" });
     }
 
-    if (!user.validatePassword(oldPassword)) {
-      return res
-        .status(400)
-        .json({ message: "Current password is not correct" });
+    const oldHash = hashPass(oldPassword, user.salt);
+    if( oldHash !== user.password ) {
+      return res.status(400).json({ message: `Your old password isn't correct` });
     }
-
-    user.password = newPassword;
+    
+    const salt = generateSalt();
+    const newHashPass = hashPass(newPassword, salt);
+    user.salt = salt;
+    user.password = newHashPass,
     await user.save();
 
     console.log("Password changed successfully");
@@ -205,7 +210,6 @@ route.post('/change-password', async(req, res) => {
     if(!currentUser) {
       return res.status(400).json({ message: "Invalid token" });
     }
-    console.log(`${newPassword}`);
     const salt = generateSalt();
     const newHashPass = hashPass(newPassword, salt);
     currentUser.salt = salt;
