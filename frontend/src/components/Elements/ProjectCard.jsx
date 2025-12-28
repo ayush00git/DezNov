@@ -30,7 +30,7 @@ const ProjectCard = ({ data }) => {
 
   return (
     <div className="flex items-center justify-center p-4"
-         onClick={() => navigate('/project/id')}>
+      onClick={() => navigate('/project/id')}>
       <div
         className={`w-100 rounded-2xl overflow-hidden relative cursor-pointer transition-all duration-300
         bg-[#121212] border border-[#2A2A2A] hover:border-[#3a3a3a]
@@ -46,7 +46,7 @@ const ProjectCard = ({ data }) => {
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-          
+
           {/* GitHub and Live Demo Links */}
           <div className="absolute top-4 left-4 flex flex-col space-y-2">
             {data.githubUrl && (
@@ -90,9 +90,8 @@ const ProjectCard = ({ data }) => {
                     e.stopPropagation();
                     setIsLiked(!isLiked);
                   }}
-                  className={`p-2 rounded-full transition-all ${
-                    isLiked ? 'text-red-500' : 'text-gray-400 hover:text-white'
-                  } hover:bg-white/5`}
+                  className={`p-2 rounded-full transition-all ${isLiked ? 'text-red-500' : 'text-gray-400 hover:text-white'
+                    } hover:bg-white/5`}
                 >
                   <Heart size={18} className={isLiked ? 'fill-current' : ''} />
                   {data.likes}
@@ -115,7 +114,7 @@ const ProjectCard = ({ data }) => {
             {/* Tags */}
             {data.tags && data.tags.length > 0 && (
               <div className="flex flex-wrap gap-1.5 pt-3">
-                {data.tags.slice(0, 5).map((tag, index) => (
+                {data.tags.filter(tag => tag && tag.trim() !== '').slice(0, 5).map((tag, index) => (
                   <span
                     key={index}
                     onClick={(e) => e.stopPropagation()}
@@ -131,13 +130,12 @@ const ProjectCard = ({ data }) => {
 
         {/* Share Button */}
         <div
-          className={`absolute top-4 right-4 transition-all duration-300 ease-out ${
-            isHovered
+          className={`absolute top-4 right-4 transition-all duration-300 ease-out ${isHovered
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 -translate-y-2 pointer-events-none'
-          }`}
+            }`}
         >
-          <button 
+          <button
             onClick={handleShare}
             className="bg-white/10 text-white cursor-pointer p-2 rounded-full hover:bg-white/20 backdrop-blur-sm transition"
             title="Share Project"

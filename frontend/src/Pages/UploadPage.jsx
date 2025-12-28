@@ -279,7 +279,7 @@ export default function UploadPage() {
                     title: formData.title,
                     description: formData.description,
                     category: formData.category,
-                    tags: formData.tags,
+                    tags: formData.tags.filter(tag => tag && tag.trim() !== ''),
                     githubLink: formData.githubLink,
                     demoLink: formData.demoLink
                   });
