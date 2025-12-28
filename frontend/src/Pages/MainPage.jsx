@@ -12,13 +12,8 @@ function MainPage() {
     useEffect(() => {
         const fetchProjects = async () => {
             try {
-                // We use dynamic import for api to avoid circular dependency if any, 
-                // or just standar import at top. Let's assume standard import at top.
-                // But I need to add the import first.
-                // Wait, I can't add import in this chunk if it's not the top of file.
-                // I will add import in a separate step.
                 const { default: api } = await import('../services/api');
-                const response = await api.get('/upload/allValues');
+                const response = await api.get('/upload/feed');
                 if (response.data.uploads) {
                     const mapped = response.data.uploads.map(u => ({
                         id: u._id,
@@ -43,13 +38,7 @@ function MainPage() {
         fetchProjects();
     }, []);
 
-    const displayData = projects.length > 0 ? projects : data; // Fallback to dummy data if empty? Or just projects.
-    // Let's use projects if available, else maybe data? 
-    // If I just started, DB is empty. So showing empty is fine, or showing dummy data.
-    // Let's mix them or just use projects. For "connecting APIs" I should rely on API.
-    // But for demo purposes if API returns empty, maybe fallback. 
-    // I'll stick to API data + fallback if API fails or returns 0?
-    // Let's just use API data. If empty, it's empty.
+    const displayData = projects.length > 0 ? projects : data; 
 
     const filteredData = selectedCategory === "All"
         ? projects
