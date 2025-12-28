@@ -1,15 +1,20 @@
 const jwt = require('jsonwebtoken'); 
 const User = require("../models/auth");
+
 const protectedRoute = async(req, res, next) => {
-    const token = req.cookies['auth-token'];
+    const token = req.cookies?.auth_token;
     if(!token){
         return res.status(401).json({ message: 'User not authenticated' });
     }
     try {
-        const payload = jwt.verify(token, process.env.JWT_LOGIN_SECRET);
-        const user = await User.findById(payload.userId);
-        if (!user) return res.status(401).json({ message: 'User not found' });
-        req.user = payload;
+        const decoded = jwt.verify(token, process.env.JWT_LOGIN_SECRET);  // token has a payload _id(userId) and email
+ 
+        const user = await User.findById({ _id: decoded.userId });
+        if (!user) {
+            return res.status(401).json({ message: 'User not found' });
+        }
+        
+        req.user = user;
         next();
     } catch (error) {
         console.log(`Error: ${error}`)
