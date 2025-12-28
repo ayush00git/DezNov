@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const categories = ['Web Dev', 'Graphic Design', 'UI/UX', 'AI/ML', 'Blockchain and Web3', 'Open'];
 
 const uploadSchema = new mongoose.Schema({
     title: {
@@ -11,7 +12,8 @@ const uploadSchema = new mongoose.Schema({
     },
     category: {
         type: String,
-        required: true,
+        enum: categories,
+        default: 'Open',
     },
     tags: {
         type: [String],
@@ -24,15 +26,19 @@ const uploadSchema = new mongoose.Schema({
     },
     githubLink: {
         type: String,
+        required: false,
     },
     demoLink: {
         type: String,
+        required: false,
     },
     createdBy: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
+        ref: 'users',
     },
 }, {timestamps: true} )
 
 const Upload = mongoose.model('uploads', uploadSchema);
 module.exports = Upload;
+
+// add logic for profile pic

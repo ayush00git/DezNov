@@ -1,9 +1,9 @@
 const express = require("express");
 const route = express.Router();
-const { protectedRoute } = require('../services/security');
 const Upload = require("../models/upload");
+
 // GET request for upload
-route.get('/upload', protectedRoute, (req, res) => {
+route.get('/', (req, res) => {
     try {
         return res.status(200).json({ message: 'Upload page loaded successfully!' })
     } catch (error) {
@@ -12,15 +12,13 @@ route.get('/upload', protectedRoute, (req, res) => {
 })
 
 // POST request for upload
-route.post('/upload', protectedRoute, async (req, res) => {
+route.post('/new-post', async (req, res) => {
     try {
-
         const { title, description, category, tags, githubLink, demoLink } = req.body;
 
-        if( !title || !description || !category ){
-            return res.status(400).json({ message: 'Title, description and category are required fields' });
+        if( !title || !description ){
+            return res.status(400).json({ message: 'Title and description are required fields' });
         }
-        // const createdBy = req.user._id;
         await Upload.create({
             title,
             description,
@@ -28,20 +26,21 @@ route.post('/upload', protectedRoute, async (req, res) => {
             tags,
             githubLink,
             demoLink,
-            createdBy: req.user.userId
+            createdBy: req.user._id
         })
         return res.status(200).json({ message: 'Uploaded successfully!' })
     } catch (error) {
         return res.status(500).json({ message: `${error}` });
     }
 })
-// GET request for all uploads (Feed)
-route.get('/allValues', async (req, res) => {
+
+route.get('/feed', async (req, res) => {
     try {
-        const uploads = await Upload.find().populate('createdBy', 'fullName userName');
-        return res.status(200).json({ uploads });
-    } catch (error) {
-        return res.status(500).json({ message: `Error: ${error}` });
+        const posts = await Upload.find({}).populate("createdBy", "userName fullName");
+        return res.status(200).json({ uploads: posts});
+    } catch(error) {
+        console.log(`${error}`);
+        return res.status(500).json({ message: 'Internal server error' });
     }
 })
 

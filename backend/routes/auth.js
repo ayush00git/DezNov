@@ -115,7 +115,7 @@ route.post("/login", async (req, res) => {
       { expiresIn: "7d" }
     );
 
-    res.cookie("auth-token", token, {
+    res.cookie("auth_token", token, {
       httpOnly: true,
       secure: false,
       sameSite: "lax",

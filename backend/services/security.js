@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 const User = require("../models/auth");
 
 const protectedRoute = async(req, res, next) => {
-    const token = res.cookies?.auth_token;
+    const token = req.cookies?.auth_token;
     if(!token){
         return res.status(401).json({ message: 'User not authenticated' });
     }
